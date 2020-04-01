@@ -1,0 +1,47 @@
+@font-face {
+    font-family: GothamRounded-Bold;
+    src: url(./font/GothamRounded-Bold/GothamRounded-Bold.ttf);
+}
+
+* {
+    font-family: GothamRounded-Bold;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    text-decoration: none;
+}
+
+body {
+    min-width: fit-content;
+    background-color: #0e0e0e;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 390px) {
+    body {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 425px) {
+    body {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+    body {
+        margin: 40px 20px;
+    }
+}

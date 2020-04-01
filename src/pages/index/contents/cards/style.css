@@ -1,0 +1,234 @@
+div.produtos {
+    position: relative;
+    display: flow-root;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px -20px 19px 0px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+div.produtos h2.title {
+    position: relative;
+    padding-top: 40px;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+div.produtos .items {
+    padding-top: 20px;
+}
+
+div.produtos .items .card {
+    position: relative;
+    float: left;
+    width: 80%;
+    max-width: 380px;
+    margin: 15px 30px;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+div.produtos .items .cover {
+    position: absolute;
+    height: 70%;
+    background-color: #000000;
+    opacity: 0;
+    transition: 400ms;
+    z-index: 1;
+}
+
+div.produtos .items .card .cover:hover {
+    background-color: black;
+    opacity: 0.5;
+}
+
+div.produtos .items .card img {
+    width: 100%;
+}
+
+div.produtos .items .card .bio {
+    position: relative;
+    margin-top: -5px;
+    padding: 20px;
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+div.produtos .items .card .bio h2 {
+    padding-bottom: 20px;
+    font-size: 15px;
+    height: 40px;
+    letter-spacing: -1px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+div.produtos .items .card .bio h3 {
+    padding-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+div.produtos .items .card .buy {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #ffae00;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+div.produtos .items .card .buy:hover {
+    color: #ffffff;
+    background-color: #1f1f1f;
+}
+
+@media (min-width: 390px) {
+    div.produtos {
+        padding: 0 15%;
+    }
+    div.produtos h2.title {
+        font-size: 26px;
+    }
+    div.produtos .items .card {
+        width: 100%;
+        margin: 15px 0;
+    }
+    div.produtos .items .card .bio h2 {
+        font-size: 14px;
+    }
+    div.produtos .items .card .bio h3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    div.produtos {
+        display: table;
+        padding: 28px;
+    }
+    div.produtos .items h2.title {
+        font-size: 35px;
+    }
+    div.produtos .items .card {
+        width: 320px;
+        margin: 20px 10px;
+    }
+    div.produtos .items .card:last-child {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    div.produtos .items .card .bio h2 {
+        font-size: 18px;
+    }
+    div.produtos .items .card .bio h3 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1024px) {
+    div.produtos {
+        padding: 90px;
+    }
+    div.produtos h2.title {
+        padding-top: 0;
+        font-size: 40px;
+    }
+    div.produtos .items {
+        padding-top: 50px;
+    }
+    div.produtos .items .card {
+        width: 350px;
+        margin: 20px;
+    }
+    div.produtos .items .card .bio h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    div.produtos {
+        padding: 10px;
+        padding-bottom: 50px;
+    }
+    div.produtos h2.title {
+        padding-top: 40px;
+        font-size: 40px;
+    }
+    div.produtos .items .card {
+        width: 262px;
+        margin: 0 8px;
+    }
+    div.produtos .items .card:last-child {
+        visibility: visible;
+        width: 262px;
+        height: auto;
+    }
+    div.produtos .items .card .bio h2 {
+        font-size: 18px;
+    }
+    div.produtos .items .card .bio h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1920px) {
+    div.produtos {
+        text-align: left;
+        padding: 55px 170px;
+    }
+    div.produtos h2.title {
+        position: relative;
+        padding: 0 10px;
+        font-size: 40px;
+    }
+    div.produtos .items .card {
+        width: 280px;
+        height: 535px;
+        margin: 0 10px;
+    }
+    div.produtos .items .card:last-child {
+        width: 280px;
+    }
+    div.produtos .items .card .bio h2 {
+        height: 35px;
+        font-size: 15px;
+    }
+    div.produtos .items .card .bio h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 2560px) {
+    div.produtos {
+        text-align: left;
+        padding: 60px 315px 20px;
+    }
+    div.produtos h2.title {
+        padding: 0 12px;
+        font-size: 50px;
+    }
+    div.produtos .items .card {
+        width: 350px;
+        height: 640px;
+        max-height: none;
+        margin: 30px 12px;
+    }
+    div.produtos .items .card:last-child {
+        width: 350px;
+    }
+    div.produtos .items .card .bio h2 {
+        font-size: 22px;
+        height: 42px;
+    }
+    div.produtos .items .card .bio h3 {
+        font-size: 25px;
+    }
+    div.produtos .items .card .buy {
+        font-size: 20px;
+    }
+}

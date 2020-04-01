@@ -1,0 +1,178 @@
+div.banner {
+    height: 200px;
+    box-shadow: 0px 20px 19px 0px rgba(0, 0, 0, 0.2);
+}
+
+div.banner .slide {
+    display: flex;
+    height: inherit;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+div.banner .slide .info {
+    visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    width: 0;
+}
+
+div.banner .buttons {
+    top: 82%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+}
+
+div.banner .buttons .banner-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12vh;
+    height: 100px;
+}
+
+div.banner img.icon {
+    cursor: pointer;
+    width: 50px;
+}
+
+div.banner .slide .text {
+    position: relative;
+    transition: 500ms;
+}
+
+div.banner .slide .text h2 {
+    text-transform: capitalize;
+    color: #5a5a5a;
+}
+
+div.banner .slide .text h3 {
+    text-transform: capitalize;
+    color: #9aa3af;
+}
+
+div.banner .slide .buy {
+    width: 60%;
+    height: 45px;
+    font-size: 16px;
+    background-color: #ffae00;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+div.banner .slide .buy:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+div.banner .images {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+div.banner .images img {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    transition: 500ms;
+}
+
+@media (min-width: 390px) {
+    div.banner {
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    div.banner {
+        height: 450px;
+    }
+}
+
+@media (min-width: 1024px) {
+    div.banner {
+        height: 550px;
+    }
+}
+
+@media (min-width: 1440px) {
+    div.banner {
+        padding: 30px;
+    }
+    div.banner .slide .info {
+        visibility: visible;
+        width: 450px;
+        height: 520px;
+        padding: 30px 30px 0;
+    }
+    div.banner .slide .text {
+        width: 300px;
+        height: 550px;
+    }
+    div.banner .slide .text h2 {
+        padding-bottom: 10px;
+        font-size: 20px;
+    }
+    div.banner .slide .text h3 {
+        padding-bottom: 35px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1920px) {
+    div.banner {
+        height: 680px;
+        padding: 55px;
+    }
+    div.banner .slide .info {
+        width: 600px;
+        height: 650px;
+        padding: 30px 60px 0 60px;
+    }
+    div.banner .slide .text {
+        width: 400px;
+        height: 680px;
+        padding: 0;
+    }
+    div.banner .slide .text h2 {
+        padding-bottom: 40px;
+        font-size: 25px;
+    }
+    div.banner .slide .text h3 {
+        font-size: 16px;
+    }
+    div.banner .slide .buy {
+        height: 55px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2560px) {
+    div.banner {
+        height: 900px;
+        padding: 50px 100px;
+    }
+    div.banner .slide .info {
+        width: 650px;
+        height: 850px;
+        padding: 50px 60px 0 60px;
+    }
+    div.banner .slide .text {
+        width: 490px;
+        height: 900px;
+        padding: 0;
+    }
+    div.banner .slide .text h2 {
+        padding-bottom: 60px;
+        font-size: 36px;
+    }
+    div.banner .slide .text h3 {
+        font-size: 20px;
+    }
+    div.banner .slide .buy {
+        height: 65px;
+        font-size: 22px;
+    }
+}

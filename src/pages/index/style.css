@@ -1,0 +1,7 @@
+div.main-container {
+    position: relative;
+    min-height: 100vh;
+    height: min-content;
+    background-color: #ffffff;
+    z-index: 1;
+}
