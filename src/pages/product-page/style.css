@@ -1,7 +1,7 @@
 .product-page-container {
     position: relative;
     min-height: 100vh;
-    height: min-content;
+    height: 100%;
     background-color: #ffffff;
     z-index: 1;
 }
@@ -17,6 +17,7 @@
     margin: 0 auto;
     width: 90%;
     max-width: 300px;
+    max-height: 400px;
 }
 
 .product-info-frame .product-bio {
@@ -32,23 +33,24 @@
 }
 
 .product-info-frame .product-bio h6 {
-    max-height: 210px;
-    overflow: scroll;
+    max-height: 250px;
+    overflow: auto;
     margin-top: 15px;
     color: #616161;
 }
 
-.product-info-frame .product-bio .teste {
+.product-info-frame .product-bio .product-resume {
     display: flex;
     flex-direction: row;
     margin-top: 25px;
 }
 
-.product-info-frame .product-bio .teste h3 {
+.product-info-frame .product-bio .product-resume h3 {
     margin-top: 5px;
+    margin-right: auto;
 }
 
-.product-info-frame .product-bio .teste button {
+.product-info-frame .product-bio .product-resume button {
     width: 50%;
     padding: 10px;
     margin-right: auto;
@@ -59,7 +61,91 @@
     transition: 500ms;
 }
 
-.product-info-frame .product-bio .teste button:hover {
+.product-info-frame .product-bio .product-resume button:hover {
     color: #ffffff;
     background-color: #1f1f1f;
 }
+
+.product-info-frame .product-requirements {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info-frame .product-requirements .product-requirements-info {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 20px;
+    padding: 15px;
+    max-width: 275px;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+.product-info-frame .product-requirements .product-requirements-info .product-requirements-title {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.product-info-frame .product-requirements .product-requirements-info .product-field {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.product-info-frame .product-requirements .product-requirements-info .product-field p {
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 390px) {}
+
+@media (min-width: 768px) {
+    .product-info-frame {
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    .product-info-frame .product-info-main {
+        display: flex;
+        flex-direction: row;
+    }
+    .product-info-frame .product-bio {
+        display: flex;
+        flex-direction: column;
+    }
+    .product-info-frame .product-requirements {
+        display: flex;
+        flex-direction: row;
+    }
+    .product-info-frame .product-requirements .product-requirements-info {
+        margin: 15px auto 25px;
+    }
+}
+
+@media (min-width: 1024px) {}
+
+@media (min-width: 1440px) {}
+
+@media (min-width: 1920px) {
+    .product-info-frame .product-bio h6 {
+        max-height: 300px;
+        overflow: auto;
+        font-size: 12px;
+        margin-top: 15px;
+        color: #616161;
+    }
+    .product-info-frame .product-bio .product-resume {
+        margin-top: 40px;
+    }
+    .product-info-frame .product-requirements .product-requirements-info .product-requirements-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .product-info-frame .product-requirements .product-requirements-info .product-field {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    .product-info-frame .product-requirements .product-requirements-info .product-field p {
+        font-size: 13px;
+        color: #616161;
+    }
+}
+
+@media (min-width: 2560px) {}

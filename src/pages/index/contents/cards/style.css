@@ -179,7 +179,7 @@ div.produtos .items .card .buy:hover {
 @media (min-width: 1920px) {
     div.produtos {
         text-align: left;
-        padding: 55px 170px;
+        padding: 55px 180px;
     }
     div.produtos h2.title {
         position: relative;

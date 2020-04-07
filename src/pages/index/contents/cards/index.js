@@ -1,73 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./style.css";
 import importAll from "../../../utils/importAll";
+import api from "../../../../service/api.js";
 
 function Produtos() {
-  let images = importAll(
-    require.context("../../../../images/img", false, /\.(jpe?g)$/)
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    console.log("DB Online");
+    select();
+  }, []);
+
+  const images = importAll(
+    require.context("../../../../images/products", false, /\.(jpg)$/)
   );
+
+  async function selectProducts() {
+    const response = await api.get("/product");
+    setResult(response.data.result);
+  }
+
+  async function select() {
+    await selectProducts();
+  }
+
   return (
     <div className="produtos">
       <h2 className="title">mais vendidos</h2>
       <div className="items">
-        <div className="card">
-          <Link to="/product-page">
-            <img src={images[0]} alt="" />
-            <div className="cover"></div>
-            <div className="bio">
-              <h2>NBA 2K20</h2>
-              <h3>R$210</h3>
-
-              <button className="buy">Comprar</button>
-            </div>
-          </Link>
-        </div>
-        <div className="card">
-          <a href="#gameCard">
-            <img src={images[1]} alt="" />
-            <div className="cover"></div>
-            <div className="bio">
-              <h2>Spider-man</h2>
-              <h3>R$210</h3>
-              <button className="buy">Comprar</button>
-            </div>
-          </a>
-        </div>
-        <div className="card">
-          <a href="#gameCard">
-            <img src={images[2]} alt="" />
-            <div className="cover"></div>
-            <div className="bio">
-              <h2>Tom clancy's rainbow six: siege</h2>
-              <h3>R$210</h3>
-              <button className="buy">Comprar</button>
-            </div>
-          </a>
-        </div>
-        <div className="card">
-          <a href="#gameCard">
-            <img src={images[3]} alt="" />
-            <div className="cover"></div>
-            <div className="bio">
-              <h2>Halo 5</h2>
-              <h3>R$210</h3>
-              <button className="buy">Comprar</button>
-            </div>
-          </a>
-        </div>
-        <div className="card">
-          <a href="#gameCard">
-            <img src={images[4]} alt="" />
-            <div className="cover"></div>
-            <div className="bio">
-              <h2>Assassin's Creed Odyssey</h2>
-              <h3>R$210</h3>
-              <button className="buy">Comprar</button>
-            </div>
-          </a>
-        </div>
+        {result.map((result) => (
+          <div key={result.id_product} className="card">
+            <Link to="/product-page">
+              <img src={images[result.img + ".jpg"]} alt="" />
+              <div className="cover"></div>
+              <div className="bio">
+                <h2>{result.name}</h2>
+                <h3>R${result.price}</h3>
+                <button className="buy">Comprar</button>
+              </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

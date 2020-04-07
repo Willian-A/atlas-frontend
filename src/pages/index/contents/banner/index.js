@@ -9,11 +9,15 @@ function Banner() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   let imagesJPEG = importAll(
-    require.context("../../../../images/banner", false, /\.(jpe?g)$/)
+    require.context("../../../../images/banner", false, /\.(jpg)$/)
   );
   let imagesPNG = importAll(
     require.context("../../../../images/banner", false, /\.(png)$/)
   );
+
+  let bannerTimer;
+  let banners = [];
+  let bannerImagesFiles = Object.values(imagesJPEG);
 
   useEffect(() => {
     setSlideIndex(1);
@@ -23,6 +27,15 @@ function Banner() {
     startTimer();
   });
 
+  function bannerLoader() {
+    for (let f = 0; f < Object.keys(imagesJPEG).length; f++) {
+      banners.push(
+        <img className="img" key={f} src={bannerImagesFiles[f]} alt="jogos" />
+      );
+    }
+    return banners;
+  }
+
   function getBannerHeight() {
     if (document.getElementById("banner-box") === null) {
       return null;
@@ -31,7 +44,6 @@ function Banner() {
     }
   }
 
-  var bannerTimer = null;
   function startTimer() {
     bannerTimer = setTimeout(() => {
       moveBanner();
@@ -45,14 +57,14 @@ function Banner() {
 
   function moveBanner() {
     try {
-      if (slideIndex === imagesJPEG.length) {
-        for (var i = 0; i < imagesJPEG.length; i++) {
+      if (slideIndex === Object.keys(imagesJPEG).length) {
+        for (let i = 0; i < Object.keys(imagesJPEG).length; i++) {
           ReactDOM.findDOMNode(bannerImages[i]).style.top = 0;
           ReactDOM.findDOMNode(bannerText[i]).style.top = 0;
         }
         setSlideIndex(1);
       } else {
-        for (var x = 0; x < imagesJPEG.length; x++) {
+        for (let x = 0; x < Object.keys(imagesJPEG).length; x++) {
           ReactDOM.findDOMNode(bannerImages[x]).style.top = moveBottom;
           ReactDOM.findDOMNode(bannerText[x]).style.top = moveBottom;
         }
@@ -65,11 +77,7 @@ function Banner() {
   return (
     <div className="banner">
       <div id="banner-box" className="slide">
-        <div className="images">
-          {imagesJPEG.map(function(image, index) {
-            return <img key={index} className="img" src={image} alt="jogos" />;
-          })}
-        </div>
+        <div className="images">{bannerLoader()}</div>
         <div className="info">
           <div className="text">
             <h2>FIFA 20</h2>
@@ -91,7 +99,7 @@ function Banner() {
                     moveBanner();
                   }}
                   className="icon"
-                  src={imagesPNG[0]}
+                  src={imagesPNG["0.png"]}
                   alt=""
                 />
               </div>
@@ -124,7 +132,7 @@ function Banner() {
                     moveBanner();
                   }}
                   className="icon"
-                  src={imagesPNG[0]}
+                  src={imagesPNG["0.png"]}
                   alt=""
                 />
               </div>
@@ -154,7 +162,7 @@ function Banner() {
                     moveBanner();
                   }}
                   className="icon"
-                  src={imagesPNG[0]}
+                  src={imagesPNG["0.png"]}
                   alt=""
                 />
               </div>
