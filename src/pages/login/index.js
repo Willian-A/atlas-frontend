@@ -9,8 +9,17 @@ export default function Login() {
   let images = importAll(
     require.context("../../images/login", false, /\.(png)$/)
   );
+
+  function teste(images) {
+    var a = [];
+    for (var i = 0; i < Object.keys(images).length; i++) {
+      a.push(i);
+    }
+    console.log();
+  }
   return (
     <div className="box-container">
+      {teste(images)}
       <div className="box">
         <div className="cover"></div>
         <div className="container">
@@ -32,7 +41,7 @@ export default function Login() {
               Não tem um cadastro? <Link to="/cadastro">Castre-se</Link>
             </h4>
           </div>
-          <img src={images[0]} alt="" />
+          <img src={images["logo.png"]} alt="" />
         </div>
       </div>
     </div>

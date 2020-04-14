@@ -33,6 +33,7 @@
 }
 
 .product-info-frame .product-bio h6 {
+    min-height: 250px;
     max-height: 250px;
     overflow: auto;
     margin-top: 15px;
@@ -125,7 +126,8 @@
 
 @media (min-width: 1920px) {
     .product-info-frame .product-bio h6 {
-        max-height: 300px;
+        min-height: 260px;
+        max-height: 267px;
         overflow: auto;
         font-size: 12px;
         margin-top: 15px;

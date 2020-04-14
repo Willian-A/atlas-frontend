@@ -46,7 +46,7 @@ export default function Cadastro() {
               Já tem um cadastro? Faça <Link to="/login">Login</Link>
             </h4>
           </div>
-          <img src={images[0]} alt="" />
+          <img src={images["logo.png"]} alt="" />
         </div>
       </div>
     </div>

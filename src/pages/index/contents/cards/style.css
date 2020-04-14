@@ -115,10 +115,10 @@ div.produtos .items .card .buy:hover {
     }
     div.produtos .items .card {
         width: 320px;
-        margin: 20px 10px;
+        margin: 20px 15px;
     }
     div.produtos .items .card:last-child {
-        visibility: hidden;
+        display: none;
         width: 0;
         height: 0;
     }
@@ -164,7 +164,7 @@ div.produtos .items .card .buy:hover {
         margin: 0 8px;
     }
     div.produtos .items .card:last-child {
-        visibility: visible;
+        display: initial;
         width: 262px;
         height: auto;
     }

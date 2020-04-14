@@ -7,7 +7,7 @@ import importAll from "../utils/importAll";
 
 export default function Carrinho() {
   let images = importAll(
-    require.context("../../images/img", false, /\.(jpe?g)$/)
+    require.context("../../images/products", false, /\.(jpg)$/)
   );
   return (
     <div className="cart-container">
@@ -22,7 +22,7 @@ export default function Carrinho() {
         <div className="cart-main">
           <div className="cart-items">
             <div className="product">
-              <img src={images[0]} alt="" />
+              <img src={images["nba2k20.jpg"]} alt="" />
               <div className="main-bio">
                 <h2 className="item-name">NBA 2K20</h2>
                 <h2 className="item-price">R$ 220,00</h2>
@@ -34,7 +34,7 @@ export default function Carrinho() {
               </div>
             </div>
             <div className="product">
-              <img src={images[3]} alt="" />
+              <img src={images["rainbowsixsiege.jpg"]} alt="" />
               <div className="main-bio">
                 <h2 className="item-name">Tom Clancy's rainbow six: Siege</h2>
                 <h2 className="item-price">R$ 120,00</h2>

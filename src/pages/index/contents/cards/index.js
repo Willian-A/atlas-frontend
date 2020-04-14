@@ -32,7 +32,12 @@ function Produtos() {
       <div className="items">
         {result.map((result) => (
           <div key={result.id_product} className="card">
-            <Link to="/product-page">
+            <Link
+              to={{
+                pathname: "/product-page",
+                state: { productID: `${result.id_product}` },
+              }}
+            >
               <img src={images[result.img + ".jpg"]} alt="" />
               <div className="cover"></div>
               <div className="bio">

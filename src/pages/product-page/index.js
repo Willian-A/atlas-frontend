@@ -5,55 +5,51 @@ import importAll from "../utils/importAll";
 import NavBar from "../utils/navBar";
 import api from "../../service/api.js";
 
-export default function ProductPage() {
+export default function ProductPage(props) {
+  let images = importAll(
+    require.context("../../images/products", false, /\.(jpe?g)$/)
+  );
+
   const [result, setResult] = useState([]);
+
+  async function select() {
+    await selectProducts();
+  }
+
+  async function selectProducts() {
+    const response = await api.post("/getProduct", props.location.state);
+    setResult(response.data.result);
+  }
 
   useEffect(() => {
     console.log("DB Online");
     select();
   }, []);
 
-  let images = importAll(
-    require.context("../../images/products", false, /\.(jpe?g)$/)
-  );
-
-  async function selectProducts() {
-    const response = await api.get("/product");
-    setResult(response.data.result);
-  }
-
-  async function select() {
-    await selectProducts();
+  function teste(data) {
+    if (data[0] === undefined) {
+    } else {
+      return (
+        <div className="product-info-main">
+          <img src={images[result[0]["img"] + ".jpg"]} alt="nba 2k20" />
+          <div className="product-bio">
+            <h2>{result[0]["name"]}</h2>
+            <h6>{result[0]["description"]}</h6>
+            <div className="product-resume">
+              <button>Comprar</button>
+              <h3>R$ {result[0]["price"]}</h3>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   return (
     <div className="product-page-container">
       <NavBar />
       <div className="product-info-frame">
-        <div className="product-info-main">
-          <img src={images["nba2k20.jpg"]} alt="nba 2k20" />
-          <div className="product-bio">
-            <h2>NBA 2K20</h2>
-            <h6>
-              NBA 2K transformou-se em algo muito maior que uma simulação de
-              basquete. Com NBA 2K20 a 2K continua a redefinir o que é possível
-              fazer em um jogo de esportes, com gráficos e jogabilidade de
-              primeira, modos de jogo, controle e personalização de jogadores
-              inigualáveis. E mais: com o Neighborhood, um modo imersivo de
-              mundo aberto, NBA 2K20 é uma plataforma para que jogadores e fãs
-              de basquete se reúnam e criem o futuro da cultura do esporte. Dê
-              um salto em suas habilidades com o controle mais realista de todos
-              os tempos, com uma engine de movimento melhorado com estilos
-              característicos, controles avançados de arremesso, um novo sistema
-              de avaliação de drible, colisões sem a bola e bola e uma nova
-              jogabilidade defensiva, baseada em leitura e reação.
-            </h6>
-            <div className="product-resume">
-              <button>Comprar</button>
-              <h3>R$ 200,00</h3>
-            </div>
-          </div>
-        </div>
+        {teste(result)}
         <div className="product-requirements">
           <div className="product-requirements-info">
             <h2 className="product-requirements-title">Requisitos Mínimos:</h2>
