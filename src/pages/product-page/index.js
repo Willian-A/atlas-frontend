@@ -12,19 +12,18 @@ export default function ProductPage(props) {
 
   const [result, setResult] = useState([]);
 
-  async function select() {
-    await selectProducts();
-  }
-
-  async function selectProducts() {
-    const response = await api.post("/getProduct", props.location.state);
-    setResult(response.data.result);
-  }
-
   useEffect(() => {
     console.log("DB Online");
+
+    async function select() {
+      await selectProducts();
+    }
+    async function selectProducts() {
+      const response = await api.post("/getProduct", props.location.state);
+      setResult(response.data.result);
+    }
     select();
-  }, []);
+  }, [props.location.state]);
 
   function teste(data) {
     if (data[0] === undefined) {

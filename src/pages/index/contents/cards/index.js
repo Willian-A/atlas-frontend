@@ -10,21 +10,20 @@ function Produtos() {
 
   useEffect(() => {
     console.log("DB Online");
+    async function selectProducts() {
+      const response = await api.get("/product");
+      setResult(response.data.result);
+    }
+    async function select() {
+      await selectProducts();
+    }
+
     select();
   }, []);
 
   const images = importAll(
     require.context("../../../../images/products", false, /\.(jpg)$/)
   );
-
-  async function selectProducts() {
-    const response = await api.get("/product");
-    setResult(response.data.result);
-  }
-
-  async function select() {
-    await selectProducts();
-  }
 
   return (
     <div className="produtos">
