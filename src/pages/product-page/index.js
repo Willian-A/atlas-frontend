@@ -19,7 +19,7 @@ export default function ProductPage(props) {
       await selectProducts();
     }
     async function selectProducts() {
-      const response = await api.post("/getProduct", props.location.state);
+      const response = await api.post("/productPage", props.location.state);
       setResult(response.data.result);
     }
     select();
