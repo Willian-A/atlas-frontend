@@ -13,36 +13,31 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const [cpf, setCpf] = useState("");
-  const [phone, setPhone] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     await handleRegister();
   }
   async function handleRegister() {
-    var msgLog = document.getElementById("teste");
+    var msgLog = document.getElementById("msgLog");
     try {
       await api.post("/cadastrar", {
         name,
         email,
         password,
         cpf,
-        phone,
       });
       msgLog.style.color = "green";
-      msgLog.innerHTML =
-        'Registrado com Sucesso! Faça <Link to="/login">Login</Link>';
+      msgLog.innerHTML = "Registrado com Sucesso! Faça Login";
       msgLog.style.visibility = "visible";
+      setName("");
+      setEmail("");
+      setPass("");
+      setCpf("");
     } catch (error) {
-      if (error.response.status === 422) {
-        msgLog.style.color = "red";
-        msgLog.innerHTML = "Campos com Conteudo Invalido";
-        msgLog.style.visibility = "visible";
-      } else if (error.response.status === 409) {
-        msgLog.style.color = "red";
-        msgLog.innerHTML = "Email ou CPF Já Cadastrados";
-        msgLog.style.visibility = "visible";
-      }
+      msgLog.innerHTML = error.response.data;
+      msgLog.style.color = "red";
+      msgLog.style.visibility = "visible";
     }
   }
 
@@ -60,9 +55,8 @@ export default function Register() {
             </h1>
             <h2>Cadastro</h2>
             <h3
-              id="teste"
+              id="msgLog"
               style={{
-                color: "green",
                 fontSize: "14.5px",
                 textAlign: "center",
                 marginBottom: "15px",
@@ -74,12 +68,15 @@ export default function Register() {
             <input
               name="name"
               type="text"
+              value={name}
               placeholder="Nome"
+              minLength="2"
               onChange={(e) => setName(e.target.value)}
             />
             <input
               name="email"
               type="email"
+              value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -87,6 +84,7 @@ export default function Register() {
             <input
               name="pass"
               type="password"
+              value={password}
               placeholder="Senha"
               minLength="8"
               onChange={(e) => setPass(e.target.value)}
@@ -94,16 +92,11 @@ export default function Register() {
             <InputMask
               name="cpf"
               mask="999.999.999-99"
+              value={cpf}
               maskChar=""
               placeholder="CPF"
+              minLength="11"
               onChange={(e) => setCpf(e.target.value)}
-            />
-            <InputMask
-              name="phone"
-              mask="(99) 99999-9999"
-              maskChar=""
-              placeholder="Telefone"
-              onChange={(e) => setPhone(e.target.value)}
             />
 
             <button>Cadastrar</button>

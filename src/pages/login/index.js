@@ -1,11 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
 import importAll from "../utils/importAll";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+  const history = useHistory();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await handleRegister();
+  }
+  async function handleRegister() {
+    var msgLog = document.getElementById("msgLog");
+    try {
+      await api.post("/login", {
+        email,
+        password,
+      });
+
+      history.push("/");
+    } catch (error) {
+      msgLog.innerHTML = error.response.data;
+      msgLog.style.color = "red";
+    }
+    msgLog.style.visibility = "visible";
+  }
+
   let images = importAll(
     require.context("../../images/login", false, /\.(png)$/)
   );
@@ -15,13 +40,36 @@ export default function Login() {
       <div className="box">
         <div className="cover"></div>
         <div className="container">
-          <div className="inputs">
+          <form onSubmit={handleSubmit} className="inputs">
             <h1>
               <Link to="/">Voltar a Página Inicial</Link>
             </h1>
             <h2>Login</h2>
-            <input name="email" type="text" placeholder="Email" />
-            <input name="pass" type="password" placeholder="Senha" />
+            <h3
+              id="msgLog"
+              style={{
+                fontSize: "14.5px",
+                textAlign: "center",
+                marginBottom: "15px",
+                visibility: "hidden",
+              }}
+            >
+              {""}
+            </h3>
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              name="pass"
+              type="password"
+              placeholder="Senha"
+              value={password}
+              onChange={(e) => setPass(e.target.value)}
+            />
 
             <a href="#test">
               <h3>Esqueci minha senha</h3>
@@ -30,9 +78,9 @@ export default function Login() {
             <button>Login</button>
 
             <h4>
-              Não tem um cadastro? <Link to="/register">Castre-se</Link>
+              Não tem um cadastro? <Link to="/register">Cadastre-se</Link>
             </h4>
-          </div>
+          </form>
           <img src={images["logo.png"]} alt="" />
         </div>
       </div>
