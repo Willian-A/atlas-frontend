@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import InputMask from "react-input-mask";
 import api from "../../service/api.js";
@@ -13,6 +13,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const [cpf, setCpf] = useState("");
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,18 +28,12 @@ export default function Register() {
         password,
         cpf,
       });
-      msgLog.style.color = "green";
-      msgLog.innerHTML = "Registrado com Sucesso! Faça Login";
-      msgLog.style.visibility = "visible";
-      setName("");
-      setEmail("");
-      setPass("");
-      setCpf("");
+      history.push("/login");
     } catch (error) {
       msgLog.innerHTML = error.response.data;
       msgLog.style.color = "red";
-      msgLog.style.visibility = "visible";
     }
+    msgLog.style.visibility = "visible";
   }
 
   let images = importAll(
