@@ -25,7 +25,7 @@ export default function ProductPage(props) {
     select();
   }, [props.location.state]);
 
-  function teste(data) {
+  function renderProduct(data) {
     if (data[0] === undefined) {
     } else {
       return (
@@ -35,7 +35,13 @@ export default function ProductPage(props) {
             <h2>{result[0]["name"]}</h2>
             <h6>{result[0]["description"]}</h6>
             <div className="product-resume">
-              <button>Comprar</button>
+              <button
+                onClick={() => {
+                  cartAdd(result);
+                }}
+              >
+                Comprar
+              </button>
               <h3>R$ {result[0]["price"]}</h3>
             </div>
           </div>
@@ -44,11 +50,26 @@ export default function ProductPage(props) {
     }
   }
 
+  async function cartAdd(data) {
+    try {
+      await api.post(
+        "/addCart",
+        {
+          productID: data[0]["id_product"],
+        },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="product-page-container">
       <NavBar />
       <div className="product-info-frame">
-        {teste(result)}
+        {renderProduct(result)}
         <div className="product-requirements">
           <div className="product-requirements-info">
             <h2 className="product-requirements-title">Requisitos Mínimos:</h2>

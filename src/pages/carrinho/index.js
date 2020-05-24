@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../global.css";
 import "./style.css";
+import api from "../../service/api.js";
 
 import NavBar from "../utils/navBar";
 import importAll from "../utils/importAll";
 
 export default function Carrinho() {
+  const [result, setResult] = useState([]);
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)
   );
+
+  async function listCart() {
+    try {
+      let response = await api.get("/cart", {
+        withCredentials: true,
+      });
+      console.log(response);
+      setResult(response.data.newResult);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function pinto(result) {
+    return result.map((index) => {
+      return (
+        <div className="product" key={index["id_product"]}>
+          <img src={images[index["img"] + ".jpg"]} alt="" />
+          <div className="main-bio">
+            <h2 className="item-name">{index["name"]}</h2>
+            <h2 className="item-price">R$ {index["price"]}</h2>
+            <h2 className="item-qt">Quantidade: {index["quantity"]}</h2>
+            <div className="cart-product-buttons">
+              <button>Adicionar</button>
+              <button>Remover</button>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  }
+  useEffect(() => {
+    listCart();
+  }, []);
   return (
     <div className="cart-container">
       <NavBar />
@@ -20,32 +56,7 @@ export default function Carrinho() {
       <div className="cart-body">
         <h2 className="title">Produtos no carrinho</h2>
         <div className="cart-main">
-          <div className="cart-items">
-            <div className="product">
-              <img src={images["nba2k20.jpg"]} alt="" />
-              <div className="main-bio">
-                <h2 className="item-name">NBA 2K20</h2>
-                <h2 className="item-price">R$ 220,00</h2>
-                <h2 className="item-qt">Quantidade: 1</h2>
-                <div className="cart-product-buttons">
-                  <button>Adicionar</button>
-                  <button>Remover</button>
-                </div>
-              </div>
-            </div>
-            <div className="product">
-              <img src={images["rainbowsixsiege.jpg"]} alt="" />
-              <div className="main-bio">
-                <h2 className="item-name">Tom Clancy's rainbow six: Siege</h2>
-                <h2 className="item-price">R$ 120,00</h2>
-                <h2 className="item-qt">Quantidade: 1</h2>
-                <div className="cart-product-buttons">
-                  <button>Adicionar</button>
-                  <button>Remover</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="cart-items">{pinto(result)}</div>
           <div className="cart-resume">
             <h2>Total: R$ 340,00</h2>
             <button>Finalizar</button>

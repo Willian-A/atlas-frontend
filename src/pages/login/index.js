@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../service/api.js";
-import { setCookie, getCookie } from "../utils/cookieHandler";
 
 import "../../global.css";
 import "./style.css";
@@ -20,13 +19,16 @@ export default function Login() {
   async function handleRegister() {
     let msgLog = document.getElementById("msgLog");
     try {
-      let response = await api.post("/login", {
-        email,
-        password,
-        profile: getCookie("profile"),
-      });
-      console.log(response.data);
-      setCookie("profile", JSON.stringify(response.data));
+      await api.post(
+        "/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
       history.push("/");
     } catch (error) {
       msgLog.innerHTML = error.response.data;
