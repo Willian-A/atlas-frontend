@@ -13,8 +13,6 @@ export default function ProductPage(props) {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    console.log("DB Online");
-
     async function select() {
       await selectProducts();
     }

@@ -17,7 +17,6 @@ export default function Carrinho() {
       let response = await api.get("/cart", {
         withCredentials: true,
       });
-      console.log(response);
       setResult(response.data.newResult);
     } catch (error) {
       console.log(error);
@@ -42,9 +41,11 @@ export default function Carrinho() {
       );
     });
   }
+
   useEffect(() => {
     listCart();
   }, []);
+
   return (
     <div className="cart-container">
       <NavBar />
