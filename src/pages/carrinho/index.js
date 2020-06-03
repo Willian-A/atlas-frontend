@@ -21,7 +21,7 @@ export default function Carrinho() {
     } catch (error) {}
   }
 
-  function pinto(result) {
+  function loadCart(result) {
     return result.map((index) => {
       return (
         <div className="product" key={index["id_product"]}>
@@ -55,7 +55,7 @@ export default function Carrinho() {
       <div className="cart-body">
         <h2 className="title">Produtos no carrinho</h2>
         <div className="cart-main">
-          <div className="cart-items">{pinto(result)}</div>
+          <div className="cart-items">{loadCart(result)}</div>
           <div className="cart-resume">
             <h2>Total: R$ 340,00</h2>
             <button>Finalizar</button>
