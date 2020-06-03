@@ -9,7 +9,6 @@ function Produtos() {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    console.log("DB Online");
     async function selectProducts() {
       const response = await api.get("/product");
       setResult(response.data.result);

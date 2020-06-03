@@ -18,9 +18,7 @@ export default function Carrinho() {
         withCredentials: true,
       });
       setResult(response.data.newResult);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   function pinto(result) {
