@@ -10,7 +10,7 @@ A simple e-commerce build with ReactJS, NodeJS and MySQL
 
 ### `What part it is?`
 
-In this repository you can find the Backend of the project.<br>
-You can find the Frontend [here](https://github.com/Willian-A/frontend-tcc).
+In this repository you can find the Frontend of the project.<br>
+You can find the Backend [here](https://github.com/Willian-A/backend-tcc).
 
 
