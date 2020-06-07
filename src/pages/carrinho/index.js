@@ -8,6 +8,7 @@ import importAll from "../utils/importAll";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
+  const [total, setTotal] = useState([]);
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)
   );
@@ -18,7 +19,10 @@ export default function Carrinho() {
         withCredentials: true,
       });
       setResult(response.data.newResult);
-    } catch (error) {}
+      setTotal("Total: R$" + response.data.totalPrice);
+    } catch (error) {
+      setTotal(error.response.data);
+    }
   }
 
   function loadCart(result) {
@@ -57,7 +61,7 @@ export default function Carrinho() {
         <div className="cart-main">
           <div className="cart-items">{loadCart(result)}</div>
           <div className="cart-resume">
-            <h2>Total: R$ 340,00</h2>
+            <h2> {total}</h2>
             <button>Finalizar</button>
           </div>
         </div>
