@@ -8,7 +8,7 @@ import importAll from "../utils/importAll";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
-  const [total, setTotal] = useState([]);
+  const [total, setTotal] = useState("");
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)
   );
@@ -19,10 +19,12 @@ export default function Carrinho() {
         withCredentials: true,
       });
       setResult(response.data.newResult);
-      setTotal("Total: R$" + response.data.totalPrice);
+      //"Total: R$" + response.data.totalPrice + ",00"
+      setTotal(response.data.totalPrice + ",00");
     } catch (error) {
-      setTotal(error.response.data);
+      setTotal(false);
     }
+    console.log(total);
   }
 
   function loadCart(result) {
@@ -44,6 +46,25 @@ export default function Carrinho() {
     });
   }
 
+  function resumeCart() {
+    let msg;
+    if (!total) {
+      msg = "Você Não Está Logado";
+      return (
+        <div className="cart-resume">
+          <h2> {msg}</h2>
+        </div>
+      );
+    } else {
+      return (
+        <div className="cart-resume">
+          <h2> Total: R$ {total}</h2>
+          <button>Finalizar</button>
+        </div>
+      );
+    }
+  }
+
   useEffect(() => {
     listCart();
   }, []);
@@ -60,10 +81,7 @@ export default function Carrinho() {
         <h2 className="title">Produtos no carrinho</h2>
         <div className="cart-main">
           <div className="cart-items">{loadCart(result)}</div>
-          <div className="cart-resume">
-            <h2> {total}</h2>
-            <button>Finalizar</button>
-          </div>
+          {resumeCart()}
         </div>
       </div>
     </div>
