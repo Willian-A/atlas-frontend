@@ -8,7 +8,8 @@ import importAll from "../utils/importAll";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
-  const [total, setTotal] = useState("");
+  const [total, setTotal] = useState({});
+
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)
   );
@@ -19,12 +20,13 @@ export default function Carrinho() {
         withCredentials: true,
       });
       setResult(response.data.newResult);
-      //"Total: R$" + response.data.totalPrice + ",00"
-      setTotal(response.data.totalPrice + ",00");
+      setTotal({
+        error: null,
+        msg: response.data.totalPrice,
+      });
     } catch (error) {
-      setTotal(false);
+      setTotal({ error: true, msg: error.response.data });
     }
-    console.log(total);
   }
 
   function loadCart(result) {
@@ -47,18 +49,16 @@ export default function Carrinho() {
   }
 
   function resumeCart() {
-    let msg;
-    if (!total) {
-      msg = "Você Não Está Logado";
+    if (total["error"] === true) {
       return (
         <div className="cart-resume">
-          <h2> {msg}</h2>
+          <h2>{total["msg"]}</h2>
         </div>
       );
     } else {
       return (
         <div className="cart-resume">
-          <h2> Total: R$ {total}</h2>
+          <h2>Total: R${total["msg"]},00</h2>
           <button>Finalizar</button>
         </div>
       );
