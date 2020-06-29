@@ -17,7 +17,7 @@ export default function ProductPage(props) {
       await selectProducts();
     }
     async function selectProducts() {
-      const response = await api.post("/productPage", props.location.state);
+      const response = await api.post("/product", props.location.state);
       setResult(response.data.result);
     }
     select();
@@ -51,7 +51,7 @@ export default function ProductPage(props) {
   async function cartAdd(data) {
     try {
       await api.post(
-        "/addCart",
+        "/cart",
         {
           productID: data[0]["id_product"],
         },
