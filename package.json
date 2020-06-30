@@ -16,7 +16,6 @@
         "universal-cookie": "^4.0.3"
     },
     "scripts": {
-        "https": "set HTTPS=true&&react-scripts start",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
