@@ -33,7 +33,7 @@ export default function Carrinho() {
     return result.map((index) => {
       return (
         <div className="product" key={index["id_product"]}>
-          <img src={images[index["img"] + ".jpg"]} alt="" />
+          <img src={images[index["image"] + ".jpg"]} alt="" />
           <div className="main-bio">
             <h2 className="item-name">{index["name"]}</h2>
             <h2 className="item-price">R$ {index["price"]}</h2>
@@ -58,7 +58,7 @@ export default function Carrinho() {
     } else {
       return (
         <div className="cart-resume">
-          <h2>Total: R${total["msg"]},00</h2>
+          <h2>Total: R${total["msg"]}</h2>
           <button>Finalizar</button>
         </div>
       );

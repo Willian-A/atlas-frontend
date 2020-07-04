@@ -28,7 +28,7 @@ export default function ProductPage(props) {
     } else {
       return (
         <div className="product-info-main">
-          <img src={images[result[0]["img"] + ".jpg"]} alt="nba 2k20" />
+          <img src={images[result[0]["image"] + ".jpg"]} alt="nba 2k20" />
           <div className="product-bio">
             <h2>{result[0]["name"]}</h2>
             <h6>{result[0]["description"]}</h6>

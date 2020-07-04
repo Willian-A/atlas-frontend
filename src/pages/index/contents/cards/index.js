@@ -36,7 +36,7 @@ function Produtos() {
                 state: { productID: `${result.id_product}` },
               }}
             >
-              <img src={images[result.img + ".jpg"]} alt="" />
+              <img src={images[result.image + ".jpg"]} alt="" />
               <div className="cover"></div>
               <div className="bio">
                 <h2>{result.name}</h2>
