@@ -17,6 +17,7 @@ div.produtos h2.title {
 
 div.produtos .items {
     padding-top: 20px;
+    width: fit-content;
 }
 
 div.produtos .items .card {
@@ -108,7 +109,7 @@ div.produtos .items .card .buy:hover {
 @media (min-width: 768px) {
     div.produtos {
         display: table;
-        padding: 28px;
+        padding: 15px;
     }
     div.produtos .items h2.title {
         font-size: 35px;
@@ -116,11 +117,6 @@ div.produtos .items .card .buy:hover {
     div.produtos .items .card {
         width: 320px;
         margin: 20px 15px;
-    }
-    div.produtos .items .card:last-child {
-        display: none;
-        width: 0;
-        height: 0;
     }
     div.produtos .items .card .bio h2 {
         font-size: 18px;
@@ -152,21 +148,18 @@ div.produtos .items .card .buy:hover {
 
 @media (min-width: 1440px) {
     div.produtos {
-        padding: 10px;
-        padding-bottom: 50px;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        padding: 35px 180px;
     }
     div.produtos h2.title {
         padding-top: 40px;
         font-size: 40px;
     }
     div.produtos .items .card {
-        width: 262px;
-        margin: 0 8px;
-    }
-    div.produtos .items .card:last-child {
-        display: initial;
-        width: 262px;
-        height: auto;
+        width: 280px;
+        margin: 25px 55px 8px 0px;
     }
     div.produtos .items .card .bio h2 {
         font-size: 18px;
@@ -178,18 +171,20 @@ div.produtos .items .card .buy:hover {
 
 @media (min-width: 1920px) {
     div.produtos {
+        display: flex;
         text-align: left;
-        padding: 55px 180px;
+        flex-direction: column;
+        padding: 55px 45px;
     }
     div.produtos h2.title {
-        position: relative;
+        float: left;
         padding: 0 10px;
         font-size: 40px;
     }
     div.produtos .items .card {
         width: 280px;
         height: 535px;
-        margin: 0 10px;
+        margin: 0 15px 8px 0px;
     }
     div.produtos .items .card:last-child {
         width: 280px;
@@ -205,8 +200,7 @@ div.produtos .items .card .buy:hover {
 
 @media (min-width: 2560px) {
     div.produtos {
-        text-align: left;
-        padding: 60px 315px 20px;
+        padding: 60px 135px 20px;
     }
     div.produtos h2.title {
         padding: 0 12px;
