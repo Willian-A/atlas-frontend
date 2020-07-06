@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../global.css";
 import "./style.css";
 
 import NavBar from "../utils/navBar";
+import DropDownBox from "../../assets/dropdown";
 import importAll from "../utils/importAll";
+import api from "../../service/api.js";
 
 export default function Products() {
+  const [result, setResult] = useState([]);
+  useEffect(() => {
+    async function selectProducts() {
+      const response = await api.get("/product");
+      setResult(response.data.result);
+    }
+    async function select() {
+      await selectProducts();
+    }
+
+    select();
+  }, []);
+
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)
   );
@@ -20,51 +36,55 @@ export default function Products() {
       </div>
       <div className="products-body">
         <div className="filters">
-          <div className="category">
-            <h2 className="category-name">Generos</h2>
-            <div className="category-type-container">
-              <a href="#a" className="category-type">
-                Ação
-              </a>
-              <a href="#a" className="category-type">
-                Aventura
-              </a>
-              <a href="#a" className="category-type">
-                Corrida
-              </a>
-              <a href="#a" className="category-type">
-                Estratégia
-              </a>
-              <a href="#a" className="category-type">
-                Esporte
-              </a>
-              <a href="#a" className="category-type">
-                FPS
-              </a>
-              <a href="#a" className="category-type">
-                Online
-              </a>
-              <a href="#a" className="category-type">
-                Simulação
-              </a>
-            </div>
-          </div>
-          <div className="category">
-            <h2 className="category-name">Plataformas</h2>
-            <div className="category-type-container">
-              <a href="#a" className="category-type">
-                PC
-              </a>
-              <a href="#a" className="category-type">
-                PS4
-              </a>
-              <a href="#a" className="category-type">
-                XBOX
-              </a>
-            </div>
+          <DropDownBox
+            options={{
+              title: "Genero",
+              fields: [
+                "Aventura",
+                "Ação",
+                "Battle Royale",
+                "Construção",
+                "Corrida",
+                "Esportes",
+                "Luta",
+                "MMO",
+                "MMORPG",
+                "PvP",
+                "RPG",
+                "Tiro",
+                "Vida Virtual",
+              ],
+            }}
+          />
+          <DropDownBox
+            options={{
+              title: "Plataforma",
+              fields: ["PC", "Playstation", "XBOX"],
+            }}
+          />
+        </div>
+        <div className="products">
+          <div className="items">
+            {result.map((result) => (
+              <div key={result.id_product} className="card">
+                <Link
+                  to={{
+                    pathname: "/product-page",
+                    state: { productID: `${result.id_product}` },
+                  }}
+                >
+                  <img src={images[result.image + ".jpg"]} alt="" />
+                  <div className="cover"></div>
+                  <div className="bio">
+                    <h2>{result.name}</h2>
+                    <h3>R${result.price}</h3>
+                    <button className="buy">Comprar</button>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="products"></div>
       </div>
     </div>
   );
