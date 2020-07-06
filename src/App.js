@@ -7,6 +7,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Carrinho from "./pages/carrinho";
 import ProductPage from "./pages/product-page";
+import Products from "./pages/products";
 import Error from "./pages/error";
 
 //CSS
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/carrinho" component={Carrinho} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/products" component={Products} />
         <Route exact path="/product-page" component={ProductPage} />
         <Route component={Error} />
       </Switch>

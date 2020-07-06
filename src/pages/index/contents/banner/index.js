@@ -108,21 +108,14 @@ function Banner() {
           <div className="text">
             <h2>Cyberpunk 2077</h2>
             <h3>
-              Em 2077, a América está arruinada. Megacorporações controlam a
-              vida em todos os aspectos, do topo de seus arranha-céus até as
-              atividades ilícitas que acontecem nas ruas. O mundo entre esses
-              dois extremos é onde a decadência, sexo e a cultura popular se
-              misturam com crimes violentos, pobreza extrema e a promessa
-              inatingível do Sonho Americano. Em um mundo em que você não tem
-              futuro, o que importa é ter controle sob o que você é. Para
-              sobreviver e proteger sua independência, você modifica seu corpo
-              com itens cibernéticos e faça trabalhos que jamais ousaria.
-              Escolha viver livremente, independente de sistemas ou controles –
-              você obedece às suas regras. Em Cyberpunk você joga como V – um
-              assassino(a) de alguel em ascensão – e você acabou de conseguir
-              seu primeiro contrato sério. Em um mundo de guerreiros aprimorados
-              cibernéticamente, gênios da tecnologia e lifehackers corporativos,
-              você pode dar o primeiro passo para se tornar uma lenda urbana.
+              Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
+              ambientada em Night City, uma megalópole obcecada por poder,
+              glamour e biomodificações. Você joga como V, um mercenário fora da
+              lei atrás de um implante único que carrega a chave da
+              imortalidade. Você pode personalizar aparatos cibernéticos,
+              conjunto de habilidades e estilo de jogo do personagem e explorar
+              uma vasta cidade onde as decisões tomadas definem a história e o
+              mundo ao seu redor.
             </h3>
             <div className="buttons">
               <button className="buy">Comprar</button>
