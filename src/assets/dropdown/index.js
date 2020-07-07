@@ -5,7 +5,7 @@ import "./style.css";
 export default function DropDownBox(props) {
   function active(e, button) {
     e.style.opacity = "1";
-    e.style.height = "230px";
+    e.style.height = "100%";
     e.style.visibility = "visible";
     button.style.borderBottom = "6px #ffae00 solid";
   }

@@ -40,7 +40,7 @@ div.products-container .products-body .filters {
     width: 15%;
     height: fit-content;
     padding: 25px 10px 10px;
-    height: 500px;
+    height: initial;
     min-width: 180px;
     background-color: black;
 }
