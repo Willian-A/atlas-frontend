@@ -23,13 +23,13 @@ h2.dropdown-category-name:hover {
     max-height: fit-content;
     height: 0;
     flex-direction: column;
-    transition: 200ms;
+    transition: 500ms;
 }
 
 a.dropdown-category-type {
     font-size: 15px;
     color: #888888;
-    transition: 200ms;
+    transition: 500ms;
 }
 
 a.dropdown-category-type:first-child {

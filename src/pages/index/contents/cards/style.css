@@ -72,16 +72,6 @@ div.produtos .items .card .bio h3 {
     text-transform: capitalize;
 }
 
-div.produtos .items .card .buy {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 5px;
-    background-color: #ffae00;
-    cursor: pointer;
-    transition: 500ms;
-}
-
 div.produtos .items .card .buy:hover {
     color: #ffffff;
     background-color: #1f1f1f;

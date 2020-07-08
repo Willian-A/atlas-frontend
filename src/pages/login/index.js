@@ -4,6 +4,7 @@ import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
+import { YellowButton } from "../../assets/buttons";
 import importAll from "../utils/importAll";
 
 export default function Login() {
@@ -81,7 +82,9 @@ export default function Login() {
               <h3>Esqueci minha senha</h3>
             </a>
 
-            <button>Login</button>
+            <YellowButton borderRadius="0" defineHeight="35px">
+              Login
+            </YellowButton>
 
             <h4>
               Não tem um cadastro? <Link to="/register">Cadastre-se</Link>

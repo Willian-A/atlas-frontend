@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./style.css";
+import { YellowButton } from "../../assets/buttons";
 import importAll from "../utils/importAll";
 import NavBar from "../utils/navBar";
 import api from "../../service/api.js";
@@ -33,13 +34,14 @@ export default function ProductPage(props) {
             <h2>{result[0]["name"]}</h2>
             <h6>{result[0]["description"]}</h6>
             <div className="product-resume">
-              <button
+              <YellowButton
+                defineHeight="35px"
                 onClick={() => {
                   cartAdd(result);
                 }}
               >
                 Comprar
-              </button>
+              </YellowButton>
               <h3>R$ {result[0]["price"]}</h3>
             </div>
           </div>

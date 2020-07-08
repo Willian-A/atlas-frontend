@@ -84,22 +84,6 @@ div.cart-container .cart-body .cart-main .cart-items .product .main-bio .cart-pr
     flex-direction: column;
 }
 
-div.cart-container .cart-body .cart-main .cart-items .product .main-bio .cart-product-buttons button {
-    width: 100px;
-    margin-top: 8px;
-    padding: 6px 5px;
-    border-radius: 5px;
-    font-size: 14px;
-    background-color: #ffae00;
-    cursor: pointer;
-    transition: 500ms;
-}
-
-div.cart-container .cart-body .cart-main .cart-items .product .main-bio .cart-product-buttons button:hover {
-    color: #ffffff;
-    background-color: #1f1f1f;
-}
-
 div.cart-container .cart-body .cart-main .cart-resume {
     text-align: center;
 }

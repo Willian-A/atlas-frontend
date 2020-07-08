@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./style.css";
+import { YellowButton } from "../../../../assets/buttons";
 import importAll from "../../../utils/importAll";
 import api from "../../../../service/api.js";
 
@@ -41,7 +42,7 @@ function Produtos() {
               <div className="bio">
                 <h2>{result.name}</h2>
                 <h3>R${result.price}</h3>
-                <button className="buy">Comprar</button>
+                <YellowButton>Comprar</YellowButton>
               </div>
             </Link>
           </div>

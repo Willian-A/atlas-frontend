@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import "./style.css";
-
+import { YellowButton } from "../../../../assets/buttons";
 import importAll from "../../../utils/importAll";
 
 function Banner() {
@@ -92,7 +92,7 @@ function Banner() {
             </h3>
 
             <div className="buttons">
-              <button className="buy">Comprar</button>
+              <YellowButton>Comprar</YellowButton>
               <div className="banner-buttons">
                 <img
                   onClick={() => {

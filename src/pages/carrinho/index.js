@@ -5,6 +5,7 @@ import api from "../../service/api.js";
 
 import NavBar from "../utils/navBar";
 import importAll from "../utils/importAll";
+import { YellowButton } from "../../assets/buttons";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
@@ -39,8 +40,20 @@ export default function Carrinho() {
             <h2 className="item-price">R$ {index["price"]}</h2>
             <h2 className="item-qt">Quantidade: {index["quantity"]}</h2>
             <div className="cart-product-buttons">
-              <button>Adicionar</button>
-              <button>Remover</button>
+              <YellowButton
+                defineHeight="30px"
+                fontSize="15px"
+                borderRadius="0"
+              >
+                Adicionar
+              </YellowButton>
+              <YellowButton
+                defineHeight="30px"
+                fontSize="15px"
+                borderRadius="0"
+              >
+                Remover
+              </YellowButton>
             </div>
           </div>
         </div>
@@ -59,7 +72,7 @@ export default function Carrinho() {
       return (
         <div className="cart-resume">
           <h2>Total: R${total["msg"]}</h2>
-          <button>Finalizar</button>
+          <YellowButton defineHeight="45px">Finalizar</YellowButton>
         </div>
       );
     }
