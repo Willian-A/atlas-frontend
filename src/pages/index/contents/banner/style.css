@@ -35,11 +35,6 @@ div.banner img.icon {
     width: 50px;
 }
 
-div.banner .slide .text {
-    position: relative;
-    transition: 500ms;
-}
-
 div.banner .slide .text h2 {
     text-transform: capitalize;
     color: #5a5a5a;

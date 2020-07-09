@@ -1,47 +1,111 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import styled from "styled-components";
 
 import "./style.css";
 import { YellowButton } from "../../../../assets/buttons";
 import importAll from "../../../utils/importAll";
 
-function Banner() {
-  const [slideIndex, setSlideIndex] = useState(0);
+const BannerIMG = styled.img`
+  position: relative;
+  top: ${(props) => props.top || "0"};
+  width: 100%;
+  min-height: 100%;
+  transition: 500ms;
+`;
 
-  let imagesJPEG = importAll(
-    require.context("../../../../images/banner", false, /\.(jpg)$/)
-  );
+const Text = styled.div`
+  position: relative;
+  transition: 500ms;
+  top: ${(props) => props.top || "0"};
+
+  h2 {
+    text-transform: capitalize;
+    color: #5a5a5a;
+  }
+
+  h3 {
+    text-transform: capitalize;
+    color: #9aa3af;
+  }
+
+  @media (min-width: 390px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1024px) {
+  }
+
+  @media (min-width: 1440px) {
+    width: 300px;
+    height: 550px;
+    h2 {
+      padding-bottom: 10px;
+      font-size: 20px;
+    }
+    h3 {
+      padding-bottom: 35px;
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 400px;
+    height: 680px;
+    padding: 0;
+
+    h2 {
+      padding-bottom: 40px;
+      font-size: 25px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    width: 400px;
+    height: 680px;
+    padding: 0;
+    h2 {
+      padding-bottom: 40px;
+      font-size: 25px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+`;
+
+function Banner() {
+  const [index, setIndex] = useState(1);
+  const [top, setTop] = useState(0);
+
   let imagesPNG = importAll(
     require.context("../../../../images/banner", false, /\.(png)$/)
   );
-
+  let imagesJPEG = importAll(
+    require.context("../../../../images/banner", false, /\.(jpg)$/)
+  );
   let bannerTimer;
-  let banners = [];
-  let bannerImagesFiles = Object.values(imagesJPEG);
-
-  useEffect(() => {
-    setSlideIndex(1);
-  }, []);
-
-  useEffect(() => {
-    startTimer();
-  });
 
   function bannerLoader() {
+    let banners = [];
+    let bannerImagesFiles = Object.values(imagesJPEG);
     for (let f = 0; f < Object.keys(imagesJPEG).length; f++) {
       banners.push(
-        <img className="img" key={f} src={bannerImagesFiles[f]} alt="jogos" />
+        <BannerIMG
+          top={top + "px"}
+          id="banner-img"
+          key={f}
+          src={bannerImagesFiles[f]}
+          alt="jogos"
+        />
       );
     }
     return banners;
-  }
-
-  function getBannerHeight() {
-    if (document.getElementById("banner-box") === null) {
-      return null;
-    } else {
-      return document.getElementById("banner-box").clientHeight;
-    }
   }
 
   function startTimer() {
@@ -50,36 +114,32 @@ function Banner() {
     }, 4000);
   }
 
-  let height = getBannerHeight();
-  let moveBottom = -(slideIndex * height) + "px";
-  let bannerImages = document.getElementsByClassName("img");
-  let bannerText = document.getElementsByClassName("text");
+  useEffect(() => {
+    startTimer();
+  });
 
   function moveBanner() {
     try {
-      if (slideIndex === Object.keys(imagesJPEG).length) {
-        for (let i = 0; i < Object.keys(imagesJPEG).length; i++) {
-          ReactDOM.findDOMNode(bannerImages[i]).style.top = 0;
-          ReactDOM.findDOMNode(bannerText[i]).style.top = 0;
-        }
-        setSlideIndex(1);
+      if (index >= Object.keys(imagesJPEG).length) {
+        setTop("0");
+        setIndex(1);
       } else {
-        for (let x = 0; x < Object.keys(imagesJPEG).length; x++) {
-          ReactDOM.findDOMNode(bannerImages[x]).style.top = moveBottom;
-          ReactDOM.findDOMNode(bannerText[x]).style.top = moveBottom;
-        }
-        setSlideIndex(slideIndex + 1);
+        setTop(
+          "-" + document.getElementById("banner-img").clientHeight * index
+        );
+        setIndex(index + 1);
       }
-    } catch (err) {}
-    clearTimeout(bannerTimer);
+      clearInterval(bannerTimer);
+    } catch (err) {
+      console.log(err);
+    }
   }
-
   return (
     <div className="banner">
       <div id="banner-box" className="slide">
         <div className="images">{bannerLoader()}</div>
         <div className="info">
-          <div className="text">
+          <Text top={top + "px"}>
             <h2>FIFA 20</h2>
             <h3>
               FIFA 20 apresenta uma nova maneira de jogar futebol, com toda
@@ -104,8 +164,8 @@ function Banner() {
                 />
               </div>
             </div>
-          </div>
-          <div className="text">
+          </Text>
+          <Text top={top + "px"}>
             <h2>Cyberpunk 2077</h2>
             <h3>
               Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
@@ -130,8 +190,8 @@ function Banner() {
                 />
               </div>
             </div>
-          </div>
-          <div className="text">
+          </Text>
+          <Text top={top + "px"}>
             <h2>NBA 2K20</h2>
             <h3>
               NBA 2K transformou-se em algo muito maior que uma simulação de
@@ -160,7 +220,7 @@ function Banner() {
                 />
               </div>
             </div>
-          </div>
+          </Text>
         </div>
       </div>
     </div>
