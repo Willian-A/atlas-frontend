@@ -79,7 +79,7 @@ const Text = styled.div`
   }
 `;
 
-function Banner() {
+export default function Banner() {
   const [index, setIndex] = useState(1);
   const [top, setTop] = useState(0);
 
@@ -178,7 +178,7 @@ function Banner() {
               mundo ao seu redor.
             </h3>
             <div className="buttons">
-              <button className="buy">Comprar</button>
+              <YellowButton className="buy">Comprar</YellowButton>
               <div className="banner-buttons">
                 <img
                   onClick={() => {
@@ -208,7 +208,7 @@ function Banner() {
               nova jogabilidade defensiva , baseada em leitura e reação.
             </h3>
             <div className="buttons">
-              <button className="buy">Comprar</button>
+              <YellowButton className="buy">Comprar</YellowButton>
               <div className="banner-buttons">
                 <img
                   onClick={() => {
@@ -226,5 +226,3 @@ function Banner() {
     </div>
   );
 }
-
-export default Banner;
