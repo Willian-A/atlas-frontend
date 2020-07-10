@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { YellowButton } from "../../../../assets/buttons";
 import * as components from "../../../../assets/banner";
 import importAll from "../../../utils/importAll";
@@ -20,7 +21,7 @@ export default function Banner() {
     let bannerImagesFiles = Object.values(imagesJPEG);
     for (let f = 0; f < Object.keys(imagesJPEG).length; f++) {
       banners.push(
-        <components.BannerIMG
+        <components.BannerImage
           top={top + "px"}
           id="banner-img"
           key={f}
@@ -61,7 +62,7 @@ export default function Banner() {
   return (
     <components.Banner>
       <components.BannerBox>
-        <div className="images">{bannerLoader()}</div>
+        <components.BannerImageBox>{bannerLoader()}</components.BannerImageBox>
         <components.BannerInfo>
           <components.BannerTextBox top={top + "px"}>
             <h2>FIFA 20</h2>

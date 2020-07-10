@@ -35,8 +35,14 @@ const BannerBox = styled.div`
   height: inherit;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
 `;
+const BannerImageBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+`;
 
-const BannerIMG = styled.img`
+const BannerImage = styled.img`
   position: relative;
   top: ${(props) => props.top || "0"};
   width: 100%;
@@ -152,7 +158,8 @@ const BannerButtons = styled.div`
 export {
   Banner,
   BannerBox,
-  BannerIMG,
+  BannerImageBox,
+  BannerImage,
   BannerInfo,
   BannerTextBox,
   BannerButtonsBox,

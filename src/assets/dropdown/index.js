@@ -1,58 +1,43 @@
-import React from "react";
+import styled from "styled-components";
 
-import "./style.css";
+const Dropdown = styled.div`
+  padding-bottom: 5px;
+`;
 
-export default function DropDownBox(props) {
-  function active(e, button) {
-    e.style.opacity = "1";
-    e.style.height = "100%";
-    e.style.visibility = "visible";
-    button.style.borderBottom = "6px #ffae00 solid";
+const DropdownName = styled.h2`
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px white solid;
+  transition: 600ms;
+
+  &:hover {
+    color: #ffae00;
   }
+`;
 
-  function deActive(e, button) {
-    e.style.opacity = "0";
-    e.style.height = "0";
-    e.style.visibility = "hidden";
-    button.style.borderBottom = "2px white solid";
-  }
+const DropdownCategoryBox = styled.div`
+  padding: 0 0 15px 30px;
+  opacity: ${(props) => props.opacity};
+  visibility: ${(props) => props.visibility};
+  height: ${(props) => props.height};
+  display: flex;
+  max-height: fit-content;
+  flex-direction: column;
+  transition: 400ms;
 
-  function renderEachOption() {
-    let elements = [];
-    for (let key in props.options.fields) {
-      elements.push(
-        <a
-          key={key}
-          href={"#" + props.options.fields[key]}
-          className="dropdown-category-type"
-        >
-          {props.options.fields[key]}
-        </a>
-      );
-    }
-    return elements;
+  a {
+    font-size: 15px;
+    color: #888888;
+    transition: 500ms;
   }
-  return (
-    <div className="dropdown-category">
-      <h2
-        className="dropdown-category-name"
-        onClick={(button) => {
-          let e = document.getElementById(props.options.title);
-          if (e.style.opacity >= 1) {
-            deActive(e, button.target);
-          } else {
-            active(e, button.target);
-          }
-        }}
-      >
-        {props.options.title}
-      </h2>
-      <div
-        id={props.options.title}
-        className="dropdown-category-type-container"
-      >
-        {renderEachOption()}
-      </div>
-    </div>
-  );
-}
+  a:first-child {
+    padding-top: 10px;
+  }
+  a:hover {
+    color: #ffffff;
+  }
+`;
+
+export { Dropdown, DropdownName, DropdownCategoryBox };
