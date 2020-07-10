@@ -1,83 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import styled from "styled-components";
-
-import "./style.css";
 import { YellowButton } from "../../../../assets/buttons";
+import * as components from "../../../../assets/banner";
 import importAll from "../../../utils/importAll";
-
-const BannerIMG = styled.img`
-  position: relative;
-  top: ${(props) => props.top || "0"};
-  width: 100%;
-  min-height: 100%;
-  transition: 500ms;
-`;
-
-const Text = styled.div`
-  position: relative;
-  transition: 500ms;
-  top: ${(props) => props.top || "0"};
-
-  h2 {
-    text-transform: capitalize;
-    color: #5a5a5a;
-  }
-
-  h3 {
-    text-transform: capitalize;
-    color: #9aa3af;
-  }
-
-  @media (min-width: 390px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1024px) {
-  }
-
-  @media (min-width: 1440px) {
-    width: 300px;
-    height: 550px;
-    h2 {
-      padding-bottom: 10px;
-      font-size: 20px;
-    }
-    h3 {
-      padding-bottom: 35px;
-      font-size: 12px;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    width: 400px;
-    height: 680px;
-    padding: 0;
-
-    h2 {
-      padding-bottom: 40px;
-      font-size: 25px;
-    }
-    h3 {
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 2560px) {
-    width: 400px;
-    height: 680px;
-    padding: 0;
-    h2 {
-      padding-bottom: 40px;
-      font-size: 25px;
-    }
-    h3 {
-      font-size: 16px;
-    }
-  }
-`;
 
 export default function Banner() {
   const [index, setIndex] = useState(1);
@@ -96,7 +20,7 @@ export default function Banner() {
     let bannerImagesFiles = Object.values(imagesJPEG);
     for (let f = 0; f < Object.keys(imagesJPEG).length; f++) {
       banners.push(
-        <BannerIMG
+        <components.BannerIMG
           top={top + "px"}
           id="banner-img"
           key={f}
@@ -135,11 +59,11 @@ export default function Banner() {
     }
   }
   return (
-    <div className="banner">
-      <div id="banner-box" className="slide">
+    <components.Banner>
+      <components.BannerBox>
         <div className="images">{bannerLoader()}</div>
-        <div className="info">
-          <Text top={top + "px"}>
+        <components.BannerInfo>
+          <components.BannerTextBox top={top + "px"}>
             <h2>FIFA 20</h2>
             <h3>
               FIFA 20 apresenta uma nova maneira de jogar futebol, com toda
@@ -150,10 +74,9 @@ export default function Banner() {
               formatos de partida, como 5x5, com ou paredes, sem goleiros ou
               futsal profissional.
             </h3>
-
-            <div className="buttons">
+            <components.BannerButtonsBox>
               <YellowButton>Comprar</YellowButton>
-              <div className="banner-buttons">
+              <components.BannerButtons>
                 <img
                   onClick={() => {
                     moveBanner();
@@ -162,10 +85,10 @@ export default function Banner() {
                   src={imagesPNG["0.png"]}
                   alt=""
                 />
-              </div>
-            </div>
-          </Text>
-          <Text top={top + "px"}>
+              </components.BannerButtons>
+            </components.BannerButtonsBox>
+          </components.BannerTextBox>
+          <components.BannerTextBox top={top + "px"}>
             <h2>Cyberpunk 2077</h2>
             <h3>
               Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
@@ -177,21 +100,20 @@ export default function Banner() {
               uma vasta cidade onde as decisões tomadas definem a história e o
               mundo ao seu redor.
             </h3>
-            <div className="buttons">
-              <YellowButton className="buy">Comprar</YellowButton>
-              <div className="banner-buttons">
+            <components.BannerButtonsBox>
+              <YellowButton>Comprar</YellowButton>
+              <components.BannerButtons>
                 <img
                   onClick={() => {
                     moveBanner();
                   }}
-                  className="icon"
                   src={imagesPNG["0.png"]}
                   alt=""
                 />
-              </div>
-            </div>
-          </Text>
-          <Text top={top + "px"}>
+              </components.BannerButtons>
+            </components.BannerButtonsBox>
+          </components.BannerTextBox>
+          <components.BannerTextBox top={top + "px"}>
             <h2>NBA 2K20</h2>
             <h3>
               NBA 2K transformou-se em algo muito maior que uma simulação de
@@ -207,9 +129,9 @@ export default function Banner() {
               sistema de avaliação de drible, colisões sem bola e bola e uma
               nova jogabilidade defensiva , baseada em leitura e reação.
             </h3>
-            <div className="buttons">
-              <YellowButton className="buy">Comprar</YellowButton>
-              <div className="banner-buttons">
+            <components.BannerButtonsBox>
+              <YellowButton>Comprar</YellowButton>
+              <components.BannerButtons>
                 <img
                   onClick={() => {
                     moveBanner();
@@ -218,11 +140,11 @@ export default function Banner() {
                   src={imagesPNG["0.png"]}
                   alt=""
                 />
-              </div>
-            </div>
-          </Text>
-        </div>
-      </div>
-    </div>
+              </components.BannerButtons>
+            </components.BannerButtonsBox>
+          </components.BannerTextBox>
+        </components.BannerInfo>
+      </components.BannerBox>
+    </components.Banner>
   );
 }
