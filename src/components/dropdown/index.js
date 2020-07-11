@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import * as components from "../../../../assets/dropdown";
+import * as components from "../../assets/dropdown";
 
 export default function DropDownBox(props) {
   const [config, setConfig] = useState({

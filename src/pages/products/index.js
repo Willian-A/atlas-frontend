@@ -4,8 +4,8 @@ import "../../global.css";
 import "./style.css";
 
 import NavBar from "../utils/navBar";
-import DropDownBox from "./components/dropdown";
-import Cards from "./components/card";
+import DropDownBox from "../../components/dropdown";
+import Cards from "../../components/card";
 
 export default function Products() {
   return (

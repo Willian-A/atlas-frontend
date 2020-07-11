@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import importAll from "../../../utils/importAll.js";
-import api from "../../../../service/api.js";
+import importAll from "../../pages/utils/importAll";
+import api from "../../service/api.js";
 
-import * as components from "../../../../assets/card";
-import { YellowButton } from "../../../../assets/buttons";
+import * as components from "../../assets/card";
+import { YellowButton } from "../../assets/buttons";
 
 export default function Cards() {
   const [result, setResult] = useState([]);
@@ -22,7 +22,7 @@ export default function Cards() {
   }, []);
 
   let images = importAll(
-    require.context("../../../../images/products", false, /\.(jpg)$/)
+    require.context("../../images/products", false, /\.(jpg)$/)
   );
 
   return (
