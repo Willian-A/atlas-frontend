@@ -5,9 +5,9 @@ const ProdcutsContainer = styled.div`
   display: flow-root;
   text-align: center;
   padding: 15px;
-  box-shadow: 0px -20px 19px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0 25px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 1;
 
   @media (min-width: 390px) {
     padding: 0 15%;
@@ -33,7 +33,7 @@ const ProdcutsContainer = styled.div`
     display: flex;
     text-align: left;
     flex-direction: column;
-    padding: 50px 25px;
+    padding: 50px 0 0 30px;
   }
 
   @media (min-width: 2560px) {
@@ -77,7 +77,7 @@ const Card = styled.div`
 
   @media (min-width: 1920px) {
     width: 270px;
-    margin: 0 12px 25px;
+    margin: 0 auto 20px 0;
   }
 
   @media (min-width: 2560px) {

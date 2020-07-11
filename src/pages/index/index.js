@@ -5,7 +5,7 @@ import "./style.css";
 import Banner from "./contents/banner";
 import NavBar from "../utils/navBar";
 import Categories from "./contents/categories";
-import Produtos from "./contents/cards";
+import Cards from "../../components/card";
 
 export default function Index() {
   return (
@@ -13,7 +13,7 @@ export default function Index() {
       <NavBar />
       <Banner />
       <Categories />
-      <Produtos />
+      <Cards />
     </div>
   );
 }
