@@ -7,11 +7,12 @@ import api from "../../service/api.js";
 import * as components from "../../assets/card";
 import { YellowButton } from "../../assets/buttons";
 
-export default function Cards() {
+export default function Cards(prop) {
   const [result, setResult] = useState([]);
+
   useEffect(() => {
     async function selectProducts() {
-      const response = await api.get("/product");
+      const response = await api.get(`/product${prop.limit}`);
       setResult(response.data.result);
     }
     async function select() {
@@ -19,7 +20,7 @@ export default function Cards() {
     }
 
     select();
-  }, []);
+  }, [prop]);
 
   let images = importAll(
     require.context("../../images/products", false, /\.(jpg)$/)

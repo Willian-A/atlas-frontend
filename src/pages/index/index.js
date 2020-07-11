@@ -13,7 +13,7 @@ export default function Index() {
       <NavBar />
       <Banner />
       <Categories />
-      <Cards />
+      <Cards limit="6" />
     </div>
   );
 }
