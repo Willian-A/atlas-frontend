@@ -1,5 +1,5 @@
 import React from "react";
-
+//  teste
 import "./style.css";
 
 function Categories() {
