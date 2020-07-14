@@ -17,10 +17,10 @@ export default function Banner() {
   let bannerTimer;
 
   function bannerLoader() {
-    let banners = [];
+    let banner = [];
     let bannerImagesFiles = Object.values(imagesJPEG);
     for (let f = 0; f < Object.keys(imagesJPEG).length; f++) {
-      banners.push(
+      banner.push(
         <components.BannerImage
           top={top + "px"}
           id="banner-img"
@@ -30,7 +30,7 @@ export default function Banner() {
         />
       );
     }
-    return banners;
+    return banner;
   }
 
   function startTimer() {
