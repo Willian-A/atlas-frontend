@@ -71,6 +71,14 @@ div.products-container .products-body .filters {
     }
 }
 
-@media (min-width: 1920px) {}
+@media (min-width: 1920px) {
+    div.products-container .products-body .filters {
+        width: 18%;
+        margin-right: 25px;
+    }
+    div.products-container .products-body {
+        padding: 55px 10px;
+    }
+}
 
 @media (min-width: 2560px) {}

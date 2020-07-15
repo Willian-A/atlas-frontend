@@ -30,7 +30,7 @@ const ProdcutsContainer = styled.div`
     width: unset;
     text-align: left;
     flex-direction: column;
-    padding: 50px 0 30px 28px;
+    padding: 30px 10px;
   }
 
   @media (min-width: 2560px) {
@@ -99,10 +99,10 @@ const Card = styled.div`
   @media (min-width: 1920px) {
     width: 100%;
     max-width: 270px;
-    margin: 0 0 27px 27px;
+    margin: 0 0 27px 28px;
 
     &:first-child {
-      margin: 0 0 27px 27px;
+      margin: 0 0 27px 28px;
     }
   }
 
@@ -159,35 +159,41 @@ const CardBio = styled.div`
 
   @media (min-width: 768px) {
     h2 {
-      font-size: 18px;
+      font-size: 15px;
     }
     h3 {
-      font-size: 22px;
+      margin-top: 5px;
+      font-size: 18px;
     }
   }
 
   @media (min-width: 1024px) {
     h2 {
-      font-size: 20px;
+      font-size: 15px;
+    }
+    h3 {
+      margin-top: 10px;
+      font-size: 18px;
     }
   }
 
   @media (min-width: 1440px) {
     h2 {
-      font-size: 18px;
+      font-size: 14px;
     }
     h3 {
-      font-size: 20px;
+      margin-top: 10px;
+      font-size: 18px;
     }
   }
 
   @media (min-width: 1920px) {
     h2 {
       font-size: 15px;
-      margin-bottom: 15px;
     }
     h3 {
-      font-size: 20px;
+      margin-top: 10px;
+      font-size: 18px;
     }
   }
 
