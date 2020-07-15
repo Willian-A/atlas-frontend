@@ -100,7 +100,7 @@ function NavBar() {
               <Link to="/carrinho">Carrinho</Link>
             </li>
             <li>
-              <a href="#travesti">Produtos</a>
+              <a href="/products">Produtos</a>
             </li>
           </ul>
           {userButtons()}

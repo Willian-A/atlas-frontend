@@ -27,7 +27,7 @@ export default function Cards(prop) {
   );
 
   return (
-    <components.ProdcutsContainer>
+    <components.ProductsContainer>
       <components.Products>
         {result.map((result) => (
           <components.Card key={result.id_product}>
@@ -49,6 +49,6 @@ export default function Cards(prop) {
           </components.Card>
         ))}
       </components.Products>
-    </components.ProdcutsContainer>
+    </components.ProductsContainer>
   );
 }

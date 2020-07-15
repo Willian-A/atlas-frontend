@@ -4,7 +4,6 @@ const ProdcutsContainer = styled.div`
   position: relative;
   display: flow-root;
   text-align: center;
-  padding: 15px;
   box-shadow: 0px 0 25px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   z-index: 1;
@@ -19,21 +18,19 @@ const ProdcutsContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 90px;
+    padding: 35px 0 10px 45px;
   }
 
   @media (min-width: 1440px) {
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    padding: 35px 180px;
+    padding: 8px;
   }
 
   @media (min-width: 1920px) {
     display: flex;
+    width: unset;
     text-align: left;
     flex-direction: column;
-    padding: 50px 0 0 30px;
+    padding: 50px 0 30px 28px;
   }
 
   @media (min-width: 2560px) {
@@ -51,33 +48,62 @@ const Card = styled.div`
   position: relative;
   float: left;
   width: 80%;
-  max-width: 380px;
-  margin: 15px 30px;
+  max-width: 260px;
+  margin: 0 auto 25px auto;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+
+  &:first-child {
+    margin: 25px auto 25px auto;
+  }
 
   @media (min-width: 390px) {
     width: 100%;
-    margin: 15px 0;
+    max-width: 270px;
+    margin: 0 auto 45px auto;
+
+    &:first-child {
+      margin: 45px auto 45px auto;
+    }
   }
 
   @media (min-width: 768px) {
-    width: 320px;
-    margin: 20px 15px;
+    width: 100%;
+    max-width: 270px;
+    margin: 20px 40px;
+
+    &:first-child {
+      margin: 20px 40px;
+    }
   }
 
   @media (min-width: 1024px) {
-    width: 350px;
-    margin: 20px;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto 25px 0;
+
+    &:first-child {
+      margin: 0 auto 25px 0;
+    }
   }
 
   @media (min-width: 1440px) {
-    width: 280px;
-    margin: 25px 55px 8px 0px;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px;
+
+    &:first-child {
+      margin: 10px;
+    }
   }
 
   @media (min-width: 1920px) {
-    width: 270px;
-    margin: 0 auto 20px 0;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 0 27px 27px;
+
+    &:first-child {
+      margin: 0 0 27px 27px;
+    }
   }
 
   @media (min-width: 2560px) {
@@ -176,4 +202,10 @@ const CardBio = styled.div`
   }
 `;
 
-export { ProdcutsContainer, Products, Card, CardIMG, CardBio };
+export {
+  ProdcutsContainer as ProductsContainer,
+  Products,
+  Card,
+  CardIMG,
+  CardBio,
+};

@@ -32,16 +32,45 @@ div.products-container .products-body {
     display: flex;
     height: 100%;
     flex-direction: row;
-    padding: 55px 0 55px 10px;
+    padding: 55px 0;
     box-shadow: 0px -20px 19px 0px rgba(0, 0, 0, 0.2);
 }
 
 div.products-container .products-body .filters {
-    width: 18%;
+    width: 0;
+    padding: 0;
     height: fit-content;
-    padding: 25px 10px 10px;
     height: initial;
-    min-width: 180px;
-    margin-right: 20px;
+    min-width: 0;
+    margin-right: 0;
     background-color: black;
 }
+
+@media (min-width: 390px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {
+    div.products-container .products-body .filters {
+        width: 60%;
+        padding: 15px 20px;
+        margin-right: 20px;
+    }
+    div.products-container .products-body {
+        padding: 55px 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    div.products-container .products-body .filters {
+        width: 30%;
+        margin-right: 15px;
+    }
+    div.products-container .products-body {
+        padding: 55px 10px;
+    }
+}
+
+@media (min-width: 1920px) {}
+
+@media (min-width: 2560px) {}
