@@ -3,7 +3,7 @@ import "../../global.css";
 import "./style.css";
 import api from "../../service/api.js";
 
-import NavBar from "../utils/navBar";
+import NavBar from "../../components/navBar";
 import importAll from "../utils/importAll";
 import { YellowButton } from "../../assets/buttons";
 
