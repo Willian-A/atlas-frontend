@@ -63,7 +63,7 @@ div.products-container .products-body .filters {
 
 @media (min-width: 1440px) {
     div.products-container .products-body .filters {
-        width: 30%;
+        width: 16%;
         margin-right: 15px;
     }
     div.products-container .products-body {

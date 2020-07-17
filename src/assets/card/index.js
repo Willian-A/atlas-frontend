@@ -14,7 +14,7 @@ const ProdcutsContainer = styled.div`
 
   @media (min-width: 768px) {
     display: table;
-    padding: 15px;
+    padding: 20px 0 20px 8.8%;
   }
 
   @media (min-width: 1024px) {
@@ -22,10 +22,6 @@ const ProdcutsContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 8px;
-  }
-
-  @media (min-width: 1920px) {
     display: flex;
     width: unset;
     text-align: left;
@@ -33,8 +29,12 @@ const ProdcutsContainer = styled.div`
     padding: 30px 10px;
   }
 
+  @media (min-width: 1920px) {
+    padding: 30px 10px;
+  }
+
   @media (min-width: 2560px) {
-    padding: 60px 135px 20px;
+    padding: 50px 0;
   }
 `;
 
@@ -69,10 +69,10 @@ const Card = styled.div`
   @media (min-width: 768px) {
     width: 100%;
     max-width: 270px;
-    margin: 20px 40px;
+    margin: 25px auto 25px 0;
 
     &:first-child {
-      margin: 20px 40px;
+      margin: 25px auto 25px 0;
     }
   }
 
@@ -88,11 +88,11 @@ const Card = styled.div`
 
   @media (min-width: 1440px) {
     width: 100%;
-    max-width: 250px;
-    margin: 10px;
+    max-width: 220px;
+    margin: 0 0 27px 10px;
 
     &:first-child {
-      margin: 10px;
+      margin: 0 0 27px 10px;
     }
   }
 
@@ -107,16 +107,18 @@ const Card = styled.div`
   }
 
   @media (min-width: 2560px) {
-    width: 350px;
-    height: 640px;
-    max-height: none;
-    margin: 30px 12px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 0 45px 50px;
+
+    &:first-child {
+      margin: 0 0 45px 50px;
+    }
   }
 `;
 
 const CardIMG = styled.img`
   width: 100%;
-  height: 320px;
   transition: 300ms filter linear;
 
   &:hover {
@@ -199,7 +201,7 @@ const CardBio = styled.div`
 
   @media (min-width: 2560px) {
     h2 {
-      font-size: 22px;
+      font-size: 20px;
       height: 42px;
     }
     h3 {

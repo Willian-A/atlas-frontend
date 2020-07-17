@@ -41,7 +41,7 @@ export default function Cards(prop) {
               <components.CardBio>
                 <h2>{result.name}</h2>
                 <h3>R${result.price}</h3>
-                <YellowButton defineHeight="40px" fontSize="15px">
+                <YellowButton defineHeight="40px" fontSize="15px" width="100%">
                   Ver Produto
                 </YellowButton>
               </components.CardBio>

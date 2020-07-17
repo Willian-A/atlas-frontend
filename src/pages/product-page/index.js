@@ -35,7 +35,6 @@ export default function ProductPage(props) {
             <h6>{result[0]["description"]}</h6>
             <div className="product-resume">
               <YellowButton
-                defineHeight="35px"
                 onClick={() => {
                   cartAdd(result);
                 }}
