@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 const Banner = styled.div`
   box-shadow: 0px 20px 19px 0px rgba(0, 0, 0, 0.2);
-
-  @media (min-width: 390px) {
-    height: 200px;
-  }
+  height: 220px;
 
   @media (min-width: 768px) {
     height: 450px;
