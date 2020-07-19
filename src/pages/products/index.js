@@ -45,7 +45,7 @@ export default function Products() {
             }}
           />
         </div>
-        <Cards />
+        <Cards limit="7" amount={{ "1440": "4", "1920": "5", "2560": "6" }} />
       </div>
     </div>
   );

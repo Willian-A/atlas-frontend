@@ -52,29 +52,28 @@ div.products-container .products-body .filters {
 
 @media (min-width: 1024px) {
     div.products-container .products-body .filters {
-        width: 60%;
+        width: 200px;
         padding: 15px 20px;
-        margin-right: 20px;
+        margin: 0 0 0 0;
     }
     div.products-container .products-body {
-        padding: 55px 20px;
+        padding: 55px 5px;
     }
 }
 
 @media (min-width: 1440px) {
     div.products-container .products-body .filters {
-        width: 16%;
-        margin-right: 15px;
+        width: 260px;
+        margin: 0 20px 0 0;
     }
     div.products-container .products-body {
-        padding: 55px 10px;
+        padding: 55px 60px;
     }
 }
 
 @media (min-width: 1920px) {
     div.products-container .products-body .filters {
-        width: 18%;
-        margin-right: 25px;
+        width: 230px;
     }
     div.products-container .products-body {
         padding: 55px 10px;

@@ -1,119 +1,76 @@
 import styled from "styled-components";
 
-const ProdcutsContainer = styled.div`
-  position: relative;
-  display: flow-root;
-  text-align: center;
+const Boxes = styled.ul`
+  display: grid;
+  width: 100%;
   box-shadow: 0px 0 25px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   z-index: 1;
 
-  @media (min-width: 390px) {
-    padding: 0 15%;
-  }
-
   @media (min-width: 768px) {
-    display: table;
-    padding: 20px 0 20px 8.8%;
+    grid-template-columns: repeat(2, 280px);
+    padding: 25px 55px;
+    grid-column-gap: 10%;
+    grid-row-gap: 20px;
   }
 
   @media (min-width: 1024px) {
-    padding: 35px 0 10px 45px;
+    grid-template-columns: repeat(3, 32%);
+    padding: 25px 25px;
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
   }
 
   @media (min-width: 1440px) {
-    display: flex;
-    width: unset;
-    text-align: left;
-    flex-direction: column;
-    padding: 30px 10px;
+    grid-template-columns: ${(props) =>
+      "repeat(" + props.amount["1440"] + ", 1fr)"};
+    padding: 20px 25px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
   }
 
   @media (min-width: 1920px) {
-    padding: 30px 10px;
+    grid-template-columns: ${(props) =>
+      "repeat(" + props.amount["1920"] + ", 280px)"};
+    padding: 20px 20px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 
   @media (min-width: 2560px) {
-    padding: 50px 0;
   }
 `;
 
+const Title = styled.h1``;
 const Products = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
 `;
 const Card = styled.div`
-  position: relative;
-  float: left;
-  width: 80%;
-  max-width: 260px;
-  margin: 0 auto 25px auto;
+  width: 300px;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
 
-  &:first-child {
-    margin: 25px auto 25px auto;
-  }
-
   @media (min-width: 390px) {
-    width: 100%;
-    max-width: 270px;
-    margin: 0 auto 45px auto;
-
-    &:first-child {
-      margin: 45px auto 45px auto;
-    }
+    width: 270px;
   }
 
   @media (min-width: 768px) {
-    width: 100%;
-    max-width: 270px;
-    margin: 25px auto 25px 0;
-
-    &:first-child {
-      margin: 25px auto 25px 0;
-    }
+    width: 280px;
   }
 
   @media (min-width: 1024px) {
-    width: 100%;
-    max-width: 270px;
-    margin: 0 auto 25px 0;
-
-    &:first-child {
-      margin: 0 auto 25px 0;
-    }
+    width: 220px;
+    margin: auto;
   }
 
   @media (min-width: 1440px) {
-    width: 100%;
-    max-width: 220px;
-    margin: 0 0 27px 10px;
-
-    &:first-child {
-      margin: 0 0 27px 10px;
-    }
+    width: 215px;
   }
 
   @media (min-width: 1920px) {
-    width: 100%;
-    max-width: 270px;
-    margin: 0 0 27px 28px;
-
-    &:first-child {
-      margin: 0 0 27px 28px;
-    }
+    width: 280px;
   }
 
   @media (min-width: 2560px) {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 0 45px 50px;
-
-    &:first-child {
-      margin: 0 0 45px 50px;
-    }
   }
 `;
 
@@ -170,26 +127,31 @@ const CardBio = styled.div`
   }
 
   @media (min-width: 1024px) {
+    padding: 15px;
+
     h2 {
-      font-size: 15px;
+      font-size: 13px;
     }
     h3 {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: 17px;
     }
   }
 
   @media (min-width: 1440px) {
+    padding: 15px;
+
     h2 {
-      font-size: 14px;
+      font-size: 13px;
     }
     h3 {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: 17px;
     }
   }
 
   @media (min-width: 1920px) {
+    padding: 20px;
     h2 {
       font-size: 15px;
     }
@@ -210,10 +172,4 @@ const CardBio = styled.div`
   }
 `;
 
-export {
-  ProdcutsContainer as ProductsContainer,
-  Products,
-  Card,
-  CardIMG,
-  CardBio,
-};
+export { Boxes, Title, Products, Card, CardIMG, CardBio };

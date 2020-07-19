@@ -10,6 +10,11 @@ import { YellowButton } from "../../assets/buttons";
 export default function Cards(prop) {
   const [result, setResult] = useState([]);
 
+  function showTitle() {
+    if (prop.title) {
+      return <h1> Mais Vendidos</h1>;
+    }
+  }
   useEffect(() => {
     async function selectProducts() {
       const response = await api.get(`/product${prop.limit}`);
@@ -27,28 +32,26 @@ export default function Cards(prop) {
   );
 
   return (
-    <components.ProductsContainer>
-      <components.Products>
-        {result.map((result) => (
-          <components.Card key={result.id_product}>
-            <Link
-              to={{
-                pathname: "/product-page",
-                state: { productID: `${result.id_product}` },
-              }}
-            >
-              <components.CardIMG src={images[result.image + ".jpg"]} alt="" />
-              <components.CardBio>
-                <h2>{result.name}</h2>
-                <h3>R${result.price}</h3>
-                <YellowButton defineHeight="40px" fontSize="15px" width="100%">
-                  Ver Produto
-                </YellowButton>
-              </components.CardBio>
-            </Link>
-          </components.Card>
-        ))}
-      </components.Products>
-    </components.ProductsContainer>
+    <components.Boxes amount={prop.amount} size={prop.size}>
+      {result.map((result) => (
+        <components.Card key={result.id_product}>
+          <Link
+            to={{
+              pathname: "/product-page",
+              state: { productID: `${result.id_product}` },
+            }}
+          >
+            <components.CardIMG src={images[result.image + ".jpg"]} alt="" />
+            <components.CardBio>
+              <h2>{result.name}</h2>
+              <h3>R${result.price}</h3>
+              <YellowButton defineHeight="40px" fontSize="15px" width="100%">
+                Ver Produto
+              </YellowButton>
+            </components.CardBio>
+          </Link>
+        </components.Card>
+      ))}
+    </components.Boxes>
   );
 }

@@ -1,7 +1,12 @@
 div.main-container {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     height: min-content;
     background-color: #ffffff;
-    z-index: 1;
+}
+
+div.teste {
+    display: flex;
+    flex-direction: row;
 }

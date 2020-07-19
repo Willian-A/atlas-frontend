@@ -13,7 +13,14 @@ export default function Index() {
       <NavBar />
       <Banner />
       <Categories />
-      <Cards limit="6" />
+      <div className="teste">
+        <Cards
+          title="true"
+          limit="6"
+          size="100%"
+          amount={{ "1440": "6", "1920": "6", "2560": "6" }}
+        />
+      </div>
     </div>
   );
 }
