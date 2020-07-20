@@ -13,14 +13,12 @@ export default function Index() {
       <NavBar />
       <Banner />
       <Categories />
-      <div className="teste">
-        <Cards
-          title="true"
-          limit="6"
-          size="100%"
-          amount={{ "1440": "6", "1920": "6", "2560": "6" }}
-        />
-      </div>
+      <Cards
+        title="true"
+        limit="5"
+        size="100%"
+        amount={{ "1440px": "6", "1920px": "6", "2560px": "6" }}
+      />
     </div>
   );
 }

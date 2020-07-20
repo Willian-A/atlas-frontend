@@ -5,8 +5,3 @@ div.main-container {
     height: min-content;
     background-color: #ffffff;
 }
-
-div.teste {
-    display: flex;
-    flex-direction: row;
-}

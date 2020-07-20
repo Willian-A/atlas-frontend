@@ -39,11 +39,16 @@ div.products-container .products-body {
 div.products-container .products-body .filters {
     width: 0;
     padding: 0;
-    height: fit-content;
     height: initial;
     min-width: 0;
     margin-right: 0;
     background-color: black;
+}
+
+div.teste {
+    height: initial;
+    width: 100%;
+    background-color: #ffffff;
 }
 
 @media (min-width: 390px) {}
@@ -52,8 +57,8 @@ div.products-container .products-body .filters {
 
 @media (min-width: 1024px) {
     div.products-container .products-body .filters {
-        width: 200px;
-        padding: 15px 20px;
+        width: 208px;
+        padding: 10px 10px;
         margin: 0 0 0 0;
     }
     div.products-container .products-body {
@@ -63,11 +68,12 @@ div.products-container .products-body .filters {
 
 @media (min-width: 1440px) {
     div.products-container .products-body .filters {
-        width: 260px;
-        margin: 0 20px 0 0;
+        width: 230px;
+        padding: 10px 20px;
+        margin: 0 25px 0 0;
     }
     div.products-container .products-body {
-        padding: 55px 60px;
+        padding: 55px 15px;
     }
 }
 
@@ -76,7 +82,7 @@ div.products-container .products-body .filters {
         width: 230px;
     }
     div.products-container .products-body {
-        padding: 55px 10px;
+        padding: 0;
     }
 }
 
