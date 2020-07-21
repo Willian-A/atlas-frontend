@@ -20,9 +20,7 @@ const DropdownName = styled.h2`
 
 const DropdownCategoryBox = styled.div`
   padding: 0 0 15px 30px;
-  opacity: ${(props) => props.opacity};
-  visibility: ${(props) => props.visibility};
-  height: ${(props) => props.height};
+  height: 100%;
   display: flex;
   max-height: fit-content;
   flex-direction: column;

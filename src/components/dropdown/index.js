@@ -3,30 +3,29 @@ import React, { useState } from "react";
 import * as components from "../../assets/dropdown";
 
 export default function DropDownBox(props) {
-  const [config, setConfig] = useState({
-    opacity: 0,
-    visibility: "hidden",
-    height: 0,
-  });
+  const [config, setConfig] = useState(false);
 
   function active(button) {
-    setConfig({
-      opacity: 1,
-      visibility: "visible",
-      height: "100%",
-    });
+    setConfig(true);
     //on
     button.style.borderBottom = "6px #ffae00 solid";
   }
 
   function deActive(button) {
-    setConfig({
-      opacity: 0,
-      visibility: "hidden",
-      height: 0,
-    });
-    //off
+    setConfig(false);
     button.style.borderBottom = "2px white solid";
+  }
+
+  function test() {
+    if (config === true) {
+      return (
+        <components.DropdownCategoryBox>
+          {renderEachOption()}
+        </components.DropdownCategoryBox>
+      );
+    } else {
+      return "";
+    }
   }
 
   function renderEachOption() {
@@ -48,7 +47,7 @@ export default function DropDownBox(props) {
     <components.Dropdown>
       <components.DropdownName
         onClick={(button) => {
-          if (config.opacity >= 1) {
+          if (config === true) {
             deActive(button.target);
           } else {
             active(button.target);
@@ -57,13 +56,7 @@ export default function DropDownBox(props) {
       >
         {props.options.title}
       </components.DropdownName>
-      <components.DropdownCategoryBox
-        opacity={config.opacity}
-        visibility={config.visibility}
-        height={config.height}
-      >
-        {renderEachOption()}
-      </components.DropdownCategoryBox>
+      {test()}
     </components.Dropdown>
   );
 }
