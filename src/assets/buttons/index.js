@@ -30,8 +30,6 @@ export const YellowButton = styled.button`
   }
 
   @media (min-width: 2560px) {
-    width: 50%;
-    height: 40px;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;

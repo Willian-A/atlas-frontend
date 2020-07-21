@@ -10,21 +10,12 @@ import { YellowButton } from "../../assets/buttons";
 export default function Cards(prop) {
   const [result, setResult] = useState([]);
 
-  function showTitle() {
-    if (prop.title) {
-      return <h1> Mais Vendidos</h1>;
-    }
-  }
   useEffect(() => {
     async function selectProducts() {
       const response = await api.get(`/product${prop.limit}`);
       setResult(response.data.result);
     }
-    async function select() {
-      await selectProducts();
-    }
-
-    select();
+    selectProducts();
   }, [prop]);
 
   let images = importAll(
@@ -32,9 +23,9 @@ export default function Cards(prop) {
   );
 
   return (
-    <components.Boxes amount={prop.amount} size={prop.size}>
+    <components.ProductGrid amount={prop.amount} size={prop.size}>
       {result.map((result) => (
-        <components.Card key={result.id_product}>
+        <components.ProductCard key={result.id_product}>
           <Link
             to={{
               pathname: "/product-page",
@@ -50,8 +41,8 @@ export default function Cards(prop) {
               </YellowButton>
             </components.CardBio>
           </Link>
-        </components.Card>
+        </components.ProductCard>
       ))}
-    </components.Boxes>
+    </components.ProductGrid>
   );
 }

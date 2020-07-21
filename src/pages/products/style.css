@@ -46,7 +46,6 @@ div.products-container .products-body .filters {
 }
 
 div.teste {
-    height: initial;
     width: 100%;
     background-color: #ffffff;
 }
@@ -63,27 +62,39 @@ div.teste {
     }
     div.products-container .products-body {
         padding: 55px 5px;
+        height: 100%;
     }
 }
 
 @media (min-width: 1440px) {
     div.products-container .products-body .filters {
-        width: 230px;
-        padding: 10px 20px;
+        width: 280px;
+        padding: 10px 10px;
         margin: 0 25px 0 0;
     }
     div.products-container .products-body {
-        padding: 55px 15px;
+        padding: 55px 20px;
     }
 }
 
 @media (min-width: 1920px) {
     div.products-container .products-body .filters {
-        width: 230px;
+        width: 280px;
+        padding: 10px 10px;
+        margin: 0 10px 0 0;
     }
     div.products-container .products-body {
-        padding: 0;
+        padding: 55px 10px;
     }
 }
 
-@media (min-width: 2560px) {}
+@media (min-width: 2560px) {
+    div.products-container .products-body .filters {
+        width: 300px;
+        padding: 10px 10px;
+        margin: 0 15px 0 0;
+    }
+    div.products-container .products-body {
+        padding: 55px 20px;
+    }
+}

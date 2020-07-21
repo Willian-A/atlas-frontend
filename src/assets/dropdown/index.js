@@ -14,6 +14,7 @@ const DropdownName = styled.h2`
 
   &:hover {
     color: #ffae00;
+    margin-left: 10px;
   }
 `;
 
