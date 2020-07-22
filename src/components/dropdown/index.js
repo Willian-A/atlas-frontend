@@ -7,7 +7,6 @@ export default function DropDownBox(props) {
 
   function active(button) {
     setConfig(true);
-    //on
     button.style.borderBottom = "6px #ffae00 solid";
   }
 

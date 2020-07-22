@@ -1,8 +1,6 @@
 div.products-container {
     position: relative;
-    width: 100%;
     min-height: 100vh;
-    height: min-content;
     background-color: #ffffff;
 }
 
@@ -29,15 +27,11 @@ div.products-container .products-banner .name-box h2 {
 
 div.products-container .products-body {
     position: relative;
-    display: flex;
-    height: 100%;
-    flex-direction: row;
     padding: 55px 0;
     box-shadow: 0px -20px 19px 0px rgba(0, 0, 0, 0.2);
 }
 
 div.teste {
-    position: relative;
     width: 100%;
     background-color: #ffffff;
 }
