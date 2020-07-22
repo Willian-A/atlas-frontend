@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../../global.css";
 import "./style.css";
+import Logo from "../../images/icon.png";
 
 import NavBar from "../../components/navBar";
 import DropDownBox from "../../components/dropdown";
 import Cards from "../../components/card";
+import { Filters, Icon } from "./filter.js";
 
 export default function Products() {
+  const [active, setActive] = useState(false);
+  const [config, setConfig] = useState(false);
+
   return (
     <div className="products-container">
       <NavBar />
@@ -17,7 +22,18 @@ export default function Products() {
         </div>
       </div>
       <div className="products-body">
-        <div className="filters">
+        <Filters width={config.width}>
+          <Icon
+            onClick={() => {
+              if (active === true) {
+                setConfig({ width: "20px", display: "none" });
+                setActive(false);
+              } else {
+                setConfig({ width: "100%", display: "block" });
+                setActive(true);
+              }
+            }}
+          />
           <DropDownBox
             options={{
               title: "Genero",
@@ -36,17 +52,19 @@ export default function Products() {
                 "Tiro",
                 "Vida Virtual",
               ],
+              display: config.display,
             }}
           />
           <DropDownBox
             options={{
               title: "Plataforma",
               fields: ["PC", "Playstation", "XBOX"],
+              display: config.display,
             }}
           />
-        </div>
+        </Filters>
         <div className="teste">
-          <Cards limit="7" amount={{ "1440": "4", "1920": "5", "2560": "6" }} />
+          <Cards amount={{ "1440": "4", "1920": "5", "2560": "6" }} />
         </div>
       </div>
     </div>

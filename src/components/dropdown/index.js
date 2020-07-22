@@ -19,7 +19,7 @@ export default function DropDownBox(props) {
   function test() {
     if (config === true) {
       return (
-        <components.DropdownCategoryBox>
+        <components.DropdownCategoryBox display={props.options.display}>
           {renderEachOption()}
         </components.DropdownCategoryBox>
       );
@@ -32,11 +32,7 @@ export default function DropDownBox(props) {
     let elements = [];
     for (let key in props.options.fields) {
       elements.push(
-        <a
-          key={key}
-          href={"#" + props.options.fields[key]}
-          className="dropdown-category-type"
-        >
+        <a key={key} href={"#" + props.options.fields[key]}>
           {props.options.fields[key]}
         </a>
       );
@@ -46,6 +42,7 @@ export default function DropDownBox(props) {
   return (
     <components.Dropdown>
       <components.DropdownName
+        display={props.options.display}
         onClick={(button) => {
           if (config === true) {
             deActive(button.target);

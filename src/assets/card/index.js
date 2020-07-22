@@ -3,17 +3,17 @@ import styled from "styled-components";
 const ProductGrid = styled.div`
   display: grid;
   grid-template-rows: repeat(auto-fill, auto);
-  grid-template-columns: repeat(auto-fill, 290px);
+  grid-template-columns: repeat(auto-fill, 265px);
   gap: 20px;
-  padding: 25px 0 25px 0;
-  justify-content: center;
+  padding: 25px 10px 25px 0;
+  justify-content: flex-end;
   box-shadow: 0px 0 25px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
 
   @media (min-width: 390px) {
     grid-template-columns: repeat(auto-fill, 280px);
     gap: 20px;
-    padding: 35px 0 35px 0;
+    padding: 35px 25px 35px 0;
   }
 
   @media (min-width: 768px) {

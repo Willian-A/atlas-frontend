@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 const Dropdown = styled.div`
+  position: relative;
   padding-bottom: 5px;
 `;
 
 const DropdownName = styled.h2`
+  display: ${(props) => props.display || "none"};
   font-size: 20px;
   color: white;
+  top: 0;
+  margin: 0 20px 5px;
   padding: 10px;
   cursor: pointer;
   border-bottom: 2px white solid;
@@ -27,6 +31,7 @@ const DropdownCategoryBox = styled.div`
   transition: 400ms;
 
   a {
+    display: ${(props) => props.display || "none"};
     font-size: 15px;
     color: #888888;
     transition: 500ms;
