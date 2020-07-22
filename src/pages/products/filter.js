@@ -21,7 +21,7 @@ const Filters = styled.div`
   }
 
   @media (min-width: 1440px) {
-    max-width: 280px;
+    max-width: 240px;
     padding: 10px 10px;
     margin: 0 25px 0 0;
   }
