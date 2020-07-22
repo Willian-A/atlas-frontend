@@ -54,7 +54,7 @@ div.teste {
 
 @media (min-width: 1440px) {
     div.products-container .products-body {
-        padding: 55px 10px;
+        padding: 55px 15px;
     }
 }
 

@@ -27,7 +27,7 @@ const Filters = styled.div`
   }
 
   @media (min-width: 1920px) {
-    max-width: 280px;
+    max-width: 245px;
     padding: 10px 10px;
     margin: 0 10px 0 0;
   }
@@ -38,11 +38,18 @@ const Filters = styled.div`
     margin: 0 15px 0 0;
   }
 `;
-
-const Icon = styled.div`
+const IconContainer = styled.div`
   position: sticky;
+  top: 250px;
+  margin-top: 25px;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+const Icon = styled.div`
+  position: absolute;
   z-index: 2;
-  top: 200px;
+  height: 0;
   margin-left: 100%;
   border-style: solid;
   border-width: 30px 0 30px 35px;
@@ -50,18 +57,6 @@ const Icon = styled.div`
   &:target {
     border-color: transparent transparent transparent blue;
   }
-  @media (min-width: 1024px) {
-    display: none;
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1920px) {
-  }
-
-  @media (min-width: 2560px) {
-  }
 `;
 
-export { Filters, Icon };
+export { Filters, IconContainer, Icon };

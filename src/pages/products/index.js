@@ -6,7 +6,7 @@ import "./style.css";
 import NavBar from "../../components/navBar";
 import DropDownBox from "../../components/dropdown";
 import Cards from "../../components/card";
-import { Filters, Icon } from "./filter.js";
+import { Filters, IconContainer, Icon } from "./filter.js";
 
 export default function Products() {
   const [active, setActive] = useState(false);
@@ -22,17 +22,19 @@ export default function Products() {
       </div>
       <div className="products-body">
         <Filters width={config.width}>
-          <Icon
-            onClick={() => {
-              if (active === true) {
-                setConfig({ width: "20px", display: "none" });
-                setActive(false);
-              } else {
-                setConfig({ width: "100%", display: "block" });
-                setActive(true);
-              }
-            }}
-          />
+          <IconContainer>
+            <Icon
+              onClick={() => {
+                if (active === true) {
+                  setConfig({ width: "20px", display: "none" });
+                  setActive(false);
+                } else {
+                  setConfig({ width: "100%", display: "block" });
+                  setActive(true);
+                }
+              }}
+            />
+          </IconContainer>
           <DropDownBox
             options={{
               title: "Genero",

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import * as components from "../dropdown/Dropdown";
 
 export default function DropDownBox(props) {
   const [active, setActive] = useState(false);
   const [config, setConfig] = useState(false);
-
+  useEffect(() => {
+    setActive(props.active);
+  }, [props]);
   function test() {
     if (active === true) {
       return (
@@ -22,7 +24,11 @@ export default function DropDownBox(props) {
     let elements = [];
     for (let key in props.options.fields) {
       elements.push(
-        <a key={key} href={"#" + props.options.fields[key]}>
+        <a
+          display={config.display}
+          key={key}
+          href={"#" + props.options.fields[key]}
+        >
           {props.options.fields[key]}
         </a>
       );
