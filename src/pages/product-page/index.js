@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import "./style.css";
-import { YellowButton } from "../../assets/buttons";
-import importAll from "../utils/importAll";
+import { YellowButton } from "../../components/buttons/Buttons";
+import importAll from "../../utils/importAll";
 import NavBar from "../../components/navBar";
 import api from "../../service/api.js";
 

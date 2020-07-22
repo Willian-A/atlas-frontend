@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import importAll from "../../pages/utils/importAll";
-import api from "../../service/api.js";
+import importAll from "../../utils/importAll";
+import api from "../../service/api";
 
-import * as components from "../../assets/card";
-import { YellowButton } from "../../assets/buttons";
+import * as components from "../card/Card";
+import { YellowButton } from "../buttons/Buttons";
 
 export default function Cards(prop) {
   const [result, setResult] = useState([]);

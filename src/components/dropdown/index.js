@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import * as components from "../../assets/dropdown";
+import * as components from "../dropdown/Dropdown";
 
 export default function DropDownBox(props) {
   const [active, setActive] = useState(false);

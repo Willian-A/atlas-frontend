@@ -2,7 +2,7 @@ import React from "react";
 
 import "./style.css";
 
-import Banner from "./contents/banner";
+import Banner from "../../components/banner";
 import NavBar from "../../components/navBar";
 import Categories from "./contents/categories";
 

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-import { YellowButton } from "../../../../assets/buttons";
-import * as components from "../../../../assets/banner";
-import importAll from "../../../utils/importAll";
+import { YellowButton } from "../buttons/Buttons";
+import * as components from "./Banner";
+import importAll from "../../utils/importAll";
 
 export default function Banner() {
   const [index, setIndex] = useState(1);
   const [top, setTop] = useState(0);
 
   let imagesPNG = importAll(
-    require.context("../../../../images/banner", false, /\.(png)$/)
+    require.context("../../images/banner", false, /\.(png)$/)
   );
   let imagesJPEG = importAll(
-    require.context("../../../../images/banner", false, /\.(jpg)$/)
+    require.context("../../images/banner", false, /\.(jpg)$/)
   );
   let bannerTimer;
 

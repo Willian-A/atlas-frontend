@@ -4,8 +4,8 @@ import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
-import { YellowButton } from "../../assets/buttons";
-import importAll from "../utils/importAll";
+import { YellowButton } from "../../components/buttons/Buttons";
+import importAll from "../../utils/importAll";
 
 export default function Login() {
   const [email, setEmail] = useState("");
