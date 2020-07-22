@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import "../../global.css";
 import "./style.css";
-import Logo from "../../images/icon.png";
 
 import NavBar from "../../components/navBar";
 import DropDownBox from "../../components/dropdown";
@@ -53,6 +52,7 @@ export default function Products() {
                 "Vida Virtual",
               ],
               display: config.display,
+              active: active,
             }}
           />
           <DropDownBox
@@ -60,6 +60,7 @@ export default function Products() {
               title: "Plataforma",
               fields: ["PC", "Playstation", "XBOX"],
               display: config.display,
+              active: active,
             }}
           />
         </Filters>

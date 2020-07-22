@@ -5,27 +5,29 @@ const ProductGrid = styled.div`
   grid-template-rows: repeat(auto-fill, auto);
   grid-template-columns: repeat(auto-fill, 265px);
   gap: 20px;
-  padding: 25px 10px 25px 0;
-  justify-content: flex-end;
+  padding: 25px 0 25px 0;
+  justify-content: center;
   box-shadow: 0px 0 25px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
 
   @media (min-width: 390px) {
     grid-template-columns: repeat(auto-fill, 280px);
     gap: 20px;
-    padding: 35px 25px 35px 0;
+    padding: 35px 0 35px 0;
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, 230px);
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, 220px);
+    gap: 10px;
     padding: 10px 10px 10px 0;
+    justify-content: flex-end;
   }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(auto-fill, 250px);
     gap: 12px;
     padding: 10px 0 10px 0;
+    justify-content: center;
   }
 
   @media (min-width: 1440px) {

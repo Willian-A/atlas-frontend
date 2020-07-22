@@ -3,22 +3,13 @@ import React, { useState } from "react";
 import * as components from "../../assets/dropdown";
 
 export default function DropDownBox(props) {
+  const [active, setActive] = useState(false);
   const [config, setConfig] = useState(false);
 
-  function active(button) {
-    setConfig(true);
-    button.style.borderBottom = "6px #ffae00 solid";
-  }
-
-  function deActive(button) {
-    setConfig(false);
-    button.style.borderBottom = "2px white solid";
-  }
-
   function test() {
-    if (config === true) {
+    if (active === true) {
       return (
-        <components.DropdownCategoryBox display={props.options.display}>
+        <components.DropdownCategoryBox display={config.display}>
           {renderEachOption()}
         </components.DropdownCategoryBox>
       );
@@ -42,11 +33,13 @@ export default function DropDownBox(props) {
     <components.Dropdown>
       <components.DropdownName
         display={props.options.display}
-        onClick={(button) => {
-          if (config === true) {
-            deActive(button.target);
+        onClick={() => {
+          if (active === true) {
+            setConfig({ display: "none" });
+            setActive(false);
           } else {
-            active(button.target);
+            setConfig({ display: "block" });
+            setActive(true);
           }
         }}
       >
