@@ -25,7 +25,10 @@ export default function Cards(prop) {
   return (
     <components.ProductGrid amount={prop.amount} size={prop.size}>
       {result.map((result) => (
-        <components.ProductCard key={result.id_product}>
+        <components.ProductCard
+          key={result.id_product}
+          LastDisplay={prop.LastDisplay}
+        >
           <Link
             to={{
               pathname: "/product-page",

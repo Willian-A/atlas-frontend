@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Filters = styled.div`
-  width: ${(props) => props.width || "20px"};
+  width: ${(props) => props.width || "0"};
   max-width: 240px;
   position: absolute;
   top: 55px;
@@ -14,7 +14,7 @@ const Filters = styled.div`
     position: relative;
     width: 100%;
     top: 0;
-    max-width: 200px;
+    max-width: 245px;
     padding: 15px 0;
     margin: 0 0 0 0;
     box-shadow: 0 0 0 rgba(0, 0, 0, 1);

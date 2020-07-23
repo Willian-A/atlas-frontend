@@ -26,7 +26,7 @@ export default function Products() {
             <Icon
               onClick={() => {
                 if (active === true) {
-                  setConfig({ width: "20px", display: "none" });
+                  setConfig({ width: "0", display: "none" });
                   setActive(false);
                 } else {
                   setConfig({ width: "100%", display: "block" });
