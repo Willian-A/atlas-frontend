@@ -40,8 +40,7 @@ const Filters = styled.div`
 `;
 const IconContainer = styled.div`
   position: sticky;
-  top: 250px;
-  margin-top: 25px;
+  top: 280px;
   @media (min-width: 1024px) {
     display: none;
   }
