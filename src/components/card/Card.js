@@ -17,27 +17,28 @@ const ProductGrid = styled.div`
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, 220px);
-    gap: 10px;
-    padding: 10px 10px 10px 0;
-    justify-content: flex-end;
+    grid-template-columns: repeat(auto-fill, 175px);
+    gap: 8px;
+    padding: 10px 0;
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-columns: repeat(auto-fill, 235px);
     gap: 12px;
     padding: 10px 0 10px 0;
-    justify-content: center;
   }
 
   @media (min-width: 1440px) {
+    grid-template-columns: repeat(auto-fill, 250px);
     gap: 20px;
     padding: 18px 0 18px 0;
   }
 
   @media (min-width: 1920px) {
-    gap: 10px;
-    padding: 10px 0 10px 0;
+    grid-template-columns: repeat(5, 275px);
+    margin: auto;
+    gap: 35px;
+    padding: 25px 0 25px 0;
   }
 
   @media (min-width: 2560px) {
@@ -49,6 +50,18 @@ const ProductGrid = styled.div`
 
 const ProductCard = styled.div`
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 768px) {
+    &:last-of-type {
+      display: ${(props) => props.LastDisplay || "block"};
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &:last-of-type {
+      display: block;
+    }
+  }
 `;
 
 const CardIMG = styled.img`
@@ -97,15 +110,15 @@ const CardBio = styled.div`
   }
 
   @media (min-width: 768px) {
-    padding: 15px;
+    padding: 10px;
     h2 {
       margin-bottom: 5px;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     h3 {
       margin-bottom: 15px;
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 
@@ -126,12 +139,12 @@ const CardBio = styled.div`
     padding: 18px;
     h2 {
       margin-bottom: 5px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     h3 {
       margin-bottom: 15px;
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 
