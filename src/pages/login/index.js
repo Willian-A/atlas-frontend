@@ -4,7 +4,7 @@ import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
-import { YellowButton } from "../../components/buttons/Buttons";
+import { YellowButton } from "../../components/buttons";
 import importAll from "../../utils/importAll";
 
 export default function Login() {

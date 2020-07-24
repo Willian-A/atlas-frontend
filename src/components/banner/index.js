@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { YellowButton } from "../buttons/Buttons";
+import { YellowButton } from "../buttons";
 import * as components from "./Banner";
 import importAll from "../../utils/importAll";
 

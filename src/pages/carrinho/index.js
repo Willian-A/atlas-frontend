@@ -5,7 +5,7 @@ import api from "../../service/api.js";
 
 import NavBar from "../../components/navBar";
 import importAll from "../../utils/importAll";
-import { YellowButton } from "../../components/buttons/Buttons";
+import { YellowButton } from "../../components/buttons";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);

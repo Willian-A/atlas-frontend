@@ -6,6 +6,8 @@ import "./style.css";
 import NavBar from "../../components/navBar";
 import DropDownBox from "../../components/dropdown";
 import Cards from "../../components/card";
+import NameBox from "../../components/nameBox";
+
 import { Filters, IconContainer, Icon } from "./Filter.js";
 
 export default function Products() {
@@ -16,9 +18,7 @@ export default function Products() {
     <div className="products-container">
       <NavBar />
       <div className="products-banner">
-        <div className="name-box">
-          <h2>Produtos</h2>
-        </div>
+        <NameBox>Produtos</NameBox>
       </div>
       <div className="products-body">
         <Filters width={config.width}>

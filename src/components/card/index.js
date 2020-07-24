@@ -5,7 +5,7 @@ import importAll from "../../utils/importAll";
 import api from "../../service/api";
 
 import * as components from "../card/Card";
-import { YellowButton } from "../buttons/Buttons";
+import { YellowButton } from "../buttons";
 
 export default function Cards(prop) {
   const [result, setResult] = useState([]);
