@@ -33,9 +33,9 @@ const Filters = styled.div`
   }
 
   @media (min-width: 2560px) {
-    max-width: 300px;
+    max-width: 350px;
     padding: 10px 10px;
-    margin: 0 15px 0 0;
+    margin: 0 80px 0 0;
   }
 `;
 const IconContainer = styled.div`

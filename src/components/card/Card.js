@@ -42,9 +42,9 @@ const ProductGrid = styled.div`
   }
 
   @media (min-width: 2560px) {
-    grid-template-columns: repeat(auto-fill, 290px);
-    gap: 20px;
-    padding: 15px 0 15px 0;
+    grid-template-columns: repeat(5, 300px);
+    gap: 75px;
+    padding: 45px 0 45px 0;
   }
 `;
 

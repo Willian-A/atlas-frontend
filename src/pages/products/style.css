@@ -66,6 +66,6 @@ div.teste {
 
 @media (min-width: 2560px) {
     div.products-container .products-body {
-        padding: 55px 20px;
+        padding: 55px 80px;
     }
 }

@@ -6,7 +6,7 @@ import "./style.css";
 import NavBar from "../../components/navBar";
 import DropDownBox from "../../components/dropdown";
 import Cards from "../../components/card";
-import { Filters, IconContainer, Icon } from "./filter.js";
+import { Filters, IconContainer, Icon } from "./Filter.js";
 
 export default function Products() {
   const [active, setActive] = useState(false);
