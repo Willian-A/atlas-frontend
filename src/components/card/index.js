@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import importAll from "../../utils/importAll";
 import api from "../../service/api";
 
-import * as components from "../card/Card";
+import * as components from "./Card";
 import { YellowButton } from "../buttons";
 
 export default function Cards(prop) {

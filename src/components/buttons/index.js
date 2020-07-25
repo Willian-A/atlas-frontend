@@ -14,21 +14,6 @@ export const YellowButton = styled.button`
     background-color: #1f1f1f;
   }
 
-  @media (min-width: 390px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1024px) {
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1920px) {
-  }
-
   @media (min-width: 2560px) {
     font-size: 18px;
   }

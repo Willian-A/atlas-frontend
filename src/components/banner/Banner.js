@@ -32,6 +32,7 @@ const BannerBox = styled.div`
   height: inherit;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
 `;
+
 const BannerImageBox = styled.div`
   display: flex;
   flex-direction: column;

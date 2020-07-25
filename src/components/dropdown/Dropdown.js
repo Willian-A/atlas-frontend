@@ -6,7 +6,6 @@ const Dropdown = styled.div`
 
 const DropdownName = styled.h2`
   display: ${(props) => props.display || "none"};
-  position: relative;
   margin: 0 20px 0;
   padding: 10px;
   font-size: 20px;
@@ -24,17 +23,8 @@ const DropdownName = styled.h2`
 
   @media (min-width: 1024px) {
     display: block;
-    margin: 10px 15px 0 15px;
-    padding: 0;
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1920px) {
-  }
-
-  @media (min-width: 2560px) {
+    margin: 0 15px 0 15px;
+    padding: 5px;
   }
 `;
 

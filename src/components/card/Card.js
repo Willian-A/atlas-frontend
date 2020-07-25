@@ -81,23 +81,24 @@ const CardBio = styled.div`
     margin-bottom: 5px;
     font-size: 15px;
     letter-spacing: -1px;
-    color: #000000;
     text-transform: capitalize;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #000000;
     transition: 500ms;
   }
+
   h2:hover{
     margin-left: 10px;
   }
 
   h3 {
     margin-bottom: 15px;
-    color: #000;
     font-size: 18px;
     letter-spacing: 1px;w
     text-transform: capitalize;
+    color: #000;
     transition: 500ms;
   }
 
@@ -146,9 +147,6 @@ const CardBio = styled.div`
       margin-bottom: 15px;
       font-size: 18px;
     }
-  }
-
-  @media (min-width: 1920px) {
   }
 
   @media (min-width: 2560px) {

@@ -7,6 +7,7 @@ import importAll from "../../utils/importAll";
 export default function Banner() {
   const [index, setIndex] = useState(1);
   const [top, setTop] = useState(0);
+  let bannerTimer;
 
   let imagesPNG = importAll(
     require.context("../../images/banner", false, /\.(png)$/)
@@ -14,7 +15,6 @@ export default function Banner() {
   let imagesJPEG = importAll(
     require.context("../../images/banner", false, /\.(jpg)$/)
   );
-  let bannerTimer;
 
   function bannerLoader() {
     let banner = [];
