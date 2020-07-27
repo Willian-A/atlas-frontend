@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
-import { YellowButton } from "../../shared/components/buttons";
+
+import api from "../../service/api.js";
 import importAll from "../../utils/importAll";
+
+import { YellowButton } from "../../shared/components/buttons";
 
 export default function Login() {
   const [email, setEmail] = useState("");

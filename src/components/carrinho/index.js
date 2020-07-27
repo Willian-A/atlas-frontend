@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import "../../global.css";
 import "./style.css";
+
 import api from "../../service/api.js";
+import importAll from "../../utils/importAll";
 
 import NavBar from "../../shared/components/navBar";
-import importAll from "../../utils/importAll";
 import { YellowButton } from "../../shared/components/buttons";
 
 export default function Carrinho() {

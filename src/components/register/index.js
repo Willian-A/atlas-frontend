@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
 import InputMask from "react-input-mask";
-import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
+
+import api from "../../service/api.js";
 import importAll from "../../utils/importAll";
 
 export default function Register() {

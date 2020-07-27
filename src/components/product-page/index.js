@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import "./style.css";
-import { YellowButton } from "../../shared/components/buttons";
+
 import importAll from "../../utils/importAll";
-import NavBar from "../../shared/components/navBar";
 import api from "../../service/api.js";
+
+import { YellowButton } from "../../shared/components/buttons";
+import NavBar from "../../shared/components/navBar";
 
 export default function ProductPage(props) {
   let images = importAll(
