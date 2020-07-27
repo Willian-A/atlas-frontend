@@ -5,7 +5,7 @@ import "./style.css";
 import importAll from "../../utils/importAll";
 import api from "../../service/api.js";
 
-import { YellowButton } from "../../shared/components/buttons";
+import { YellowButton } from "../../shared/components/buttons/style";
 import NavBar from "../../shared/components/navBar";
 
 export default function ProductPage(props) {

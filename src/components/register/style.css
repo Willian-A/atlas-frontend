@@ -69,18 +69,6 @@ div.box-container .box .inputs h4 {
     margin: 15px 0 0;
 }
 
-div.box-container .box .inputs a {
-    width: fit-content;
-    height: fit-content;
-    margin: 15px 0 0;
-    color: #313131;
-    transition: 500ms;
-}
-
-div.box-container .box .inputs a:hover {
-    color: #a51a1a;
-}
-
 div.box-container .box .inputs button {
     width: 100%;
     padding: 10px;
@@ -109,9 +97,6 @@ div.box-container .box .inputs button:hover {
         width: 280px;
         font-size: 15px;
     }
-    div.box-container .box .inputs a {
-        margin-top: 25px;
-    }
     div.box-container .box .inputs h3 {
         font-size: 12px;
     }
@@ -138,9 +123,6 @@ div.box-container .box .inputs button:hover {
     div.box-container .box .inputs input {
         width: 280px;
         font-size: 13px;
-    }
-    div.box-container .box .inputs a {
-        margin-top: 20px;
     }
     div.box-container .box .inputs h3 {
         font-size: 12px;
@@ -223,9 +205,6 @@ div.box-container .box .inputs button:hover {
         width: 250px;
         padding: 10px;
         font-size: 13px;
-    }
-    div.box-container .box .inputs a {
-        margin: 15px 0 0;
     }
     div.box-container .box .inputs h3 {
         font-size: 12px;

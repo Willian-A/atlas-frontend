@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { YellowButton } from "../buttons";
-import * as components from "./Banner";
+import { YellowButton } from "../buttons/style";
+import * as components from "./style";
 import importAll from "../../../utils/importAll";
 
 export default function Banner() {

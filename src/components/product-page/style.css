@@ -79,8 +79,6 @@
     font-size: 10px;
 }
 
-@media only screen and (min-width: 390px) {}
-
 @media (min-width: 768px) {
     .product-info-frame {
         flex-direction: column;
@@ -103,10 +101,6 @@
         margin: 15px auto 25px;
     }
 }
-
-@media (min-width: 1024px) {}
-
-@media (min-width: 1440px) {}
 
 @media (min-width: 1920px) {
     .product-info-frame .product-bio h6 {

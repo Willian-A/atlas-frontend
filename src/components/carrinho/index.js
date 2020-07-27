@@ -7,7 +7,8 @@ import api from "../../service/api.js";
 import importAll from "../../utils/importAll";
 
 import NavBar from "../../shared/components/navBar";
-import { YellowButton } from "../../shared/components/buttons";
+import { YellowButton } from "../../shared/components/buttons/style";
+import NameBox from "../../shared/components/nameBox/style";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
@@ -88,9 +89,7 @@ export default function Carrinho() {
     <div className="cart-container">
       <NavBar />
       <div className="cart-banner">
-        <div className="name-box">
-          <h2>Carrinho</h2>
-        </div>
+        <NameBox>Carrinho</NameBox>
       </div>
       <div className="cart-body">
         <h2 className="title">Produtos no carrinho</h2>

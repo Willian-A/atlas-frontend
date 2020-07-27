@@ -6,7 +6,7 @@ import "./style.css";
 import NavBar from "../../shared/components/navBar";
 import DropDownBox from "../../shared/components/dropdown";
 import Cards from "../../shared/components/card";
-import NameBox from "../../shared/components/nameBox";
+import NameBox from "../../shared/components/nameBox/style";
 
 import { Filters, IconContainer, Icon } from "./Filter.js";
 
@@ -66,7 +66,7 @@ export default function Products() {
             }}
           />
         </Filters>
-        <div className="teste">
+        <div className="cards-container">
           <Cards amount={{ "1440": "4", "1920": "5", "2560": "6" }} />
         </div>
       </div>

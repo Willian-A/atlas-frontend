@@ -7,7 +7,7 @@ import "./style.css";
 import api from "../../service/api.js";
 import importAll from "../../utils/importAll";
 
-import { YellowButton } from "../../shared/components/buttons";
+import { YellowButton } from "../../shared/components/buttons/style";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -47,7 +47,6 @@ export default function Login() {
   return (
     <div className="box-container">
       <div className="box">
-        <div className="cover"></div>
         <div className="container">
           <form onSubmit={handleSubmit} className="inputs">
             <h1>

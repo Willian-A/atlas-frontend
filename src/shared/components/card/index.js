@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import importAll from "../../../utils/importAll";
 import api from "../../../service/api";
 
-import * as components from "./Card";
-import { YellowButton } from "../buttons";
+import * as components from "./style";
+import { YellowButton } from "../buttons/style";
 
 export default function Cards(prop) {
   const [result, setResult] = useState([]);
