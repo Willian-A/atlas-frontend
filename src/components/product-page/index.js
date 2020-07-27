@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import "./style.css";
-import { YellowButton } from "../../components/buttons";
+import { YellowButton } from "../../shared/components/buttons";
 import importAll from "../../utils/importAll";
-import NavBar from "../../components/navBar";
+import NavBar from "../../shared/components/navBar";
 import api from "../../service/api.js";
 
 export default function ProductPage(props) {
   let images = importAll(
-    require.context("../../images/products", false, /\.(jpe?g)$/)
+    require.context("../../shared/images/products", false, /\.(jpe?g)$/)
   );
 
   const [result, setResult] = useState([]);

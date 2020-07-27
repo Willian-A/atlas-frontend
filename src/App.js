@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Pages
-import Index from "./pages/index";
-import Login from "./pages/login";
-import Register from "./pages/register";
-import Carrinho from "./pages/carrinho";
-import ProductPage from "./pages/product-page";
-import Products from "./pages/products";
-import Error from "./pages/error";
+import Index from "./components/index";
+import Login from "./components/login";
+import Register from "./components/register";
+import Carrinho from "./components/carrinho";
+import ProductPage from "./components/product-page";
+import Products from "./components/products";
+import Error from "./components/error";
 
 //CSS
 import "./global.css";

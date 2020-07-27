@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import "../../global.css";
 import "./style.css";
 
-import NavBar from "../../components/navBar";
-import DropDownBox from "../../components/dropdown";
-import Cards from "../../components/card";
-import NameBox from "../../components/nameBox";
+import NavBar from "../../shared/components/navBar";
+import DropDownBox from "../../shared/components/dropdown";
+import Cards from "../../shared/components/card";
+import NameBox from "../../shared/components/nameBox";
 
 import { Filters, IconContainer, Icon } from "./Filter.js";
 

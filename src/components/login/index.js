@@ -1,34 +1,36 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
-import InputMask from "react-input-mask";
 import api from "../../service/api.js";
 
 import "../../global.css";
 import "./style.css";
+import { YellowButton } from "../../shared/components/buttons";
 import importAll from "../../utils/importAll";
 
-export default function Register() {
-  const [name, setName] = useState("");
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
-  const [cpf, setCpf] = useState("");
   const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
     await handleRegister();
   }
+
   async function handleRegister() {
-    var msgLog = document.getElementById("msgLog");
+    let msgLog = document.getElementById("msgLog");
     try {
-      await api.post("/cadastrar", {
-        name,
-        email,
-        password,
-        cpf,
-      });
-      history.push("/login");
+      await api.post(
+        "/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      history.push("/");
     } catch (error) {
       msgLog.innerHTML = error.response.data;
       msgLog.style.color = "red";
@@ -37,18 +39,19 @@ export default function Register() {
   }
 
   let images = importAll(
-    require.context("../../images/login", false, /\.(png)$/)
+    require.context("../../shared/images/login", false, /\.(png)$/)
   );
 
   return (
     <div className="box-container">
       <div className="box">
+        <div className="cover"></div>
         <div className="container">
           <form onSubmit={handleSubmit} className="inputs">
             <h1>
               <Link to="/">Voltar a Página Inicial</Link>
             </h1>
-            <h2>Cadastro</h2>
+            <h2>Login</h2>
             <h3
               id="msgLog"
               style={{
@@ -58,46 +61,33 @@ export default function Register() {
                 visibility: "hidden",
               }}
             >
-              Registrado com Sucesso! Faça <Link to="/login">Login</Link>
+              Logado com Sucesso!
             </h3>
             <input
-              name="name"
-              type="text"
-              value={name}
-              placeholder="Nome"
-              minLength="2"
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
               name="email"
-              type="email"
-              value={email}
+              type="text"
               placeholder="Email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-
             <input
               name="pass"
               type="password"
-              value={password}
               placeholder="Senha"
-              minLength="8"
+              value={password}
               onChange={(e) => setPass(e.target.value)}
             />
-            <InputMask
-              name="cpf"
-              mask="999.999.999-99"
-              value={cpf}
-              maskChar=""
-              placeholder="CPF"
-              minLength="11"
-              onChange={(e) => setCpf(e.target.value)}
-            />
 
-            <button>Cadastrar</button>
+            <a href="#test">
+              <h3>Esqueci minha senha</h3>
+            </a>
+
+            <YellowButton borderRadius="0" defineHeight="35px">
+              Login
+            </YellowButton>
 
             <h4>
-              Já tem um cadastro? Faça <Link to="/login">Login</Link>
+              Não tem um cadastro? <Link to="/register">Cadastre-se</Link>
             </h4>
           </form>
           <img src={images["logo.png"]} alt="" />

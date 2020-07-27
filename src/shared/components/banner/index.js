@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { YellowButton } from "../buttons";
 import * as components from "./Banner";
-import importAll from "../../utils/importAll";
+import importAll from "../../../utils/importAll";
 
 export default function Banner() {
   const [index, setIndex] = useState(1);

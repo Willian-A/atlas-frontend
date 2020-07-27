@@ -2,10 +2,10 @@ import React from "react";
 
 import "./style.css";
 
-import Banner from "../../components/banner";
-import NavBar from "../../components/navBar";
+import Banner from "../../shared/components/banner";
+import NavBar from "../../shared/components/navBar";
 import Categories from "./contents/categories";
-import Cards from "../../components/card";
+import Cards from "../../shared/components/card";
 
 export default function Index() {
   return (

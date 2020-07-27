@@ -3,16 +3,16 @@ import "../../global.css";
 import "./style.css";
 import api from "../../service/api.js";
 
-import NavBar from "../../components/navBar";
+import NavBar from "../../shared/components/navBar";
 import importAll from "../../utils/importAll";
-import { YellowButton } from "../../components/buttons";
+import { YellowButton } from "../../shared/components/buttons";
 
 export default function Carrinho() {
   const [result, setResult] = useState([]);
   const [total, setTotal] = useState({});
 
   let images = importAll(
-    require.context("../../images/products", false, /\.(jpg)$/)
+    require.context("../../shared/images/products", false, /\.(jpg)$/)
   );
 
   async function listCart() {

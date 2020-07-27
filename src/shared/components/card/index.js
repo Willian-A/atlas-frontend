@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import importAll from "../../utils/importAll";
-import api from "../../service/api";
+import importAll from "../../../utils/importAll";
+import api from "../../../service/api";
 
 import * as components from "./Card";
 import { YellowButton } from "../buttons";

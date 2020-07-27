@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import api from "../../service/api.js";
+import api from "../../../service/api";
 
 import "./style.css";
 
