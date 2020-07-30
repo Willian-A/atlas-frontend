@@ -6,6 +6,7 @@ import Banner from "../../organism/banner";
 import MainCard from "../../organism/main-card";
 
 const DivTest = styled.div`
+  height: 1000px;
   @media (min-width: 390px) {
   }
 
@@ -17,6 +18,7 @@ const DivTest = styled.div`
   }
 
   @media (min-width: 1440px) {
+    padding: 0 10%;
   }
 
   @media (min-width: 1920px) {
@@ -24,6 +26,7 @@ const DivTest = styled.div`
   }
 
   @media (min-width: 2560px) {
+    padding: 0 16%;
   }
 `;
 

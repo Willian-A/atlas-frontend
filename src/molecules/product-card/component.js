@@ -1,70 +1,53 @@
 import styled from "styled-components";
 
 const CardBox = styled.div`
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
-  width: 270px;
+  width: 100%;
+  max-width: 85%;
   margin: 0 auto 20px auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
   img {
     width: 100%;
-    height: 360px;
-    transition: 300ms filter linear;
+    transition: 500ms;
 
     &:hover {
-      filter: brightness(50%);
+      filter: brightness(30%);
     }
   }
 
   @media (min-width: 390px) {
-    width: 280px;
-    margin: 0 auto 20px auto;
-
-    img {
-      height: 360px;
-    }
+    max-width: 75%;
+    margin: 0 auto 30px auto;
   }
 
   @media (min-width: 768px) {
-    width: 180px;
+    flex-basis: calc(25.5% - 12px);
     margin: 0;
 
-    img {
-      height: 250px;
-    }
     &:last-child {
       display: none;
     }
   }
 
   @media (min-width: 1024px) {
-    width: 190px;
-    img {
-      height: 260px;
-    }
+    flex-basis: calc(20% - 6px);
+
     &:last-child {
-      display: initial;
+      display: block;
     }
   }
 
   @media (min-width: 1440px) {
-    width: 250px;
-    img {
-      height: 340px;
-    }
+    flex-basis: calc(20% - 10px);
+    margin: 0;
   }
 
   @media (min-width: 1920px) {
-    width: 275px;
-    img {
-      height: 360px;
-    }
   }
 
   @media (min-width: 2560px) {
-    width: 275px;
-    img {
-      height: 360px;
-    }
+    flex-basis: calc(19.5% - 15px);
   }
 `;
 
@@ -120,6 +103,16 @@ const CardBio = styled.div`
   }
 
   @media (min-width: 2560px) {
+    padding: 20px;
+    h4 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
   }
 `;
 
