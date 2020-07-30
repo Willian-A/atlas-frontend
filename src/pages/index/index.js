@@ -1,0 +1,39 @@
+import React from "react";
+import styled from "styled-components";
+
+import Navbar from "../../organism/navbar";
+import Banner from "../../organism/banner";
+import MainCard from "../../organism/main-card";
+
+const DivTest = styled.div`
+  @media (min-width: 390px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 5%;
+  }
+
+  @media (min-width: 1440px) {
+  }
+
+  @media (min-width: 1920px) {
+  }
+
+  @media (min-width: 2560px) {
+  }
+`;
+
+export default function Index() {
+  return (
+    <div style={{ height: "100%" }}>
+      <Navbar />
+      <DivTest>
+        <Banner />
+        <MainCard />
+      </DivTest>
+    </div>
+  );
+}
