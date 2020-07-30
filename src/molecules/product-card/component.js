@@ -40,10 +40,10 @@ const CardBox = styled.div`
 
   @media (min-width: 1440px) {
     flex-basis: calc(20% - 10px);
-    margin: 0;
   }
 
   @media (min-width: 1920px) {
+    flex-basis: calc(20% - 15px);
   }
 
   @media (min-width: 2560px) {

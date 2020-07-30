@@ -22,7 +22,7 @@ const DivTest = styled.div`
   }
 
   @media (min-width: 1920px) {
-    padding: 0 10%;
+    padding: 0 12%;
   }
 
   @media (min-width: 2560px) {

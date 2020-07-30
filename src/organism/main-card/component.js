@@ -23,6 +23,7 @@ const CardContainer = styled.div`
   }
 
   @media (min-width: 1920px) {
+    padding: 20px 0 20px 0;
   }
 
   @media (min-width: 2560px) {
