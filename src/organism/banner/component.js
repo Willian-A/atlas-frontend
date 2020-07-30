@@ -3,32 +3,34 @@ import styled from "styled-components";
 const BannerContainer = styled.div`
   background-color: #fff;
   height: 250px;
+  padding: 0 0 20px 0;
 
   @media (min-width: 390px) {
-    height: 275px;
+    height: 295px;
+    padding: 0 0 50px 0;
   }
   @media (min-width: 768px) {
     height: 480px;
+    padding: 0 0 5px 0;
   }
 
   @media (min-width: 1024px) {
-    padding-top: 30px;
     height: 550px;
+    padding: 20px 0;
   }
 
   @media (min-width: 1440px) {
     height: 550px;
-    padding-top: 50px;
+    padding: 30px 0;
   }
 
   @media (min-width: 1920px) {
     height: 630px;
-    padding: 50px;
+    padding-bottom: 50px;
   }
 
   @media (min-width: 2560px) {
     height: 900px;
-    padding-top: 80px;
   }
 `;
 

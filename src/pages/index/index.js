@@ -13,13 +13,14 @@ const DivTest = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 0 5%;
+    padding: 0 2%;
   }
 
   @media (min-width: 1440px) {
   }
 
   @media (min-width: 1920px) {
+    padding: 0 10%;
   }
 
   @media (min-width: 2560px) {
