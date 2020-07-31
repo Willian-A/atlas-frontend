@@ -9,6 +9,7 @@ const CardBox = styled.div`
 
   img {
     width: 100%;
+    cursor: pointer;
     transition: 500ms;
 
     &:hover {

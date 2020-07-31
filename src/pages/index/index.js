@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Navbar from "../../organism/navbar";
 import Banner from "../../organism/banner";
 import MainCard from "../../organism/main-card";
+import Category from "../../organism/category";
 
 const DivTest = styled.div`
   height: 1000px;
@@ -37,6 +38,7 @@ export default function Index() {
       <DivTest>
         <Banner />
         <MainCard />
+        <Category />
       </DivTest>
     </div>
   );
