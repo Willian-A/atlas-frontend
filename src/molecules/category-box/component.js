@@ -9,7 +9,7 @@ const CategoriesBox = styled.div`
   &:hover {
     img {
       filter: brightness(20%);
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     h2 {
       color: white;

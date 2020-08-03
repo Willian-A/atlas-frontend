@@ -1,19 +1,15 @@
 import React from "react";
 
 import Navbar from "../../organism/navbar";
-import Banner from "../../organism/banner";
-import MainCard from "../../organism/main-card";
-import Category from "../../organism/category";
 import GeralContainer from "../../atoms/page-margin";
+import CartList from "../../organism/cart-product-list";
 
-export default function Index() {
+export default function Carrinho() {
   return (
     <div style={{ height: "100%" }}>
       <Navbar />
       <GeralContainer>
-        <Banner />
-        <MainCard />
-        <Category />
+        <CartList />
       </GeralContainer>
     </div>
   );

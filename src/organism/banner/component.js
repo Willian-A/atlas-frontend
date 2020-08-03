@@ -13,12 +13,10 @@ const BannerContainer = styled.div`
 
   @media (min-width: 1024px) {
     height: 550px;
-    padding-top: 15px;
   }
 
   @media (min-width: 1440px) {
     height: 550px;
-    padding-top: 20px;
   }
 
   @media (min-width: 1920px) {
@@ -26,7 +24,6 @@ const BannerContainer = styled.div`
   }
 
   @media (min-width: 2560px) {
-    padding-top: 50px;
     height: 900px;
   }
 `;
