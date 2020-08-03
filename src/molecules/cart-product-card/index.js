@@ -17,14 +17,14 @@ export default function CartCard() {
     <components.CardContainer>
       <img src={images["cyberpunk2077.jpg"]} />
       <components.CardBio>
-        <h2>Cyberpunk 2077 </h2>
-        <h3>R$ 299.99</h3>
+        <h2>Cyberpunk 2077</h2>
+        <h3>R$ 259.99</h3>
         <components.CardQty>
           <Button width="55%" fontSize="15px" padding="0 10px">
             Adicionar
           </Button>
 
-          <h2>1</h2>
+          <h4>1</h4>
           <Button width="55%" fontSize="15px" padding="0 10px">
             Adicionar
           </Button>

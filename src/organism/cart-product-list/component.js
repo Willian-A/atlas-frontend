@@ -14,8 +14,9 @@ const PageNameBox = styled.div`
 `;
 
 const CartListContainer = styled.div`
-  width: 60%;
+  width: 100%;
   position: relative;
+  margin-right: 50px;
 `;
 
 export { PageNameBox, CartListContainer };
