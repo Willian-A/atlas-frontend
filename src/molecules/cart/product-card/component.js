@@ -4,7 +4,7 @@ const CardContainer = styled.div`
   position: relative;
   display: flex;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 12px;
 
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 

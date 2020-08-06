@@ -6,8 +6,6 @@ const PageNameBox = styled.div`
   padding-bottom: 25px;
 
   h5 {
-    position: relative;
-    top: 50%;
     margin-left: 10px;
     transform: translateY(35%);
   }
@@ -19,4 +17,11 @@ const CartListContainer = styled.div`
   margin-right: 25px;
 `;
 
-export { PageNameBox, CartListContainer };
+const ResumeContainer = styled.div`
+  width: 30%;
+  height: 100%;
+  padding: 15px 20px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+`;
+
+export { PageNameBox, CartListContainer, ResumeContainer };

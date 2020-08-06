@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import Button from "../../atoms/button";
-import importAll from "../../utils/importAll";
+import Button from "../../../atoms/button";
+import importAll from "../../../utils/importAll";
 
 export default function CartCard() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     setImages(
-      importAll(require.context("../../images/products", false, /\.(jpg)$/))
+      importAll(require.context("../../../images/products", false, /\.(jpg)$/))
     );
   }, []);
 
