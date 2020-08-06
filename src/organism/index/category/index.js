@@ -1,13 +1,13 @@
 import React from "react";
 
 import * as component from "./component";
-import CategoryBox from "../../molecules/category-box";
+import CategoryBox from "../../../molecules/index/category-box";
 
-import importAll from "../../utils/importAll";
+import importAll from "../../../utils/importAll";
 
 export default function Category() {
   let imagesJPEG = importAll(
-    require.context("../../images/categories", false, /\.(jpg)$/)
+    require.context("../../../images/categories", false, /\.(jpg)$/)
   );
   return (
     <component.CategoriesContainer>

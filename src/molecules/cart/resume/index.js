@@ -1,7 +1,6 @@
 import React from "react";
 
 import * as components from "./component";
-import Button from "../../../atoms/button";
 
 export default function CartResume(props) {
   return (

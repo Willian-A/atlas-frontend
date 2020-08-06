@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "../../molecules/product-card";
+import Card from "../../../molecules/index/product-card";
 import CardContainer from "./component";
 
-import importAll from "../../utils/importAll";
-import api from "../../service/api";
+import importAll from "../../../utils/importAll";
+import api from "../../../service/api";
 
 export default function MainCard() {
   const [result, setResult] = useState([]);
@@ -16,7 +16,7 @@ export default function MainCard() {
       setResult(response.data.result);
     }
     setImages(
-      importAll(require.context("../../images/products", false, /\.(jpg)$/))
+      importAll(require.context("../../../images/products", false, /\.(jpg)$/))
     );
     selectProducts();
   }, []);

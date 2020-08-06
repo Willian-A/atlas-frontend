@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const Button = styled.button`
   width: ${(props) => props.width || "50%"};
-  position: ${(props) => props.position || "unset"};
-  top: ${(props) => props.top || "0"};
   height: ${(props) => props.defineHeight || "40px"};
   font-size: ${(props) => props.fontSize || "18px"};
   padding: ${(props) => props.padding || "0"};

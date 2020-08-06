@@ -12,7 +12,7 @@ export default function CartList() {
         <h1>Seu Carrinho</h1>
         <h5>1 itens</h5>
       </components.PageNameBox>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <components.CartContainer>
         <components.CartListContainer>
           <CartCard />
           <CartCard />
@@ -23,7 +23,7 @@ export default function CartList() {
           <CartResume value="779.97" />
           <Button width="100%">Finalizar</Button>
         </components.ResumeContainer>
-      </div>
+      </components.CartContainer>
     </div>
   );
 }

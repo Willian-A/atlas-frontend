@@ -19,11 +19,11 @@ export default function CartCard() {
       <components.CardBio>
         <h2>Cyberpunk 2077</h2>
         <h3>R$ 259.99</h3>
+        <h4>R$ 259.99</h4>
         <components.CardQty>
           <Button width="55%" fontSize="25px" padding="0 10px">
             +
           </Button>
-
           <h4>1</h4>
           <Button width="55%" fontSize="25px" padding="0 10px">
             -

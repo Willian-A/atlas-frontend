@@ -1,24 +1,23 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  position: relative;
   display: flex;
-  margin-bottom: 10px;
   padding: 12px;
-
+  margin-bottom: 10px;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   img {
     width: 100px;
+    cursor: pointer;
+    transition: 500ms;
+
+    &:hover {
+      filter: brightness(30%);
+    }
   }
 `;
 
 const CardBio = styled.div`
-  position: relative;
   margin: 0 15px;
   display: flex;
   flex-direction: column;
