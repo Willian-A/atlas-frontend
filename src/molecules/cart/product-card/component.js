@@ -29,6 +29,10 @@ const CardBio = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  h5 {
+    font-size: 14px;
+    opacity: 0.5;
+  }
 `;
 
 const CardQty = styled.div`
