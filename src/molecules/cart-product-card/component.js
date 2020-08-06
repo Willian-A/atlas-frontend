@@ -3,10 +3,10 @@ import styled from "styled-components";
 const CardContainer = styled.div`
   position: relative;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px;
 
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
   &:last-child {
     margin-bottom: 0;
@@ -41,7 +41,7 @@ const CardQty = styled.div`
     font-size: 22px;
     margin: 0 20px 0;
     padding: 5px 20px 0 20px;
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+    border: 1px rgba(0, 0, 0, 0.08) solid;
   }
 `;
 
