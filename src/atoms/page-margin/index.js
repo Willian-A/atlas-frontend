@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const GeralContainer = styled.div`
-  height: 1000px;
+  height: fit-content;
 
   @media (min-width: 1024px) {
     padding: 0 2%;
