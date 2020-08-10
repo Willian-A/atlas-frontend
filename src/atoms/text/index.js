@@ -19,6 +19,7 @@ const H4Link = styled.h4`
 `;
 
 const Text = styled.h2`
+  height: ${(props) => props.height || "fit-content"};
   margin: ${(props) => props.margin || "0"};
   font-size: ${(props) => props.font || "15px"};
   color: ${(props) => props.color || "#a3a3a3"};
