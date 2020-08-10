@@ -9,7 +9,9 @@ export default function CartCard() {
 
   useEffect(() => {
     setImages(
-      importAll(require.context("../../../images/products", false, /\.(jpg)$/))
+      importAll(
+        require.context("../../../shared/images/products", false, /\.(jpg)$/)
+      )
     );
   }, []);
 

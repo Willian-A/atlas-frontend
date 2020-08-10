@@ -16,7 +16,9 @@ export default function MainCard() {
       setResult(response.data.result);
     }
     setImages(
-      importAll(require.context("../../../images/products", false, /\.(jpg)$/))
+      importAll(
+        require.context("../../../shared/images/products", false, /\.(jpg)$/)
+      )
     );
     selectProducts();
   }, []);

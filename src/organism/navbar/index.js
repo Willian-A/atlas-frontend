@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import * as component from "./component";
-import MenuBar from "../../images/icons/menu-bar";
+import MenuBar from "../../shared/images/icons/menu-bar";
 
 export default function Navbar() {
   return (
@@ -31,7 +31,7 @@ export default function Navbar() {
           <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/carrinho">Cadastrar</Link>
+          <Link to="/cadastro">Cadastrar</Link>
         </li>
       </ul>
     </component.NavbarContainer>

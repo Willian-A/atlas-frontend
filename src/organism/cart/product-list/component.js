@@ -24,7 +24,7 @@ const ResumeContainer = styled.div`
   h1 {
     border-bottom: 5px solid rgba(0, 0, 0, 0.8);
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 `;
 

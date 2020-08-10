@@ -4,7 +4,7 @@ import Navbar from "../../organism/navbar";
 import GeralContainer from "../../atoms/page-margin";
 import CartList from "../../organism/cart/product-list";
 
-export default function Carrinho() {
+export default function Cart() {
   return (
     <div style={{ height: "100%" }}>
       <Navbar />

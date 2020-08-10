@@ -7,7 +7,7 @@ import importAll from "../../../utils/importAll";
 
 export default function Category() {
   let imagesJPEG = importAll(
-    require.context("../../../images/categories", false, /\.(jpg)$/)
+    require.context("../../../shared/images/categories", false, /\.(jpg)$/)
   );
   return (
     <component.CategoriesContainer>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: GothamRounded-Bold;
-    src: url(./fonts/GothamRounded-Bold/GothamRounded-Bold.ttf);
+    src: url(./shared/fonts/GothamRounded-Bold/GothamRounded-Bold.ttf);
 }
 
 * {
