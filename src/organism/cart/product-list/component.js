@@ -9,9 +9,6 @@ const PageNameBox = styled.div`
     transform: translateY(35%);
   }
 `;
-const CartContainer = styled.div`
-  display: flex;
-`;
 
 const CartListContainer = styled.div`
   width: 100%;
@@ -23,6 +20,12 @@ const ResumeContainer = styled.div`
   height: 100%;
   padding: 15px 20px;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
-export { PageNameBox, CartContainer, CartListContainer, ResumeContainer };
+export { PageNameBox, CartListContainer, ResumeContainer };
