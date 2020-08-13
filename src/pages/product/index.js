@@ -21,14 +21,27 @@ export default function Product() {
     <div style={{ height: "100%" }}>
       <Navbar />
       <GeralContainer>
-        <FlexContainer direction="row" shadow="">
+        <FlexContainer
+          width="72%"
+          direction="row"
+          shadow=""
+          padding="30px"
+          margin="0 auto"
+        >
           <img
             src={images["thelastofus2.jpg"]}
             alt=""
-            style={{ width: "40%", height: "730px" }}
+            style={{ width: "38%", height: "550px", margin: "0 auto 0 0" }}
           />
-          <div style={{ margin: "0 auto ", width: "750px" }}>
-            <div>
+          <div
+            style={{
+              margin: "0 auto ",
+              width: "550px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ height: "100%" }}>
               <h1 style={{ padding: "0 0 20px" }}>The Last Of Us II</h1>
               <h4>
                 Cinco anos depois da jornada perigosa pelos Estados Unidos
@@ -42,9 +55,15 @@ export default function Product() {
                 repercussões físicas e emocionais devastadoras de suas ações.
               </h4>
             </div>
-            <div style={{ width: "200px", padding: "20px 0 0" }}>
-              <h3 style={{ padding: "0 0 5px" }}>R$ 200,99</h3>
-              <Button width="80%">Comprar</Button>
+            <div
+              style={{
+                width: "200px",
+                padding: "50px 0 0",
+                justifyContent: "flex-end",
+              }}
+            >
+              <h2 style={{ padding: "0 0 5px" }}>R$ 200,99</h2>
+              <Button width="100%">Comprar</Button>
             </div>
           </div>
         </FlexContainer>
