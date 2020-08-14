@@ -4,7 +4,7 @@ import Button from "../../../../styled/button";
 import ArrowDown from "../../../../assets/images/icons/arrow-down";
 import * as component from "./component";
 
-import importAll from "../../../../utils/importAll";
+import importAll from "../../../../functions/importAll";
 
 export default function Banner() {
   let bannerContainer = useRef();

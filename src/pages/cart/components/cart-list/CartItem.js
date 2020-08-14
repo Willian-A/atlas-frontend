@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
 import Button from "../../../../styled/button";
-import importAll from "../../../../utils/importAll";
+import importAll from "../../../../functions/importAll";
 
 export default function CartItem() {
   const [images, setImages] = useState([]);

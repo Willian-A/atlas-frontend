@@ -3,7 +3,7 @@ import React from "react";
 import * as component from "./component";
 import CategoryCard from "./CategoryCard";
 
-import importAll from "../../../../utils/importAll";
+import importAll from "../../../../functions/importAll";
 
 export default function Category() {
   let imagesJPEG = importAll(

@@ -4,7 +4,7 @@ import * as component from "./component";
 import Button from "../../../../styled/button";
 import FlexContainer from "../../../../styled/flex-container";
 
-import importAll from "../../../../utils/importAll";
+import importAll from "../../../../functions/importAll";
 
 export default function ProdCard() {
   const [images, setImages] = useState([]);

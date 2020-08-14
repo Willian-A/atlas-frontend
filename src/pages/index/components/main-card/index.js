@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import * as component from "./component";
 
-import importAll from "../../../../utils/importAll";
+import importAll from "../../../../functions/importAll";
 import api from "../../../../api";
 
 export default function MainCard() {
