@@ -1,7 +1,7 @@
 import React from "react";
 
-import GeralContainer from "../../atoms/page-margin";
-import Navbar from "../../organism/navbar";
+import GeralContainer from "../../styled/page-margin";
+import Navbar from "../../components/navbar";
 
 import Banner from "./components/banner";
 import MainCard from "./components/main-card";

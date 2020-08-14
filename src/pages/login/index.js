@@ -1,6 +1,6 @@
 import React from "react";
 
-import GeralContainer from "../../atoms/page-margin";
+import GeralContainer from "../../styled/page-margin";
 import LoginCard from "./components/login-card";
 
 export default function Login() {

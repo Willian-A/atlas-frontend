@@ -3,10 +3,10 @@ import { Link, useHistory } from "react-router-dom";
 
 import api from "../../../../service/api.js";
 
-import FlexContainer from "../../../../atoms/flex-container";
-import Input from "../../../../atoms/input";
-import Button from "../../../../atoms/button";
-import * as text from "../../../../atoms/text";
+import FlexContainer from "../../../../styled/flex-container";
+import Input from "../../../../styled/input";
+import Button from "../../../../styled/button";
+import * as text from "../../../../styled/text";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");

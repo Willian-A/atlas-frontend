@@ -1,7 +1,7 @@
 import React from "react";
 
-import Navbar from "../../organism/navbar";
-import GeralContainer from "../../atoms/page-margin";
+import Navbar from "../../components/navbar";
+import GeralContainer from "../../styled/page-margin";
 import CartList from "./components/cart-list";
 
 export default function Cart() {

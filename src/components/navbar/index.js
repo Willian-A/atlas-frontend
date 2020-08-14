@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import api from "../../service/api.js";
 
 import * as component from "./component";
-import MenuBar from "../../shared/images/icons/menu-bar";
+import MenuBar from "../../assets/images/icons/menu-bar";
 
 export default function Navbar() {
   const [logged, setLogged] = useState(false);

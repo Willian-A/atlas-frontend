@@ -2,7 +2,7 @@ import React from "react";
 
 import * as component from "./component";
 
-export default function CategoryBox(props) {
+export default function CategoryCard(props) {
   return (
     <component.CategoriesBox>
       <component.CategoriesCover src={props.img} />

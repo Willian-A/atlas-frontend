@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
-import Button from "../../../atoms/button";
+import Button from "../../../../styled/button";
 
 export default function Card(props) {
   return (

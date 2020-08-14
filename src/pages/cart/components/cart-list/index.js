@@ -2,8 +2,8 @@ import React from "react";
 
 import * as components from "./component";
 
-import FlexContainer from "../../../../atoms/flex-container";
-import Button from "../../../../atoms/button";
+import FlexContainer from "../../../../styled/flex-container";
+import Button from "../../../../styled/button";
 
 import CartResume from "./CartResume";
 import CartItem from "./CartItem";

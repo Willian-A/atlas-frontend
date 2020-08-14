@@ -4,10 +4,10 @@ import InputMask from "react-input-mask";
 
 import api from "../../../../service/api.js";
 
-import FlexContainer from "../../../../atoms/flex-container";
-import Input from "../../../../atoms/input";
-import Button from "../../../../atoms/button";
-import * as text from "../../../../atoms/text";
+import FlexContainer from "../../../../styled/flex-container";
+import Input from "../../../../styled/input";
+import Button from "../../../../styled/button";
+import * as text from "../../../../styled/text";
 
 export default function RegisterCard() {
   const [name, setName] = useState("");

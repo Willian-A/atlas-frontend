@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "../../../../molecules/index/product-card";
-import CardContainer from "./component";
+import Card from "./Card";
+import * as component from "./component";
 
 import importAll from "../../../../utils/importAll";
 import api from "../../../../service/api";
@@ -17,7 +17,7 @@ export default function MainCard() {
     }
     setImages(
       importAll(
-        require.context("../../../../shared/images/products", false, /\.(jpg)$/)
+        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
     selectProducts();
@@ -36,5 +36,5 @@ export default function MainCard() {
     });
   }
 
-  return <CardContainer>{loadCard()}</CardContainer>;
+  return <component.CardContainer>{loadCard()}</component.CardContainer>;
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
-import Button from "../../../../atoms/button";
-import FlexContainer from "../../../../atoms/flex-container";
+import Button from "../../../../styled/button";
+import FlexContainer from "../../../../styled/flex-container";
 
 import importAll from "../../../../utils/importAll";
 
@@ -12,7 +12,7 @@ export default function ProdCard() {
   useEffect(() => {
     setImages(
       importAll(
-        require.context("../../../../shared/images/products", false, /\.(jpg)$/)
+        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
   }, []);

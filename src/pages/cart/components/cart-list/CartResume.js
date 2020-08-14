@@ -1,7 +1,7 @@
 import React from "react";
 
-import FlexContainer from "../../../../atoms/flex-container";
-import * as text from "../../../../atoms/text";
+import FlexContainer from "../../../../styled/flex-container";
+import * as text from "../../../../styled/text";
 
 export default function CartResume(props) {
   return (

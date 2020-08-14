@@ -1,6 +1,6 @@
 import React from "react";
 
-import GeralContainer from "../../atoms/page-margin";
+import GeralContainer from "../../styled/page-margin";
 
 export default function GeralContainer(props) {
   return <GeralContainer>{props.child}</GeralContainer>;

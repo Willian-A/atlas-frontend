@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import Button from "../../../../atoms/button";
+import Button from "../../../../styled/button";
 import importAll from "../../../../utils/importAll";
 
 export default function CartItem() {
@@ -10,7 +10,7 @@ export default function CartItem() {
   useEffect(() => {
     setImages(
       importAll(
-        require.context("../../../../shared/images/products", false, /\.(jpg)$/)
+        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
   }, []);
