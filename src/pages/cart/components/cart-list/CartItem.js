@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import Button from "../../../atoms/button";
-import importAll from "../../../utils/importAll";
+import Button from "../../../../atoms/button";
+import importAll from "../../../../utils/importAll";
 
-export default function CartCard() {
+export default function CartItem() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     setImages(
       importAll(
-        require.context("../../../shared/images/products", false, /\.(jpg)$/)
+        require.context("../../../../shared/images/products", false, /\.(jpg)$/)
       )
     );
   }, []);

@@ -1,10 +1,12 @@
 import React from "react";
 
 import * as components from "./component";
-import CartCard from "../../../../molecules/cart/product-card";
-import CartResume from "../../../../molecules/cart/resume";
-import Button from "../../../../atoms/button";
+
 import FlexContainer from "../../../../atoms/flex-container";
+import Button from "../../../../atoms/button";
+
+import CartResume from "./CartResume";
+import CartItem from "./CartItem";
 
 export default function CartList() {
   return (
@@ -15,9 +17,9 @@ export default function CartList() {
       </components.PageNameBox>
       <FlexContainer padding="0" shadow="0" direction="row">
         <components.CartListContainer>
-          <CartCard />
-          <CartCard />
-          <CartCard />
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </components.CartListContainer>
         <components.ResumeContainer>
           <h1>Resumo:</h1>
