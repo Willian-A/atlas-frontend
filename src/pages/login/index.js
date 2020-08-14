@@ -1,7 +1,7 @@
 import React from "react";
 
 import GeralContainer from "../../atoms/page-margin";
-import LoginCard from "../../organism/login";
+import LoginCard from "./components/login-card";
 
 export default function Login() {
   return (

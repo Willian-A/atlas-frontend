@@ -1,10 +1,10 @@
 import React from "react";
 
 import * as components from "./component";
-import CartCard from "../../../molecules/cart/product-card";
-import CartResume from "../../../molecules/cart/resume";
-import Button from "../../../atoms/button";
-import FlexContainer from "../../../atoms/flex-container";
+import CartCard from "../../../../molecules/cart/product-card";
+import CartResume from "../../../../molecules/cart/resume";
+import Button from "../../../../atoms/button";
+import FlexContainer from "../../../../atoms/flex-container";
 
 export default function CartList() {
   return (

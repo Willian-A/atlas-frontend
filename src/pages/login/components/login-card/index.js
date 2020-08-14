@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import api from "../../service/api.js";
+import api from "../../../../service/api.js";
 
-import FlexContainer from "../../atoms/flex-container";
-import Input from "../../atoms/input";
-import Button from "../../atoms/button";
-import * as text from "../../atoms/text";
+import FlexContainer from "../../../../atoms/flex-container";
+import Input from "../../../../atoms/input";
+import Button from "../../../../atoms/button";
+import * as text from "../../../../atoms/text";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");

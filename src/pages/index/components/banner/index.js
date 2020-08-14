@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Button from "../../../atoms/button";
-import ArrowDown from "../../../shared/images/icons/arrow-down";
+import Button from "../../../../atoms/button";
+import ArrowDown from "../../../../shared/images/icons/arrow-down";
 import * as component from "./component";
 
-import importAll from "../../../utils/importAll";
+import importAll from "../../../../utils/importAll";
 
 export default function Banner() {
   let bannerContainer = useRef();
@@ -15,7 +15,7 @@ export default function Banner() {
   }, 4000);
 
   let imagesJPEG = importAll(
-    require.context("../../../shared/images/banner", false, /\.(jpg)$/)
+    require.context("../../../../shared/images/banner", false, /\.(jpg)$/)
   );
 
   function moveUp() {

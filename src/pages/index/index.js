@@ -1,10 +1,11 @@
 import React from "react";
 
-import Navbar from "../../organism/navbar";
-import Banner from "../../organism/index/banner";
-import MainCard from "../../organism/index/main-card";
-import Category from "../../organism/index/category";
 import GeralContainer from "../../atoms/page-margin";
+import Navbar from "../../organism/navbar";
+
+import Banner from "./components/banner";
+import MainCard from "./components/main-card";
+import Category from "./components/category";
 
 export default function Index() {
   return (
