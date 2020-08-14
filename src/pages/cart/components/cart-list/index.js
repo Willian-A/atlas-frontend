@@ -2,7 +2,6 @@ import React from "react";
 
 import * as components from "./component";
 
-import FlexContainer from "../../../../styled/flex-container";
 import Button from "../../../../styled/button";
 
 import CartResume from "./CartResume";
@@ -15,8 +14,10 @@ export default function CartList() {
         <h1>Seu Carrinho</h1>
         <h5>1 itens</h5>
       </components.PageNameBox>
-      <FlexContainer padding="0" shadow="0" direction="row">
+      <components.CartContainer>
         <components.CartListContainer>
+          <CartItem />
+          <CartItem />
           <CartItem />
           <CartItem />
           <CartItem />
@@ -24,11 +25,9 @@ export default function CartList() {
         <components.ResumeContainer>
           <h1>Resumo:</h1>
           <CartResume value="779.97" />
-          <Button width="100%" margin="10px 0 0">
-            Finalizar
-          </Button>
+          <Button>Finalizar</Button>
         </components.ResumeContainer>
-      </FlexContainer>
+      </components.CartContainer>
     </div>
   );
 }

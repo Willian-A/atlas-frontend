@@ -18,24 +18,11 @@ export default function ProdCard() {
   }, []);
 
   return (
-    <FlexContainer
-      width="72%"
-      direction="row"
-      shadow=""
-      padding="30px"
-      margin="0 auto"
-    >
+    <component.ProductContainer>
       <component.ProdIMG src={images["thelastofus2.jpg"]} alt="" />
-      <FlexContainer
-        width="550px"
-        height="unset"
-        padding="0"
-        margin="0 auto"
-        direction="column"
-        shadow="0"
-      >
-        <component.ProdBio>
-          <h1 style={{ padding: "0 0 20px" }}>The Last Of Us II</h1>
+      <component.ProdBioContainer>
+        <component.ProdBioBox>
+          <h1>Tom Clancy's Rainbow Six Siege</h1>
           <h4>
             Cinco anos depois da jornada perigosa pelos Estados Unidos
             pós-pandêmicos, Ellie e Joel se estabelecem em Jackson, Wyoming. A
@@ -45,28 +32,23 @@ export default function ProdCard() {
             interrompe essa paz, Ellie embarca em uma jornada implacável para
             fazer justiça e encontrar uma solução. Enquanto vai atrás de cada um
             dos responsáveis, ela se confronta com as repercussões físicas e
-            emocionais devastadoras de suas ações.
+            emocionais devastadoras de suas ações. Cinco anos depois da jornada
+            perigosa pelos Estados Unidos pós-pandêmicos, Ellie e Joel se
+            estabelecem em Jackson, Wyoming. A vida em uma próspera comunidade
+            de sobreviventes lhes trouxe paz e estabilidade, apesar da ameaça
+            constante dos infectados e de outros sobreviventes mais
+            desesperados. Quando um evento violento interrompe essa paz, Ellie
+            embarca em uma jornada implacável para fazer justiça e encontrar uma
+            solução. Enquanto vai atrás de cada um dos responsáveis, ela se
+            confronta com as repercussões físicas e emocionais devastadoras de
+            suas ações.
           </h4>
-        </component.ProdBio>
-        <FlexContainer
-          width="fit-content"
-          padding="50px 0 0"
-          margin="0 0 0 auto"
-          justify="flex-end"
-          shadow="0"
-        >
-          <h2
-            style={{
-              padding: "0 0 5px",
-              width: "fit-content",
-              margin: "0 0 0 auto",
-            }}
-          >
-            R$ 200,99
-          </h2>
-          <Button width="190px">Comprar</Button>
-        </FlexContainer>
-      </FlexContainer>
-    </FlexContainer>
+        </component.ProdBioBox>
+        <component.ProdResume>
+          <h3>R$ 200,99</h3>
+          <Button width="150px">Comprar</Button>
+        </component.ProdResume>
+      </component.ProdBioContainer>
+    </component.ProductContainer>
   );
 }
