@@ -21,6 +21,7 @@ export default function CartList() {
           <CartItem />
           <CartItem />
           <CartItem />
+          <CartItem />
         </components.CartListContainer>
         <components.ResumeContainer>
           <h1>Resumo:</h1>

@@ -30,10 +30,11 @@ const CartListContainer = styled.div`
 `;
 
 const ResumeContainer = styled.div`
-  position: sticky;
+  position: fixed;
+  top: unset;
   height: fit-content;
-  background-color: #fff;
   padding: 15px 18px;
+  background-color: #fff;
   box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.6);
   z-index: 2;
 
@@ -44,8 +45,8 @@ const ResumeContainer = styled.div`
   }
 
   button {
-    width: 50%;
-    margin: 0 25%;
+    width: 100%;
+    margin-top: 5px;
   }
 
   @media (min-width: 768px) {
@@ -55,7 +56,7 @@ const ResumeContainer = styled.div`
   @media (min-width: 1024px) {
     width: 40%;
     flex-direction: row;
-    margin: 0 0 0 auto;
+    position: relative;
     padding: 15px 25px;
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
@@ -83,7 +84,7 @@ const CardContainer = styled.div`
   }
 
   &:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 200px;
   }
 
   @media (min-width: 1024px) {

@@ -17,7 +17,7 @@ export default function CartItem() {
 
   return (
     <components.CardContainer>
-      <img src={images["cyberpunk2077.jpg"]} />
+      <img src={images["cyberpunk2077.jpg"]} alt="" />
       <components.CardBio>
         <h2>Cyberpunk 2077</h2>
         <h3>R$ 259.99</h3>

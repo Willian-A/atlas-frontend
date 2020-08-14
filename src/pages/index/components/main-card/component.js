@@ -88,6 +88,7 @@ const CardBio = styled.div`
   padding: 10px 20px 15px 20px;
 
   h4 {
+    color: black;
     font-size: 15px;
     margin-bottom: 5px;
     white-space: nowrap;
@@ -96,6 +97,7 @@ const CardBio = styled.div`
   }
 
   h3 {
+    color: black;
     font-size: 18px;
     margin-bottom: 15px;
   }

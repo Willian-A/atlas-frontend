@@ -31,6 +31,7 @@ export default function MainCard() {
           cover={images[value.image + ".jpg"]}
           name={value.name}
           price={value.price}
+          id_product={value.id_product}
         />
       );
     });

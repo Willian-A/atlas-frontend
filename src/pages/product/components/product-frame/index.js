@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
 import Button from "../../../../styled/button";
-import FlexContainer from "../../../../styled/flex-container";
 
 import importAll from "../../../../functions/importAll";
+import api from "../../../../api";
 
-export default function ProdCard() {
+export default function ProdCard(props) {
   const [images, setImages] = useState([]);
+  const [result, setResult] = useState([]);
 
   useEffect(() => {
     setImages(
@@ -15,37 +16,28 @@ export default function ProdCard() {
         require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
-  }, []);
+    async function selectProduct() {
+      const response = await api.post("/product", {
+        productID: props.id,
+      });
+      setResult(response.data.result[0]);
+    }
+    selectProduct();
+  }, [props.id]);
 
   return (
     <component.ProductContainer>
-      <component.ProdIMG src={images["thelastofus2.jpg"]} alt="" />
+      <component.ProdIMG
+        src={images[`${result.image}.jpg`]}
+        alt={result.name}
+      />
       <component.ProdBioContainer>
         <component.ProdBioBox>
-          <h1>Tom Clancy's Rainbow Six Siege</h1>
-          <h4>
-            Cinco anos depois da jornada perigosa pelos Estados Unidos
-            pós-pandêmicos, Ellie e Joel se estabelecem em Jackson, Wyoming. A
-            vida em uma próspera comunidade de sobreviventes lhes trouxe paz e
-            estabilidade, apesar da ameaça constante dos infectados e de outros
-            sobreviventes mais desesperados. Quando um evento violento
-            interrompe essa paz, Ellie embarca em uma jornada implacável para
-            fazer justiça e encontrar uma solução. Enquanto vai atrás de cada um
-            dos responsáveis, ela se confronta com as repercussões físicas e
-            emocionais devastadoras de suas ações. Cinco anos depois da jornada
-            perigosa pelos Estados Unidos pós-pandêmicos, Ellie e Joel se
-            estabelecem em Jackson, Wyoming. A vida em uma próspera comunidade
-            de sobreviventes lhes trouxe paz e estabilidade, apesar da ameaça
-            constante dos infectados e de outros sobreviventes mais
-            desesperados. Quando um evento violento interrompe essa paz, Ellie
-            embarca em uma jornada implacável para fazer justiça e encontrar uma
-            solução. Enquanto vai atrás de cada um dos responsáveis, ela se
-            confronta com as repercussões físicas e emocionais devastadoras de
-            suas ações.
-          </h4>
+          <h1>{result.name}</h1>
+          <h4>{result.description}</h4>
         </component.ProdBioBox>
         <component.ProdResume>
-          <h3>R$ 200,99</h3>
+          <h3>R$ {result.price}</h3>
           <Button width="150px">Comprar</Button>
         </component.ProdResume>
       </component.ProdBioContainer>
