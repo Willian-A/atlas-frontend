@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import api from "../../../../service/api.js";
+import api from "../../../../api";
 
 import FlexContainer from "../../../../styled/flex-container";
 import Input from "../../../../styled/input";
@@ -50,6 +50,7 @@ export default function LoginCard() {
         <Input
           type="password"
           placeholder="Senha"
+          minLength="8"
           required
           onChange={(e) => setPass(e.target.value)}
         />

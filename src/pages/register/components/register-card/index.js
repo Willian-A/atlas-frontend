@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import InputMask from "react-input-mask";
 
-import api from "../../../../service/api.js";
+import api from "../../../../api";
 
 import FlexContainer from "../../../../styled/flex-container";
 import Input from "../../../../styled/input";

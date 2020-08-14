@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import api from "../../service/api.js";
+import api from "../../api";
 
 import * as component from "./component";
 import MenuBar from "../../assets/images/icons/menu-bar";

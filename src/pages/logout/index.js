@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-import api from "../../service/api.js";
+import api from "../../api";
 
 export default function Logout() {
   const history = useHistory();

@@ -4,7 +4,7 @@ import Card from "./Card";
 import * as component from "./component";
 
 import importAll from "../../../../utils/importAll";
-import api from "../../../../service/api";
+import api from "../../../../api";
 
 export default function MainCard() {
   const [result, setResult] = useState([]);
