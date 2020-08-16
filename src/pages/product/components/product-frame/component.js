@@ -25,6 +25,8 @@ const ProdIMG = styled.img`
 `;
 
 const ProdBioContainer = styled.div`
+  padding: 0 5%;
+
   @media (min-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -33,18 +35,19 @@ const ProdBioContainer = styled.div`
 `;
 
 const ProdBioBox = styled.div`
-  padding: 0 5% 50px;
   height: 100%;
+
   h1 {
-    font-size: 22px;
-    margin: 25px 0;
+    font-size: 1.5em;
+    margin: 25px 0 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   h4 {
-    font-size: 12px;
+    color: #3f3f3f;
+    font-size: 0.9em;
   }
 
   @media (min-width: 1024px) {
@@ -53,12 +56,10 @@ const ProdBioBox = styled.div`
     box-shadow: none;
 
     h1 {
-      font-size: 25px;
       margin: 0 0 10px;
     }
 
     h4 {
-      font-size: 13px;
       display: -webkit-box;
       -webkit-line-clamp: 12;
       -webkit-box-orient: vertical;
@@ -69,7 +70,10 @@ const ProdBioBox = styled.div`
 `;
 
 const ProdResume = styled.div`
+  margin: 20px 0;
+
   h3 {
+    font-size: 1.4em;
     margin-bottom: 5px;
   }
 `;

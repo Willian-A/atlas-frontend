@@ -38,7 +38,7 @@ export default function ProdCard(props) {
         </component.ProdBioBox>
         <component.ProdResume>
           <h3>R$ {result.price}</h3>
-          <Button width="150px">Comprar</Button>
+          <Button width="200px">Comprar</Button>
         </component.ProdResume>
       </component.ProdBioContainer>
     </component.ProductContainer>

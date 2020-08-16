@@ -8,6 +8,10 @@ import MenuBar from "../../assets/images/icons/menu-bar";
 
 export default function Navbar() {
   const [logged, setLogged] = useState(false);
+  const [config, setConfig] = useState({
+    width: "0",
+    state: false,
+  });
 
   async function getLoginStatus() {
     try {
@@ -15,6 +19,20 @@ export default function Navbar() {
       setLogged(response.data);
     } catch (error) {
       console.log(error.response.data);
+    }
+  }
+
+  function MobileMenu() {
+    if (config.state === false) {
+      setConfig({
+        width: "100",
+        state: true,
+      });
+    } else {
+      setConfig({
+        width: "0",
+        state: false,
+      });
     }
   }
 
@@ -43,27 +61,30 @@ export default function Navbar() {
   }, []);
 
   return (
-    <component.NavbarContainer>
-      <ul>
-        <div
-          className="icon"
-          onClick={() => {
-            console.log("CLICO K K K ");
-          }}
-        >
-          <MenuBar />
-        </div>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/carrinho">Carrinho</Link>
-        </li>
-        <li>
-          <a href="/products">Produtos</a>
-        </li>
-      </ul>
-      <ul>{UserButtons()}</ul>
+    <component.NavbarContainer width={config.width} display={config.display}>
+      <div
+        className="icon"
+        onClick={() => {
+          MobileMenu();
+        }}
+      >
+        <MenuBar />
+        <h3 style={{ margin: "5px " }}>Menu</h3>{" "}
+      </div>
+      <div className="pages">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/carrinho">Carrinho</Link>
+          </li>
+          <li>
+            <a href="/products">Produtos</a>
+          </li>
+        </ul>
+        <ul>{UserButtons()}</ul>
+      </div>
     </component.NavbarContainer>
   );
 }
