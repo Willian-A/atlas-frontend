@@ -41,6 +41,7 @@ const NavbarContainer = styled.div`
 
   div.icon {
     display: flex;
+    width: fit-content;
     padding: 1.2em;
     transition: 500ms;
 

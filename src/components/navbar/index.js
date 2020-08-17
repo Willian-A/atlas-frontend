@@ -58,6 +58,18 @@ export default function Navbar() {
 
   useEffect(() => {
     getLoginStatus();
+    document.addEventListener(
+      "mousedown",
+      (e) => {
+        if (e.path[1].id !== "menu") {
+          setConfig({
+            width: "0",
+            state: false,
+          });
+        }
+      },
+      false
+    );
   }, []);
 
   return (
@@ -68,10 +80,10 @@ export default function Navbar() {
           MobileMenu();
         }}
       >
-        <MenuBar />
+        <MenuBar id="menu" />
         <h3 style={{ margin: "5px " }}>Menu</h3>{" "}
       </div>
-      <div className="pages">
+      <div id="menu" className="pages">
         <ul>
           <li>
             <Link to="/">Home</Link>
