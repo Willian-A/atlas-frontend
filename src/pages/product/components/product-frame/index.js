@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import * as component from "./component";
 import Button from "../../../../styled/button";
@@ -9,6 +10,7 @@ import api from "../../../../api";
 export default function ProdCard(props) {
   const [images, setImages] = useState([]);
   const [result, setResult] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     setImages(
@@ -16,14 +18,27 @@ export default function ProdCard(props) {
         require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
+
     async function selectProduct() {
       const response = await api.post("/product", {
         productID: props.id,
       });
       setResult(response.data.result[0]);
     }
+
     selectProduct();
   }, [props.id]);
+
+  async function addOnCart() {
+    try {
+      await api.post("/cart", {
+        productID: props.id,
+      });
+      history.push("/carrinho");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <component.ProductContainer>
@@ -38,7 +53,14 @@ export default function ProdCard(props) {
         </component.ProdBioBox>
         <component.ProdResume>
           <h3>R$ {result.price}</h3>
-          <Button width="200px">Comprar</Button>
+          <Button
+            width="200px"
+            onClick={() => {
+              addOnCart();
+            }}
+          >
+            Comprar
+          </Button>
         </component.ProdResume>
       </component.ProdBioContainer>
     </component.ProductContainer>

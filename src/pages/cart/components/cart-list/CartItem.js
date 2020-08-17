@@ -4,7 +4,7 @@ import * as components from "./component";
 import Button from "../../../../styled/button";
 import importAll from "../../../../functions/importAll";
 
-export default function CartItem() {
+export default function CartItem(props) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -13,20 +13,20 @@ export default function CartItem() {
         require.context("../../../../assets/images/products", false, /\.(jpg)$/)
       )
     );
-  }, []);
+  }, [props]);
 
   return (
     <components.CardContainer>
-      <img src={images["cyberpunk2077.jpg"]} alt="" />
+      <img src={images[`${props.image}.jpg`]} alt="" />
       <components.CardBio>
-        <h2>Cyberpunk 2077</h2>
-        <h3>R$ 259.99</h3>
+        <h2>{props.name}</h2>
+        <h3>R$ {props.price}</h3>
         <h5>R$ 259.99</h5>
         <components.CardQty>
           <Button width="55%" fontSize="25px" padding="0 10px">
             +
           </Button>
-          <h4>1</h4>
+          <h4>{props.qty}</h4>
           <Button width="55%" fontSize="25px" padding="0 10px">
             -
           </Button>
