@@ -28,7 +28,7 @@ export default function CartList() {
     <div>
       <components.PageNameBox>
         <h1>Seu Carrinho</h1>
-        <h5>1 itens</h5>
+        <h5>{carResult.length} itens</h5>
       </components.PageNameBox>
       <components.CartContainer>
         <components.CartListContainer>
@@ -36,6 +36,7 @@ export default function CartList() {
             return (
               <CartItem
                 key={value.id_product}
+                id={value.id_product}
                 image={value.image}
                 name={value.name}
                 qty={value.quantity}
