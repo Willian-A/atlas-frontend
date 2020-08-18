@@ -17,10 +17,11 @@ export default function CartItem(props) {
     );
   }, [props]);
 
-  async function addOnCart() {
+  async function productQty(action) {
     try {
       await api.post("/cart", {
         productID: props.id,
+        action: action,
       });
       window.location.reload();
     } catch (error) {
@@ -33,15 +34,15 @@ export default function CartItem(props) {
       <img src={images[`${props.image}.jpg`]} alt="" />
       <components.CardBio>
         <h2>{props.name}</h2>
-        <h3>R$ {props.price}</h3>
-        <h5>R$ 259.99</h5>
+        <h3>R$ {props.price * props.qty}</h3>
+        <h5>R$ {props.price}</h5>
         <components.CardQty>
           <Button
             width="55%"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
-              addOnCart();
+              productQty("add");
             }}
           >
             +
@@ -52,7 +53,7 @@ export default function CartItem(props) {
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
-              addOnCart();
+              productQty("remove");
             }}
           >
             -

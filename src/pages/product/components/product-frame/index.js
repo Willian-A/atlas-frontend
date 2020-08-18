@@ -33,6 +33,7 @@ export default function ProdCard(props) {
     try {
       await api.post("/cart", {
         productID: props.id,
+        action: "add",
       });
       history.push("/carrinho");
     } catch (error) {
