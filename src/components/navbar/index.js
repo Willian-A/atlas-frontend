@@ -8,10 +8,7 @@ import MenuBar from "../../assets/images/icons/menu-bar";
 
 export default function Navbar() {
   const [logged, setLogged] = useState(false);
-  const [config, setConfig] = useState({
-    width: "0",
-    state: false,
-  });
+  const [open, setOpen] = useState(false);
 
   async function getLoginStatus() {
     try {
@@ -19,20 +16,6 @@ export default function Navbar() {
       setLogged(response.data);
     } catch (error) {
       console.log(error.response.data);
-    }
-  }
-
-  function MobileMenu() {
-    if (config.state === false) {
-      setConfig({
-        width: "100",
-        state: true,
-      });
-    } else {
-      setConfig({
-        width: "0",
-        state: false,
-      });
     }
   }
 
@@ -58,14 +41,12 @@ export default function Navbar() {
 
   useEffect(() => {
     getLoginStatus();
+
     document.addEventListener(
       "mousedown",
       (e) => {
-        if (e.path[1].id !== "menu") {
-          setConfig({
-            width: "0",
-            state: false,
-          });
+        if (!document.getElementById("menu").contains(e.target)) {
+          setOpen(false);
         }
       },
       false
@@ -73,14 +54,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <component.NavbarContainer width={config.width} display={config.display}>
+    <component.NavbarContainer open={open}>
       <div
         className="icon"
         onClick={() => {
-          MobileMenu();
+          setOpen(!open);
         }}
       >
-        <MenuBar id="menu" />
+        <MenuBar />
         <h3 style={{ margin: "5px " }}>Menu</h3>{" "}
       </div>
       <div id="menu" className="pages">
