@@ -9,14 +9,11 @@ import importAll from "../../../../functions/importAll";
 export default function Banner() {
   let bannerContainer = useRef();
   const [bannerConfig, setBannerConfig] = useState({ top: 0, index: 1 });
+  const [images, setImages] = useState([]);
 
   let bannerTimer = setInterval(() => {
     moveUp();
   }, 4000);
-
-  let imagesJPEG = importAll(
-    require.context("../../../../assets/images/banner", false, /\.(jpg)$/)
-  );
 
   function moveUp() {
     clearInterval(bannerTimer);
@@ -36,17 +33,15 @@ export default function Banner() {
   }
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      bannerContainer.current = {
-        bannerCounter: document.getElementById("banner-main-container")
-          .childElementCount,
-        slideContainer: document.getElementById("banner-slide-container"),
-      };
-    }
-
-    return function cleanup() {
-      mounted = false;
+    setImages(
+      importAll(
+        require.context("../../../../assets/images/banner", false, /\.(jpg)$/)
+      )
+    );
+    bannerContainer.current = {
+      bannerCounter: document.getElementById("banner-main-container")
+        .childElementCount,
+      slideContainer: document.getElementById("banner-slide-container"),
     };
   }, []);
 
@@ -57,7 +52,7 @@ export default function Banner() {
           id="banner-slide-container"
           top={`-${bannerConfig.top}px`}
         >
-          <img src={Object.values(imagesJPEG)[0]} alt="FIFA 20" />
+          <img src={Object.values(images)[0]} alt="FIFA 20" />
           <component.BannerDescBox>
             <component.BannerDesc>
               <h2>FIFA 20</h2>
@@ -84,7 +79,7 @@ export default function Banner() {
           </component.BannerDescBox>
         </component.BannerSlideBox>
         <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <img src={Object.values(imagesJPEG)[1]} alt="Cyberpunk 2077" />
+          <img src={Object.values(images)[1]} alt="Cyberpunk 2077" />
           <component.BannerDescBox>
             <component.BannerDesc>
               <h2>Cyberpunk 2077</h2>
@@ -112,7 +107,7 @@ export default function Banner() {
           </component.BannerDescBox>
         </component.BannerSlideBox>
         <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <img src={Object.values(imagesJPEG)[2]} alt="NBA 2K20" />
+          <img src={Object.values(images)[2]} alt="NBA 2K20" />
           <component.BannerDescBox>
             <component.BannerDesc>
               <h2>NBA 2K20</h2>
