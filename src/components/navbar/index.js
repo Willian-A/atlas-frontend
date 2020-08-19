@@ -40,17 +40,24 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    getLoginStatus();
+    let mounted = true;
 
+    getLoginStatus();
     document.addEventListener(
       "mousedown",
       (e) => {
-        if (!document.getElementById("menu").contains(e.target)) {
-          setOpen(false);
+        if (mounted) {
+          if (!document.getElementById("menu").contains(e.target)) {
+            setOpen(false);
+          }
         }
       },
       false
     );
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   return (

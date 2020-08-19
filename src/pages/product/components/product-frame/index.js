@@ -13,20 +13,31 @@ export default function ProdCard(props) {
   const history = useHistory();
 
   useEffect(() => {
-    setImages(
-      importAll(
-        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
-      )
-    );
+    let mounted = true;
+    if (mounted) {
+      setImages(
+        importAll(
+          require.context(
+            "../../../../assets/images/products",
+            false,
+            /\.(jpg)$/
+          )
+        )
+      );
 
-    async function selectProduct() {
-      const response = await api.post("/product", {
-        productID: props.id,
-      });
-      setResult(response.data.result[0]);
+      async function selectProduct() {
+        const response = await api.post("/product", {
+          productID: props.id,
+        });
+        setResult(response.data.result[0]);
+      }
+
+      selectProduct();
     }
 
-    selectProduct();
+    return function cleanup() {
+      mounted = false;
+    };
   }, [props.id]);
 
   async function addOnCart() {

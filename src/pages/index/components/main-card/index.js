@@ -11,16 +11,27 @@ export default function MainCard() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    async function selectProducts() {
-      const response = await api.get(`/product${5}`);
-      setResult(response.data.result);
+    let mounted = true;
+    if (mounted) {
+      async function selectProducts() {
+        const response = await api.get(`/product${5}`);
+        setResult(response.data.result);
+      }
+      setImages(
+        importAll(
+          require.context(
+            "../../../../assets/images/products",
+            false,
+            /\.(jpg)$/
+          )
+        )
+      );
+      selectProducts();
     }
-    setImages(
-      importAll(
-        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
-      )
-    );
-    selectProducts();
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   function loadCard() {

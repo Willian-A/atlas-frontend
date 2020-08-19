@@ -11,17 +11,25 @@ import CartItem from "./CartItem";
 export default function CartList() {
   const [carResult, setCartResult] = useState([]);
   const [cartTotal, setCartTotal] = useState("0");
+
   useEffect(() => {
-    async function getCart() {
-      try {
-        const response = await api.get("/cart");
-        setCartResult(response.data.newResult);
-        setCartTotal(response.data.totalPrice);
-      } catch (error) {
-        console.log(error);
+    let mounted = true;
+    if (mounted) {
+      async function getCart() {
+        try {
+          const response = await api.get("/cart");
+          setCartResult(response.data.newResult);
+          setCartTotal(response.data.totalPrice);
+        } catch (error) {
+          console.log(error);
+        }
       }
+      getCart();
     }
-    getCart();
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   return (

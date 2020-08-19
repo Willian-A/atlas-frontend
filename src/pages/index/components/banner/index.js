@@ -36,10 +36,17 @@ export default function Banner() {
   }
 
   useEffect(() => {
-    bannerContainer.current = {
-      bannerCounter: document.getElementById("banner-main-container")
-        .childElementCount,
-      slideContainer: document.getElementById("banner-slide-container"),
+    let mounted = true;
+    if (mounted) {
+      bannerContainer.current = {
+        bannerCounter: document.getElementById("banner-main-container")
+          .childElementCount,
+        slideContainer: document.getElementById("banner-slide-container"),
+      };
+    }
+
+    return function cleanup() {
+      mounted = false;
     };
   }, []);
 

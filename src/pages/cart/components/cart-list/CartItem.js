@@ -10,11 +10,22 @@ export default function CartItem(props) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    setImages(
-      importAll(
-        require.context("../../../../assets/images/products", false, /\.(jpg)$/)
-      )
-    );
+    let mounted = true;
+    if (mounted) {
+      setImages(
+        importAll(
+          require.context(
+            "../../../../assets/images/products",
+            false,
+            /\.(jpg)$/
+          )
+        )
+      );
+    }
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, [props]);
 
   async function productQty(action) {
