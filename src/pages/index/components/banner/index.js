@@ -7,16 +7,11 @@ import * as component from "./component";
 import importAll from "../../../../functions/importAll";
 
 export default function Banner() {
-  let bannerContainer = useRef();
+  const bannerContainer = useRef();
   const [bannerConfig, setBannerConfig] = useState({ top: 0, index: 1 });
   const [images, setImages] = useState([]);
 
-  let bannerTimer = setInterval(() => {
-    moveUp();
-  }, 4000);
-
   function moveUp() {
-    clearInterval(bannerTimer);
     if (bannerConfig.index >= bannerContainer.current.bannerCounter) {
       setBannerConfig({
         top: 0,
@@ -31,6 +26,16 @@ export default function Banner() {
       });
     }
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      moveUp();
+    }, 3500);
+
+    return () => clearInterval(interval);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bannerConfig]);
 
   useEffect(() => {
     setImages(
