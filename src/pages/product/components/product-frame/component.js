@@ -70,7 +70,7 @@ const ProdBioBox = styled.div`
 `;
 
 const ProdResume = styled.div`
-  margin: 20px 0;
+  margin: 20px 0 0;
 
   h3 {
     font-size: 1.4em;
