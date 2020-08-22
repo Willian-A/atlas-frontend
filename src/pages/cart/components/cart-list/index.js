@@ -11,6 +11,7 @@ import CartItem from "./CartItem";
 export default function CartList() {
   const [carResult, setCartResult] = useState([]);
   const [cartTotal, setCartTotal] = useState("0");
+  const [error, setError] = useState({ error: false, message: null });
 
   useEffect(() => {
     let mounted = true;
@@ -21,7 +22,7 @@ export default function CartList() {
           setCartResult(response.data.newResult);
           setCartTotal(response.data.totalPrice);
         } catch (error) {
-          console.log(error);
+          setError({ error: true, message: error.response.data });
         }
       }
       getCart();
@@ -32,33 +33,43 @@ export default function CartList() {
     };
   }, []);
 
-  return (
-    <div>
-      <components.PageNameBox>
-        <h1>Seu Carrinho</h1>
-        <h5>{carResult.length} itens</h5>
-      </components.PageNameBox>
-      <components.CartContainer>
-        <components.CartListContainer>
-          {carResult.map((value) => {
-            return (
-              <CartItem
-                key={value.id_product}
-                id={value.id_product}
-                image={value.image}
-                name={value.name}
-                qty={value.quantity}
-                price={value.price}
-              />
-            );
-          })}
-        </components.CartListContainer>
-        <components.ResumeContainer>
-          <h1>Resumo:</h1>
-          <CartResume value={cartTotal} />
-          <Button>Finalizar</Button>
-        </components.ResumeContainer>
-      </components.CartContainer>
-    </div>
-  );
+  if (!error.error) {
+    return (
+      <div>
+        <components.PageNameBox>
+          <h1>Seu Carrinho</h1>
+          <h5>{carResult.length} itens</h5>
+        </components.PageNameBox>
+        <components.CartContainer>
+          <components.CartListContainer>
+            {carResult.map((value) => {
+              return (
+                <CartItem
+                  key={value.id_product}
+                  id={value.id_product}
+                  image={value.image}
+                  name={value.name}
+                  qty={value.quantity}
+                  price={value.price}
+                />
+              );
+            })}
+          </components.CartListContainer>
+          <components.ResumeContainer>
+            <h1>Resumo:</h1>
+            <CartResume value={cartTotal} />
+            <Button>Finalizar</Button>
+          </components.ResumeContainer>
+        </components.CartContainer>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <h1 style={{ margin: "10% auto", width: "fit-content" }}>
+          {error.message}
+        </h1>
+      </>
+    );
+  }
 }

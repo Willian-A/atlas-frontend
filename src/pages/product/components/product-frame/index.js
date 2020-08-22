@@ -10,6 +10,8 @@ import api from "../../../../api";
 export default function ProdCard(props) {
   const [images, setImages] = useState([]);
   const [result, setResult] = useState([]);
+  const [error, setError] = useState({ error: false, message: null });
+
   const history = useHistory();
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function ProdCard(props) {
       });
       history.push("/carrinho");
     } catch (error) {
-      console.log(error);
+      setError({ error: true, message: error.response.data });
     }
   }
 
@@ -64,6 +66,7 @@ export default function ProdCard(props) {
           <h4>{result.description}</h4>
         </component.ProdBioBox>
         <component.ProdResume>
+          <h4 style={{ color: "red" }}>{error.message}</h4>
           <h3>R$ {result.price}</h3>
           <Button
             width="200px"
