@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const ProductContainer = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
 
@@ -16,7 +15,7 @@ const ProductContainer = styled.div`
 
 const ProdIMG = styled.img`
   width: 100%;
-  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
 
   @media (min-width: 1024px) {
     width: 30%;
@@ -48,6 +47,7 @@ const ProdBioBox = styled.div`
   h4 {
     color: #3f3f3f;
     font-size: 0.9em;
+    -webkit-line-clamp: 30;
   }
 
   @media (min-width: 1024px) {
@@ -70,11 +70,15 @@ const ProdBioBox = styled.div`
 `;
 
 const ProdResume = styled.div`
-  margin: 20px 0 0;
+  margin: 20px 0 25px;
 
   h3 {
     font-size: 1.4em;
     margin-bottom: 5px;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 20px 0 0;
   }
 `;
 
