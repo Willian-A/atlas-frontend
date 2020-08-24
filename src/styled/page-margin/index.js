@@ -4,23 +4,19 @@ const GeralContainer = styled.div`
   height: fit-content;
 
   @media (min-width: 1024px) {
-    padding: 0 2%;
-    padding-top: 15px;
+    padding: 15px 2% 0;
   }
 
   @media (min-width: 1440px) {
-    padding: 0 10%;
-    padding-top: 20px;
+    padding: 50px 10% 0;
   }
 
   @media (min-width: 1920px) {
-    padding: 0 12%;
-    padding-top: 50px;
+    padding: 50px 12% 0;
   }
 
   @media (min-width: 2560px) {
-    padding: 0 16%;
-    padding-top: 50px;
+    padding: 60px 16% 0;
   }
 `;
 
