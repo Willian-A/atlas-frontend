@@ -4,44 +4,43 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 0 20px 0;
+  padding: 20px 0;
 
   @media (min-width: 390px) {
-    padding: 30px 0 30px 0;
+    padding: 30px 0;
   }
 
   @media (min-width: 768px) {
     flex-direction: row;
-    padding: 10px;
+    padding: 10px 0;
   }
 
   @media (min-width: 1024px) {
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
   }
 
   @media (min-width: 1440px) {
-    padding: 15px 0 15px 0;
+    padding: 15px 0;
   }
 
   @media (min-width: 1920px) {
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
   }
 
   @media (min-width: 2560px) {
-    padding: 25px 0 25px 0;
+    padding: 25px 0;
   }
 `;
 
 const CardBox = styled.div`
   width: 100%;
   max-width: 85%;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   overflow: hidden;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
   img {
     width: 100%;
-    cursor: pointer;
     transition: 500ms;
 
     &:hover {
@@ -50,12 +49,12 @@ const CardBox = styled.div`
   }
 
   @media (min-width: 390px) {
-    max-width: 75%;
-    margin: 0 auto 30px auto;
+    max-width: 80%;
+    margin: 0 auto 30px;
   }
 
   @media (min-width: 768px) {
-    flex-basis: calc(25.5% - 12px);
+    flex-basis: calc(25% - 6px);
     margin: 0;
 
     &:last-child {
@@ -78,75 +77,54 @@ const CardBox = styled.div`
   @media (min-width: 1920px) {
     flex-basis: calc(20% - 15px);
   }
-
-  @media (min-width: 2560px) {
-    flex-basis: calc(19.5% - 15px);
-  }
 `;
 
 const CardBio = styled.div`
-  padding: 10px 20px 15px 20px;
+  padding: 12px;
+  color: black;
 
   h4 {
-    color: black;
     font-size: 15px;
-    margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   h3 {
-    color: black;
     font-size: 18px;
     margin-bottom: 15px;
   }
 
-  @media (min-width: 390px) {
-  }
-
   @media (min-width: 768px) {
     padding: 10px;
+
     h4 {
       font-size: 12px;
-      margin-bottom: 5px;
     }
 
     h3 {
       font-size: 15px;
-      margin-bottom: 15px;
     }
   }
 
   @media (min-width: 1024px) {
-    padding: 10px;
     h4 {
       font-size: 14px;
-      margin-bottom: 5px;
     }
 
     h3 {
       font-size: 16px;
-      margin-bottom: 15px;
     }
   }
 
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1920px) {
-  }
-
   @media (min-width: 2560px) {
-    padding: 20px;
+    padding: 15px;
     h4 {
-      font-size: 17px;
-      margin-bottom: 6px;
+      font-size: 18px;
     }
 
     h3 {
       font-size: 20px;
-      margin-bottom: 20px;
     }
   }
 `;

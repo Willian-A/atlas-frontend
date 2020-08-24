@@ -9,7 +9,7 @@ import Category from "./components/category";
 
 export default function Index() {
   return (
-    <div style={{ height: "100%" }}>
+    <div>
       <Navbar />
       <GeralContainer>
         <Banner />

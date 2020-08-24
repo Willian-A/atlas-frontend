@@ -16,7 +16,7 @@ export default function Card(props) {
         <img src={props.cover} alt={props.name} />
         <component.CardBio>
           <h4>{props.name}</h4>
-          <h3>R${props.price}</h3>
+          <h3>R$ {props.price}</h3>
           <Button width="100%">Ver Produto</Button>
         </component.CardBio>
       </Link>

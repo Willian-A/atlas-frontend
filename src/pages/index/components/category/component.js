@@ -3,33 +3,28 @@ import styled from "styled-components";
 const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
 
   @media (min-width: 390px) {
     padding: 0 0 30px 0;
   }
-
   @media (min-width: 768px) {
+    margin: 0;
+    padding: 0 10px 10px;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0;
-    padding: 0 10px 10px 10px;
   }
-
   @media (min-width: 1024px) {
-    padding: 0 0 10px 0;
+    padding: 0 0 10px;
   }
-
   @media (min-width: 1440px) {
-    padding: 0 0 15px 0;
+    padding: 0 0 15px;
   }
-
   @media (min-width: 1920px) {
-    padding: 0 0 20px 0;
+    padding: 0 0 20px;
   }
-
   @media (min-width: 2560px) {
-    padding: 0 0 25px 0;
+    padding: 0 0 25px;
   }
 `;
 
@@ -37,7 +32,7 @@ const CategoriesBox = styled.div`
   position: relative;
   width: 92%;
   text-align: center;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 5px;
 
   &:hover {
     img {
@@ -50,22 +45,21 @@ const CategoriesBox = styled.div`
   }
 
   h2 {
+    position: absolute;
     margin: 28% auto;
     font-size: 35px;
-    position: absolute;
     color: #ffae00;
     transition: 500ms;
   }
 
   @media (min-width: 390px) {
     width: 85%;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 15px;
 
     h2 {
       font-size: 45px;
     }
   }
-
   @media (min-width: 768px) {
     width: 32%;
     margin: 0;
@@ -74,23 +68,19 @@ const CategoriesBox = styled.div`
       font-size: 32px;
     }
   }
-
   @media (min-width: 1024px) {
     h2 {
       font-size: 35px;
     }
   }
-
   @media (min-width: 1440px) {
     h2 {
       font-size: 38px;
     }
   }
-
   @media (min-width: 1920px) {
     width: 32.5%;
   }
-
   @media (min-width: 2560px) {
     h2 {
       font-size: 55px;

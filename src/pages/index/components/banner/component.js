@@ -10,19 +10,15 @@ const BannerContainer = styled.div`
   @media (min-width: 768px) {
     height: 480px;
   }
-
   @media (min-width: 1024px) {
     height: 550px;
   }
-
   @media (min-width: 1440px) {
     height: 550px;
   }
-
   @media (min-width: 1920px) {
     height: 630px;
   }
-
   @media (min-width: 2560px) {
     height: 900px;
   }
@@ -37,20 +33,16 @@ const BannerSlideContainer = styled.div`
 `;
 
 const BannerSlideBox = styled.div`
-  display: flex;
   position: relative;
   top: ${(props) => props.top || "0"};
+  height: inherit;
+  display: flex;
   flex-direction: row;
   transition: 500ms;
-  height: inherit;
 
   img {
-    min-height: 1px;
-    display: block;
     height: 100%;
-    left: 0px;
     object-fit: cover;
-    top: 0px;
     width: 100%;
   }
 
@@ -60,9 +52,6 @@ const BannerSlideBox = styled.div`
     }
   }
   @media (min-width: 2560px) {
-    img {
-      width: 100%;
-    }
   }
 `;
 
@@ -80,24 +69,18 @@ const BannerDescBox = styled.div`
   }
 
   @media (min-width: 1440px) {
-    display: block;
-
-    padding: 20px 20px;
+    display: initial;
+    padding: 20px;
   }
-
   @media (min-width: 1920px) {
     padding: 30px;
-  }
-
-  @media (min-width: 2560px) {
-    width: 30%;
-    padding: 30px 30px;
   }
 `;
 
 const BannerDesc = styled.div`
   transition: 500ms;
   height: 90%;
+  position: relative;
 
   h2 {
     text-transform: capitalize;
@@ -119,10 +102,8 @@ const BannerDesc = styled.div`
       font-size: 12px;
     }
   }
-
   @media (min-width: 1440px) {
     h2 {
-      margin-bottom: 15px;
       font-size: 20px;
     }
 
@@ -130,32 +111,29 @@ const BannerDesc = styled.div`
       font-size: 12px;
     }
   }
-
   @media (min-width: 1920px) {
     h2 {
       margin-bottom: 25px;
       font-size: 25px;
     }
+
     h3 {
       font-size: 0.88em;
     }
   }
-
   @media (min-width: 2560px) {
     h2 {
       font-size: 28px;
     }
 
     h3 {
-      font-size: 18px;
+      font-size: 1.2em;
     }
   }
 `;
 
 const BannerButtonsBox = styled.div`
-  top: 100%;
   display: flex;
-  flex-direction: row;
 
   div {
     margin: 0 auto;
