@@ -26,16 +26,15 @@ const CartContainer = styled.div`
 
 const CartListContainer = styled.div`
   width: 100%;
-  z-index: 1;
 `;
 
 const ResumeContainer = styled.div`
   position: fixed;
   top: unset;
   height: fit-content;
-  padding: 15px 18px;
+  padding: 18px;
   background-color: #fff;
-  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
 
   h1 {
@@ -46,7 +45,7 @@ const ResumeContainer = styled.div`
 
   button {
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   @media (min-width: 768px) {
@@ -57,19 +56,14 @@ const ResumeContainer = styled.div`
     width: 40%;
     flex-direction: row;
     position: relative;
-    padding: 15px 25px;
+    padding: 10px 15px;
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
-
-    button {
-      width: 100%;
-      margin: 10px 0 0;
-    }
   }
 `;
 
 const CardContainer = styled.div`
   display: flex;
-  padding: 12px;
+  padding: 15px;
   margin-bottom: 10px;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
@@ -97,10 +91,10 @@ const CardContainer = styled.div`
 `;
 
 const CardBio = styled.div`
-  margin: 0 15px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin: 0 15px;
   max-width: 420px;
 
   h2 {
@@ -117,24 +111,16 @@ const CardBio = styled.div`
 const CardQty = styled.div`
   display: flex;
   flex-direction: row;
+  position: absolute;
+  top: unset;
+  bottom: 0;
   max-width: 220px;
 
   h4 {
     font-size: 22px;
-    margin: 0 20px 0;
+    margin: 0 20px;
     padding: 5px 20px 0 20px;
     border: 1px rgba(0, 0, 0, 0.08) solid;
-  }
-`;
-
-const ResumeBox = styled.div`
-  display: flex;
-  margin: 5px 0;
-  padding: 5px 0 0;
-  border-top: 2px rgba(0, 0, 0, 0.2) solid;
-
-  h2.value {
-    margin: 0 0 0 auto;
   }
 `;
 
@@ -146,5 +132,4 @@ export {
   CardContainer,
   CardBio,
   CardQty,
-  ResumeBox,
 };
