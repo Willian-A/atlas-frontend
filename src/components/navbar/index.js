@@ -80,7 +80,7 @@ export default function Navbar() {
             <Link to="/carrinho">Carrinho</Link>
           </li>
           <li>
-            <a href="/products">Produtos</a>
+            <a href="/produtos">Produtos</a>
           </li>
         </ul>
         <ul>{UserButtons()}</ul>
