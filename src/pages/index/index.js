@@ -4,7 +4,7 @@ import GeralContainer from "../../styled/page-margin";
 import Navbar from "../../components/navbar";
 
 import Banner from "./components/banner";
-import MainCard from "./components/main-card";
+import MainCard from "./components/product-card";
 import Category from "./components/category";
 
 export default function Index() {
