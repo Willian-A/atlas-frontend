@@ -6,7 +6,7 @@ import CartList from "./components/cart-list";
 
 export default function Cart() {
   return (
-    <div style={{ height: "100%" }}>
+    <div>
       <Navbar />
       <GeralContainer>
         <CartList />
