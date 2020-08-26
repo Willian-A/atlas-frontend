@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import * as component from "./component";
-import Button from "../../../styled/button";
+import Button from "../../../../styled/button";
 
 function ProductCard(props) {
   return (

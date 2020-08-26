@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
 import ProductCard from "./ProductCard";
+import Filter from "./Filter";
 
-import importAll from "../../../functions/importAll";
-import api from "../../../api";
+import importAll from "../../../../functions/importAll";
+import api from "../../../../api";
 
 function Products() {
   const [result, setResult] = useState([]);
@@ -19,7 +20,11 @@ function Products() {
       }
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context(
+            "../../../../assets/images/products",
+            false,
+            /\.(jpg)$/
+          )
         )
       );
       selectProducts();
@@ -51,9 +56,7 @@ function Products() {
         <h5>12 Categorias</h5>
       </component.PageNameBox>
       <component.PageContainer>
-        <component.FilterContainer>
-          <h1>Teste1</h1>
-        </component.FilterContainer>
+        <Filter />
         <component.ProductsContainer>{loadCard()}</component.ProductsContainer>
       </component.PageContainer>
     </>
