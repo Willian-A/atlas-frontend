@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
 import ProductCard from "./ProductCard";
 
+import importAll from "../../../functions/importAll";
+import api from "../../../api";
+
 function Products() {
+  const [result, setResult] = useState([]);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    if (mounted) {
+      async function selectProducts() {
+        const response = await api.get(`/product${0}`);
+        setResult(response.data.result);
+      }
+      setImages(
+        importAll(
+          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+        )
+      );
+      selectProducts();
+    }
+
+    return function cleanup() {
+      mounted = false;
+    };
+  }, []);
+
+  function loadCard() {
+    return result.map((value) => {
+      return (
+        <ProductCard
+          key={value.id_product}
+          cover={images[value.image + ".jpg"]}
+          name={value.name}
+          price={value.price}
+          id_product={value.id_product}
+        />
+      );
+    });
+  }
+
   return (
     <>
       <component.PageNameBox>
@@ -14,11 +54,7 @@ function Products() {
         <component.FilterContainer>
           <h1>Teste1</h1>
         </component.FilterContainer>
-        <component.ProductsContainer>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </component.ProductsContainer>
+        <component.ProductsContainer>{loadCard()}</component.ProductsContainer>
       </component.PageContainer>
     </>
   );

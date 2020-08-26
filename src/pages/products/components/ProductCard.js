@@ -1,39 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import * as component from "./component";
 import Button from "../../../styled/button";
-import importAll from "../../../functions/importAll";
 
-function ProductCard() {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      setImages(
-        importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
-        )
-      );
-    }
-
-    return function cleanup() {
-      mounted = false;
-    };
-  }, []);
+function ProductCard(props) {
   return (
     <component.CardBox>
       <Link
         to={{
           pathname: "/produto",
-          state: 2,
+          state: props.id_product,
         }}
       >
-        <img src={images["cyberpunk2077.jpg"]} alt="asdasd" />
+        <img src={props.cover} alt={props.name} />
         <component.CardBio>
-          <h4>Cyberpunj 2077</h4>
-          <h3>R$ 299.99</h3>
+          <h4>{props.name}</h4>
+          <h3>R$ {props.price}</h3>
           <Button width="100%">Ver Produto</Button>
         </component.CardBio>
       </Link>
