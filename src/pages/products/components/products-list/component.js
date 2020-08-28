@@ -46,13 +46,48 @@ const FilterContainer = styled.div`
   }
 
   @media (min-width: 1920px) {
-    width: 15vw;
+    width: 13vw;
   }
 
   @media (min-width: 2560px) {
     width: 14vw;
   }
 `;
+const FilterBox = styled.div`
+  overflow-y: hidden;
+  padding: 1vw 1vw 0;
+  cursor: pointer;
+  text-transform: capitalize;
+
+  transition: 500ms;
+
+  h3 {
+    padding-bottom: 0.5vw;
+    transition: 500ms;
+    border-bottom: ${({ open }) => (open ? "5px solid white" : "0")};
+
+    &:hover {
+      color: #ffae00;
+    }
+  }
+`;
+
+const FilterOptions = styled.div`
+  padding-top: ${({ open }) => (open ? "1vw" : "0")};
+  height: ${({ open }) => (open ? "fit-content" : "0")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  visibility: ${({ open }) => (open ? "visible" : "hidden")};
+  transition: 500ms;
+
+  h4 {
+    transition: 500ms;
+
+    &:hover {
+      color: #ffae00;
+    }
+  }
+`;
+
 const ProductsContainer = styled.div`
   display: grid;
   grid-gap: 5vw;
@@ -73,6 +108,7 @@ const ProductsContainer = styled.div`
   }
 
   @media (min-width: 1920px) {
+    grid-gap: 1.5vw;
     grid-template-columns: repeat(4, 14vw);
   }
 
@@ -117,6 +153,8 @@ export {
   PageNameBox,
   PageContainer,
   FilterContainer,
+  FilterBox,
+  FilterOptions,
   ProductsContainer,
   CardBox,
   CardBio,

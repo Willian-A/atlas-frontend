@@ -56,7 +56,38 @@ function Products() {
         <h5>12 Categorias</h5>
       </component.PageNameBox>
       <component.PageContainer>
-        <Filter />
+        <component.FilterContainer>
+          <Filter
+            name="categorias"
+            options={[
+              "ação",
+              "aventura",
+              "puzzle",
+              "rpg",
+              "tiro",
+              "estratégia",
+              "sobrevivência",
+              "indie",
+              "esporte",
+              "horror",
+              "dança",
+            ]}
+          />
+          <Filter
+            name="plataforma"
+            options={[
+              "steam",
+              "psn",
+              "xbox live",
+              "uplay",
+              "origin",
+              "nintendo",
+              "battle.net",
+              "epic games",
+              "rockstar",
+            ]}
+          />
+        </component.FilterContainer>
         <component.ProductsContainer>{loadCard()}</component.ProductsContainer>
       </component.PageContainer>
     </>
