@@ -17,10 +17,9 @@ const PageNameBox = styled.div`
 
 const PageContainer = styled.div`
   display: flex;
-  padding: 0 5vw 5vh 0;
 
   @media (min-width: 768px) {
-    padding: 0 2vw 2vh 0;
+    padding: 0 0 2vh 0;
   }
 
   @media (min-width: 1024px) {
@@ -30,15 +29,15 @@ const PageContainer = styled.div`
 const FilterContainer = styled.div`
   color: #fff;
   background-color: #000;
-  width: 5vw;
-  margin-right: auto;
+  width: 0;
 
   @media (min-width: 768px) {
-    width: 3vw;
+    width: 0;
   }
 
   @media (min-width: 1024px) {
     width: 22vw;
+    margin-right: auto;
   }
 
   @media (min-width: 1440px) {
@@ -91,6 +90,7 @@ const FilterOptions = styled.div`
 const ProductsContainer = styled.div`
   display: grid;
   grid-gap: 5vw;
+  margin: 0 auto;
   grid-template-columns: repeat(1, 80vw);
 
   @media (min-width: 768px) {

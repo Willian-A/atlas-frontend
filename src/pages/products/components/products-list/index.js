@@ -77,7 +77,7 @@ function Products() {
             name="plataforma"
             options={[
               "steam",
-              "psn",
+              "PSN",
               "xbox live",
               "uplay",
               "origin",
