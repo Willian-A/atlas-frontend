@@ -1,22 +1,47 @@
 import styled from "styled-components";
 
-const PageNameBox = styled.div`
-  display: flex;
-  padding-bottom: 25px;
-  margin: 20px 0 0 10px;
+const PageNameContainer = styled.div`
+  position: relative;
+  width: fit-content;
+  margin: 1.5vh auto;
 
-  h5 {
-    margin-left: 10px;
-    transform: translateY(35%);
+  h3 {
+    width: fit-content;
+    margin: 1.5vh auto;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    margin: 3.5vw;
+    display: flex;
+
+    h3 {
+      margin: 1.5vh 0 0 auto;
+    }
   }
 
   @media (min-width: 1024px) {
-    margin: 0;
+    margin: 0 0 2vh;
+
+    h3 {
+      display: none;
+    }
+  }
+`;
+
+const PageNameBox = styled.div`
+  display: flex;
+  width: fit-content;
+
+  h5 {
+    margin-left: 10px;
+    transform: translateY(40%);
   }
 `;
 
 const PageContainer = styled.div`
   display: flex;
+  position: relative;
 
   @media (min-width: 768px) {
     padding: 0 0 2vh 0;
@@ -27,41 +52,51 @@ const PageContainer = styled.div`
   }
 `;
 const FilterContainer = styled.div`
-  color: #fff;
+  position: absolute;
+  width: ${({ open }) => (open ? "50vw" : "0")};
+  overflow: hidden;
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  padding: 3vw 3vw 0;
   background-color: #000;
-  width: 0;
+  color: #fff;
+  box-shadow: 0px 25px 50px 35px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transition: 500ms;
 
   @media (min-width: 768px) {
-    width: 0;
+    padding: 1.5vw 1.5vw 0;
+    width: ${({ open }) => (open ? "30vw" : "0")};
   }
 
   @media (min-width: 1024px) {
-    width: 22vw;
+    position: relative;
+    width: 18vw;
+    opacity: 1;
+    padding: 1vw 1vw 0;
     margin-right: auto;
   }
 
   @media (min-width: 1440px) {
-    width: 16vw;
-  }
-
-  @media (min-width: 1920px) {
     width: 13vw;
   }
 
+  @media (min-width: 1920px) {
+    width: 10vw;
+  }
+
   @media (min-width: 2560px) {
-    width: 14vw;
+    width: 11vw;
   }
 `;
 const FilterBox = styled.div`
-  overflow-y: hidden;
-  padding: 1vw 1vw 0;
+  overflow: hidden;
   cursor: pointer;
+  margin-bottom: 1vh;
   text-transform: capitalize;
-
   transition: 500ms;
 
   h3 {
-    padding-bottom: 0.5vw;
+    padding-bottom: 0.5vh;
     transition: 500ms;
     border-bottom: ${({ open }) => (open ? "5px solid white" : "0")};
 
@@ -72,7 +107,7 @@ const FilterBox = styled.div`
 `;
 
 const FilterOptions = styled.div`
-  padding-top: ${({ open }) => (open ? "1vw" : "0")};
+  padding-top: ${({ open }) => (open ? "1vh" : "0")};
   height: ${({ open }) => (open ? "fit-content" : "0")};
   opacity: ${({ open }) => (open ? "1" : "0")};
   visibility: ${({ open }) => (open ? "visible" : "hidden")};
@@ -83,6 +118,9 @@ const FilterOptions = styled.div`
 
     &:hover {
       color: #ffae00;
+    }
+    &:last-child {
+      padding-bottom: 0.5vh;
     }
   }
 `;
@@ -151,6 +189,7 @@ const CardBio = styled.div`
 
 export {
   PageNameBox,
+  PageNameContainer,
   PageContainer,
   FilterContainer,
   FilterBox,

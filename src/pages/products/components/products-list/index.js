@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import * as component from "./component";
 import ProductCard from "./ProductCard";
 import Filter from "./Filter";
+import FilterIcon from "../../../../assets/images/icons/filter-icon";
 
 import importAll from "../../../../functions/importAll";
 import api from "../../../../api";
@@ -10,6 +11,7 @@ import api from "../../../../api";
 function Products() {
   const [result, setResult] = useState([]);
   const [images, setImages] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -18,6 +20,7 @@ function Products() {
         const response = await api.get(`/product${0}`);
         setResult(response.data.result);
       }
+
       setImages(
         importAll(
           require.context(
@@ -26,6 +29,18 @@ function Products() {
             /\.(jpg)$/
           )
         )
+      );
+
+      document.addEventListener(
+        "mousedown",
+        (e) => {
+          if (mounted) {
+            if (!document.getElementById("filter").contains(e.target)) {
+              setOpen(false);
+            }
+          }
+        },
+        false
       );
       selectProducts();
     }
@@ -51,12 +66,21 @@ function Products() {
 
   return (
     <>
-      <component.PageNameBox>
-        <h1>Produtos</h1>
-        <h5>12 Categorias</h5>
-      </component.PageNameBox>
+      <component.PageNameContainer>
+        <component.PageNameBox>
+          <h1>Produtos</h1>
+          <h5>{result.length} Produtos</h5>
+        </component.PageNameBox>
+        <h3
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          Filtro
+        </h3>
+      </component.PageNameContainer>
       <component.PageContainer>
-        <component.FilterContainer>
+        <component.FilterContainer id="filter" open={open}>
           <Filter
             name="categorias"
             options={[

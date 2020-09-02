@@ -10,6 +10,8 @@ const NavbarContainer = styled.div`
     position: fixed;
     max-width: 55vw;
     overflow-x: hidden;
+    box-shadow: ${({ open }) =>
+      open ? "0px 25px 50px 35px rgba(0, 0, 0, 0.5)" : "0"};
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 40%,
