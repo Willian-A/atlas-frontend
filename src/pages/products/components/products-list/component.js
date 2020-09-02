@@ -59,7 +59,6 @@ const FilterContainer = styled.div`
   padding: 3vw 3vw 0;
   background-color: #000;
   color: #fff;
-  box-shadow: 0px 25px 50px 35px rgba(0, 0, 0, 0.5);
   z-index: 2;
   transition: 500ms;
 

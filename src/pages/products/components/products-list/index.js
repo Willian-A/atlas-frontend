@@ -35,8 +35,12 @@ function Products() {
         "mousedown",
         (e) => {
           if (mounted) {
-            if (!document.getElementById("filter").contains(e.target)) {
-              setOpen(false);
+            if (!document.getElementById("filter-box").contains(e.target)) {
+              if (
+                !document.getElementById("filter-button").contains(e.target)
+              ) {
+                setOpen(false);
+              }
             }
           }
         },
@@ -72,6 +76,7 @@ function Products() {
           <h5>{result.length} Produtos</h5>
         </component.PageNameBox>
         <h3
+          id="filter-button"
           onClick={() => {
             setOpen(!open);
           }}
@@ -80,7 +85,7 @@ function Products() {
         </h3>
       </component.PageNameContainer>
       <component.PageContainer>
-        <component.FilterContainer id="filter" open={open}>
+        <component.FilterContainer id="filter-box" open={open}>
           <Filter
             name="categorias"
             options={[
