@@ -22,7 +22,7 @@ const NavbarContainer = styled.div`
     z-index: 2;
 
     ul {
-      padding: 8vh 5vh 0;
+      padding: 8vw 8vw 0;
       list-style-type: none;
     }
 
@@ -61,7 +61,7 @@ const NavbarContainer = styled.div`
       box-shadow: unset;
 
       ul {
-        padding: 2em;
+        padding: 3vh;
       }
 
       ul li a {
@@ -78,8 +78,6 @@ const NavbarContainer = styled.div`
     }
 
     ul {
-      padding: 2em;
-
       &:last-child {
         display: flex;
         flex: 1;
@@ -96,7 +94,7 @@ const NavbarContainer = styled.div`
   @media (min-width: 2560px) {
     div.pages {
       ul {
-        padding: 3em;
+        padding: 4vh;
 
         li a {
           font-size: 1.5em;

@@ -53,30 +53,36 @@ const PageContainer = styled.div`
 `;
 const FilterContainer = styled.div`
   position: absolute;
+  padding: 5vw 5vw 0;
   width: ${({ open }) => (open ? "50vw" : "0")};
-  overflow: hidden;
   opacity: ${({ open }) => (open ? "1" : "0")};
-  padding: 3vw 3vw 0;
+  overflow: hidden;
   background-color: #000;
   color: #fff;
   z-index: 2;
   transition: 500ms;
 
+  @media (min-width: 390px) {
+    padding: 3.5vw 3.5vw 0;
+    width: ${({ open }) => (open ? "40vw" : "0")};
+  }
+
   @media (min-width: 768px) {
-    padding: 1.5vw 1.5vw 0;
-    width: ${({ open }) => (open ? "30vw" : "0")};
+    padding: 2vw 2vw 0;
+    width: ${({ open }) => (open ? "25vw" : "0")};
   }
 
   @media (min-width: 1024px) {
     position: relative;
     width: 18vw;
     opacity: 1;
-    padding: 1vw 1vw 0;
+    padding: 2vw 2vw 0;
     margin-right: auto;
   }
 
   @media (min-width: 1440px) {
     width: 13vw;
+    padding: 1vw 1vw 0;
   }
 
   @media (min-width: 1920px) {
