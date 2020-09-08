@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import * as component from "./component";
 import ProductCard from "./ProductCard";
 import Filter from "./Filter";
-import FilterIcon from "../../../../assets/images/icons/filter-icon";
 
 import importAll from "../../../../functions/importAll";
 import api from "../../../../api";
