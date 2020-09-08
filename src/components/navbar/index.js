@@ -13,6 +13,7 @@ export default function Navbar() {
   async function getLoginStatus() {
     try {
       let response = await api.get("/logged");
+      console.log(response);
       setLogged(response.data);
     } catch (error) {
       console.log(error.response.data);

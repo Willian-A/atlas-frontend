@@ -1,29 +1,37 @@
 import React, { useState, useEffect } from "react";
+
 import { useHistory } from "react-router-dom";
 
 import * as component from "./component";
-import Button from "../../../../styled/button";
+import Button from "../../../styled/button";
 
-import importAll from "../../../../functions/importAll";
-import api from "../../../../api";
+import importAll from "../../../functions/importAll";
+import api from "../../../api";
 
 export default function ProdCard(props) {
   const [images, setImages] = useState([]);
   const [result, setResult] = useState([]);
   const [error, setError] = useState({ error: false, message: null });
-
   const history = useHistory();
+
+  async function addOnCart() {
+    try {
+      await api.post("/cart", {
+        productID: props.id,
+        action: "add",
+      });
+      history.push("/carrinho");
+    } catch (error) {
+      setError({ error: true, message: error.response.data });
+    }
+  }
 
   useEffect(() => {
     let mounted = true;
     if (mounted) {
       setImages(
         importAll(
-          require.context(
-            "../../../../assets/images/products",
-            false,
-            /\.(jpg)$/
-          )
+          require.context("../../../assets/images/products", false, /\.(jpg)$/)
         )
       );
 
@@ -41,18 +49,6 @@ export default function ProdCard(props) {
       mounted = false;
     };
   }, [props.id]);
-
-  async function addOnCart() {
-    try {
-      await api.post("/cart", {
-        productID: props.id,
-        action: "add",
-      });
-      history.push("/carrinho");
-    } catch (error) {
-      setError({ error: true, message: error.response.data });
-    }
-  }
 
   return (
     <component.ProductContainer>

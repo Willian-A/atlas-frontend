@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import Button from "../../../../styled/button";
-import importAll from "../../../../functions/importAll";
+import Button from "../../../styled/button";
+import importAll from "../../../functions/importAll";
 
-import api from "../../../../api";
+import api from "../../../api";
 
 export default function CartItem(props) {
   const [images, setImages] = useState([]);
@@ -17,11 +17,7 @@ export default function CartItem(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context(
-            "../../../../assets/images/products",
-            false,
-            /\.(jpg)$/
-          )
+          require.context("../../../assets/images/products", false, /\.(jpg)$/)
         )
       );
     }

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
 
-import Button from "../../../../styled/button";
-import api from "../../../../api";
+import api from "../../../api";
 
 import CartResume from "./CartResume";
 import CartItem from "./CartItem";
@@ -56,9 +55,7 @@ export default function CartList() {
             })}
           </components.CartListContainer>
           <components.ResumeContainer>
-            <h1>Resumo:</h1>
             <CartResume value={cartTotal} />
-            <Button>Finalizar</Button>
           </components.ResumeContainer>
         </components.CartContainer>
       </div>

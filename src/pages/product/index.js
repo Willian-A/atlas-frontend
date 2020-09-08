@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "../../components/navbar";
 import GeralContainer from "../../styled/page-margin";
-import ProdCard from "./components/product-frame";
+import ProdCard from "./components/";
 
 export default function Product(props) {
   return (

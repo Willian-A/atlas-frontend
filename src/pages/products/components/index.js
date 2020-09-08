@@ -4,10 +4,10 @@ import * as component from "./component";
 import ProductCard from "./ProductCard";
 import Filter from "./Filter";
 
-import importAll from "../../../../functions/importAll";
-import api from "../../../../api";
+import importAll from "../../../functions/importAll";
+import api from "../../../api";
 
-function Products() {
+export default function ProductsLayout() {
   const [result, setResult] = useState([]);
   const [images, setImages] = useState([]);
   const [open, setOpen] = useState(false);
@@ -22,11 +22,7 @@ function Products() {
 
       setImages(
         importAll(
-          require.context(
-            "../../../../assets/images/products",
-            false,
-            /\.(jpg)$/
-          )
+          require.context("../../../assets/images/products", false, /\.(jpg)$/)
         )
       );
 
@@ -45,6 +41,7 @@ function Products() {
         },
         false
       );
+
       selectProducts();
     }
 
@@ -121,5 +118,3 @@ function Products() {
     </>
   );
 }
-
-export default Products;

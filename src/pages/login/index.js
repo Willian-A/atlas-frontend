@@ -1,7 +1,7 @@
 import React from "react";
 
 import GeralContainer from "../../styled/page-margin";
-import LoginCard from "./components/login-card";
+import LoginCard from "./components";
 
 export default function Login() {
   return (
