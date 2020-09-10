@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Pages
-import Index from "./pages/index";
+import Index from "./pages/index/index";
 import Cart from "./pages/cart";
 import Product from "./pages/product";
 import ProductsPage from "./pages/products";
