@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import InputMask from "react-input-mask";
 
-import api from "../../../../api";
+import api from "../../../api";
 
-import FlexContainer from "../../../../styled/flex-container";
-import Input from "../../../../styled/input";
-import Button from "../../../../styled/button";
-import * as text from "../../../../styled/text";
+import FlexContainer from "../../../styled/flex-container";
+import Input from "../../../styled/input";
+import Button from "../../../styled/button";
+import * as text from "../../../styled/text";
 
 export default function RegisterCard() {
   const [name, setName] = useState("");

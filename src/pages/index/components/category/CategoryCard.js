@@ -1,12 +1,13 @@
 import React from "react";
 
 import * as component from "./component";
+import * as text from "../../../../components/text";
 
 export default function CategoryCard(props) {
   return (
     <component.CategoriesBox>
       <component.CategoriesCover src={props.img} />
-      <h2>{props.txt}</h2>
+      <text.H2_Big>{props.txt}</text.H2_Big>
     </component.CategoriesBox>
   );
 }

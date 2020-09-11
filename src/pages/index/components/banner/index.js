@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Button from "../../../../styled/button";
 import ArrowDown from "../../../../assets/images/icons/arrow-down";
 import * as component from "./component";
+import * as text from "../../../../components/text";
 
 import importAll from "../../../../functions/importAll";
 
@@ -60,8 +61,8 @@ export default function Banner() {
           <img src={Object.values(images)[0]} alt="FIFA 20" />
           <component.BannerDescBox>
             <component.BannerDesc>
-              <h2>FIFA 20</h2>
-              <h3>
+              <text.H2_Medium>FIFA 20</text.H2_Medium>
+              <text.H3_Small>
                 FIFA 20 apresenta uma nova maneira de jogar futebol, com toda
                 cultura, criatividade e estilo das ruas e quadras pelo mundo.
                 Crie seu jogador ou jogadora, escolha seu equipamento e mostre
@@ -69,7 +70,7 @@ export default function Banner() {
                 passagem subterrânea em Amsterdã. Jogue futebol do seu jeito em
                 vários formatos de partida, como 5x5, com ou paredes, sem
                 goleiros ou futsal profissional.
-              </h3>
+              </text.H3_Small>
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>
@@ -87,8 +88,8 @@ export default function Banner() {
           <img src={Object.values(images)[1]} alt="Cyberpunk 2077" />
           <component.BannerDescBox>
             <component.BannerDesc>
-              <h2>Cyberpunk 2077</h2>
-              <h3>
+              <text.H2_Medium>Cyberpunk 2077</text.H2_Medium>
+              <text.H3_Small>
                 Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
                 ambientada em Night City, uma megalópole obcecada por poder,
                 glamour e biomodificações. Você joga como V, um mercenário fora
@@ -97,7 +98,7 @@ export default function Banner() {
                 conjunto de habilidades e estilo de jogo do personagem e
                 explorar uma vasta cidade onde as decisões tomadas definem a
                 história e o mundo ao seu redor.
-              </h3>
+              </text.H3_Small>
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>
@@ -115,8 +116,8 @@ export default function Banner() {
           <img src={Object.values(images)[2]} alt="NBA 2K20" />
           <component.BannerDescBox>
             <component.BannerDesc>
-              <h2>NBA 2K20</h2>
-              <h3>
+              <text.H2_Medium>NBA 2K20</text.H2_Medium>
+              <text.H3_Small>
                 NBA 2K transformou-se em algo muito maior que uma simulação de
                 basquete. Com NBA 2K20 a 2K continua a redefinir ou é possível
                 fazer um jogo de esportes, com gráficos e jogabilidade da
@@ -129,7 +130,7 @@ export default function Banner() {
                 estilos característicos, controles avançados de controle, um
                 novo sistema de avaliação de drible, colisões sem bola e bola e
                 uma nova jogabilidade defensiva , baseada em leitura e reação.
-              </h3>
+              </text.H3_Small>
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>

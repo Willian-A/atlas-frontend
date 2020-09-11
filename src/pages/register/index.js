@@ -1,7 +1,7 @@
 import React from "react";
 
 import GeralContainer from "../../styled/page-margin";
-import RegisterCard from "./components/register-card";
+import RegisterCard from "./components";
 
 export default function Register() {
   return (

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
+import * as text from "../../../components/text";
+
 import ProductCard from "./ProductCard";
 import Filter from "./Filter";
 
@@ -68,8 +70,8 @@ export default function ProductsLayout() {
     <>
       <component.PageNameContainer>
         <component.PageNameBox>
-          <h1>Produtos</h1>
-          <h5>{result.length} Produtos</h5>
+          <text.H2_Big>Produtos</text.H2_Big>
+          <text.H4_Small>{result.length} Produtos</text.H4_Small>
         </component.PageNameBox>
         <h3
           id="filter-button"

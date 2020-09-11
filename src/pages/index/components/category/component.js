@@ -47,7 +47,6 @@ const CategoriesBox = styled.div`
   h2 {
     position: absolute;
     margin: 28% auto;
-    font-size: 35px;
     color: #ffae00;
     transition: 500ms;
   }
@@ -55,36 +54,19 @@ const CategoriesBox = styled.div`
   @media (min-width: 390px) {
     width: 85%;
     margin: 0 auto 15px;
-
-    h2 {
-      font-size: 45px;
-    }
   }
   @media (min-width: 768px) {
     width: 32%;
     margin: 0;
-
-    h2 {
-      font-size: 32px;
-    }
   }
   @media (min-width: 1024px) {
-    h2 {
-      font-size: 35px;
-    }
   }
   @media (min-width: 1440px) {
-    h2 {
-      font-size: 38px;
-    }
   }
   @media (min-width: 1920px) {
     width: 32.5%;
   }
   @media (min-width: 2560px) {
-    h2 {
-      font-size: 55px;
-    }
   }
 `;
 const CategoriesCover = styled.img`

@@ -34,7 +34,7 @@ export default function CartList() {
 
   if (!error.error) {
     return (
-      <div>
+      <>
         <components.PageNameBox>
           <h1>Seu Carrinho</h1>
           <h5>{carResult.length} itens</h5>
@@ -58,7 +58,7 @@ export default function CartList() {
             <CartResume value={cartTotal} />
           </components.ResumeContainer>
         </components.CartContainer>
-      </div>
+      </>
     );
   } else {
     return (

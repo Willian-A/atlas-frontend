@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import api from "../../api";
 
 import * as component from "./component";
+import * as text from "../text";
 import MenuBar from "../../assets/images/icons/menu-bar";
 
 export default function Navbar() {
@@ -24,17 +25,23 @@ export default function Navbar() {
     if (logged) {
       return (
         <li>
-          <Link to="/logout">Sair</Link>
+          <Link to="/logout">
+            <text.H4_Big>Sair</text.H4_Big>
+          </Link>
         </li>
       );
     }
     return (
       <>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">
+            <text.H4_Big>Login</text.H4_Big>
+          </Link>
         </li>
         <li>
-          <Link to="/cadastro">Cadastrar</Link>
+          <Link to="/cadastro">
+            <text.H4_Big>Cadastrar</text.H4_Big>
+          </Link>
         </li>
       </>
     );
@@ -70,18 +77,24 @@ export default function Navbar() {
         }}
       >
         <MenuBar />
-        <h3 style={{ margin: "5px " }}>Menu</h3>{" "}
+        <text.H4_Big style={{ margin: "2.5px " }}>Menu </text.H4_Big>
       </div>
       <div id="menu" className="pages">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <text.H4_Big>Home </text.H4_Big>
+            </Link>
           </li>
           <li>
-            <Link to="/carrinho">Carrinho</Link>
+            <Link to="/carrinho">
+              <text.H4_Big>Carrinho</text.H4_Big>
+            </Link>
           </li>
           <li>
-            <a href="/produtos">Produtos</a>
+            <Link to="/produtos">
+              <text.H4_Big>Produtos</text.H4_Big>
+            </Link>
           </li>
         </ul>
         <ul>{UserButtons()}</ul>

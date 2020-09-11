@@ -95,39 +95,12 @@ const BannerDesc = styled.div`
   @media (min-width: 1440px) {
     h2 {
       margin-bottom: 15px;
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 12px;
     }
   }
-  @media (min-width: 1440px) {
-    h2 {
-      font-size: 20px;
-    }
 
-    h3 {
-      font-size: 12px;
-    }
-  }
   @media (min-width: 1920px) {
     h2 {
       margin-bottom: 25px;
-      font-size: 25px;
-    }
-
-    h3 {
-      font-size: 0.88em;
-    }
-  }
-  @media (min-width: 2560px) {
-    h2 {
-      font-size: 28px;
-    }
-
-    h3 {
-      font-size: 1.2em;
     }
   }
 `;

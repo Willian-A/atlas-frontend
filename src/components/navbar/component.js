@@ -27,7 +27,6 @@ const NavbarContainer = styled.div`
     }
 
     ul li a {
-      font-size: 1.2em;
       text-transform: capitalize;
       color: #fff;
       transition: 500ms;
@@ -61,7 +60,14 @@ const NavbarContainer = styled.div`
       box-shadow: unset;
 
       ul {
+        display: flex;
         padding: 3vh;
+
+        &:last-child {
+          display: flex;
+          flex: 1;
+          justify-content: flex-end;
+        }
       }
 
       ul li a {
@@ -75,19 +81,7 @@ const NavbarContainer = styled.div`
 
     ul li {
       display: initial;
-    }
-
-    ul {
-      &:last-child {
-        display: flex;
-        flex: 1;
-        justify-content: flex-end;
-      }
-    }
-
-    ul li a {
       margin: 0 20px 0 0;
-      font-size: 1.2em;
     }
   }
 
@@ -95,10 +89,6 @@ const NavbarContainer = styled.div`
     div.pages {
       ul {
         padding: 4vh;
-
-        li a {
-          font-size: 1.5em;
-        }
       }
     }
   }

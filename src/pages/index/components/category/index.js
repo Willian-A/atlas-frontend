@@ -1,6 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
+
 import CategoryCard from "./CategoryCard";
 
 import importAll from "../../../../functions/importAll";

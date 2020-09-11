@@ -84,48 +84,25 @@ const CardBio = styled.div`
   color: black;
 
   h4 {
-    font-size: 15px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+    margin-bottom: 1vh;
 
-  h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    &:first-child {
+      margin-bottom: 0;
+    }
   }
 
   @media (min-width: 768px) {
     padding: 10px;
-
-    h4 {
-      font-size: 12px;
-    }
-
-    h3 {
-      font-size: 15px;
-    }
   }
 
   @media (min-width: 1024px) {
-    h4 {
-      font-size: 14px;
-    }
-
-    h3 {
-      font-size: 16px;
-    }
   }
 
   @media (min-width: 2560px) {
     padding: 15px;
-    h4 {
-      font-size: 18px;
-    }
-
-    h3 {
-      font-size: 20px;
-    }
   }
 `;
 

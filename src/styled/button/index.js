@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
+  font-family: WorkSans-SemiBold;
   width: ${(props) => props.width || "50%"};
   height: ${(props) => props.defineHeight || "40px"};
   font-size: ${(props) => props.fontSize || "18px"};
