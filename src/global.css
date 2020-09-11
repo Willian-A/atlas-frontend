@@ -1,10 +1,24 @@
 @font-face {
-    font-family: GothamRounded-Bold;
-    src: url(./assets/fonts/GothamRounded-Bold/GothamRounded-Bold.ttf);
+    font-family: WorkSans-SemiBold;
+    src: url(./assets/fonts/WorkSans/WorkSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: WorkSans-Bold;
+    src: url(./assets/fonts/WorkSans/WorkSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: WorkSans-Light;
+    src: url(./assets/fonts/WorkSans/WorkSans-Light.ttf);
+}
+
+@font-face {
+    font-family: WorkSans-Medium;
+    src: url(./assets/fonts/WorkSans/WorkSans-Medium.ttf);
 }
 
 * {
-    font-family: GothamRounded-Bold;
     top: 0;
     left: 0;
     right: 0;
@@ -13,7 +27,6 @@
     margin: 0;
     border: 0;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
     user-select: none;
     text-decoration: none;
 }
