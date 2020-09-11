@@ -16,8 +16,8 @@ export default function Card(props) {
       >
         <img src={props.cover} alt={props.name} />
         <component.CardBio>
-          <text.H4_Medium>{props.name}</text.H4_Medium>
-          <text.H4_Big>R$ {props.price}</text.H4_Big>
+          <text.SmallSemiBold>{props.name}</text.SmallSemiBold>
+          <text.MediumSemiBold>R$ {props.price}</text.MediumSemiBold>
           <Button width="100%">Ver Produto</Button>
         </component.CardBio>
       </Link>

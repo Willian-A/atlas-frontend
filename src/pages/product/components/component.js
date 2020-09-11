@@ -36,8 +36,7 @@ const ProdBioContainer = styled.div`
 const ProdBioBox = styled.div`
   height: 100%;
 
-  h1 {
-    font-size: 1.5em;
+  h2 {
     margin: 25px 0 15px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,7 +45,6 @@ const ProdBioBox = styled.div`
 
   h4 {
     color: #3f3f3f;
-    font-size: 0.9em;
     -webkit-line-clamp: 30;
   }
 
@@ -55,8 +53,8 @@ const ProdBioBox = styled.div`
     padding: 0;
     box-shadow: none;
 
-    h1 {
-      margin: 0 0 10px;
+    h2 {
+      margin: 0 0 1.5vh;
     }
 
     h4 {
@@ -73,7 +71,6 @@ const ProdResume = styled.div`
   margin: 20px 0 25px;
 
   h3 {
-    font-size: 1.4em;
     margin-bottom: 5px;
   }
 

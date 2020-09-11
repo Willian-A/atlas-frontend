@@ -87,11 +87,13 @@ const CardBio = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 1vh;
+  }
 
-    &:first-child {
-      margin-bottom: 0;
-    }
+  h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1vh;
   }
 
   @media (min-width: 768px) {

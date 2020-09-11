@@ -13,10 +13,10 @@ function Filter(props) {
           setOpen(!open);
         }}
       >
-        <text.H3_Medium>{props.name}</text.H3_Medium>
+        <text.MediumSemiBold>{props.name}</text.MediumSemiBold>
         <component.FilterOptions open={open}>
           {props.options.map((name, index) => {
-            return <text.H4_Medium key={index}>{name}</text.H4_Medium>;
+            return <text.SmallSemiBold key={index}>{name}</text.SmallSemiBold>;
           })}
         </component.FilterOptions>
       </component.FilterBox>

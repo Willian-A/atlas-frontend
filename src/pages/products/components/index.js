@@ -70,17 +70,17 @@ export default function ProductsLayout() {
     <>
       <component.PageNameContainer>
         <component.PageNameBox>
-          <text.H2_Big>Produtos</text.H2_Big>
-          <text.H4_Small>{result.length} Produtos</text.H4_Small>
+          <text.BigBold>Produtos</text.BigBold>
+          <text.SmallSemiBold>{result.length} Produtos</text.SmallSemiBold>
         </component.PageNameBox>
-        <h3
+        <text.MediumSemiBold
           id="filter-button"
           onClick={() => {
             setOpen(!open);
           }}
         >
           Filtro
-        </h3>
+        </text.MediumSemiBold>
       </component.PageNameContainer>
       <component.PageContainer>
         <component.FilterContainer id="filter-box" open={open}>

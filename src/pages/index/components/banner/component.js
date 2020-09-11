@@ -87,7 +87,7 @@ const BannerDesc = styled.div`
     color: #5a5a5a;
   }
 
-  h3 {
+  h4 {
     text-transform: capitalize;
     color: #9aa3af;
   }

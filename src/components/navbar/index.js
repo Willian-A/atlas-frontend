@@ -26,7 +26,7 @@ export default function Navbar() {
       return (
         <li>
           <Link to="/logout">
-            <text.H4_Big>Sair</text.H4_Big>
+            <text.MediumSemiBold>Sair</text.MediumSemiBold>
           </Link>
         </li>
       );
@@ -35,12 +35,12 @@ export default function Navbar() {
       <>
         <li>
           <Link to="/login">
-            <text.H4_Big>Login</text.H4_Big>
+            <text.MediumSemiBold>Login</text.MediumSemiBold>
           </Link>
         </li>
         <li>
           <Link to="/cadastro">
-            <text.H4_Big>Cadastrar</text.H4_Big>
+            <text.MediumSemiBold>Cadastrar</text.MediumSemiBold>
           </Link>
         </li>
       </>
@@ -77,23 +77,25 @@ export default function Navbar() {
         }}
       >
         <MenuBar />
-        <text.H4_Big style={{ margin: "2.5px " }}>Menu </text.H4_Big>
+        <text.MediumSemiBold style={{ margin: "2.5px " }}>
+          Menu
+        </text.MediumSemiBold>
       </div>
       <div id="menu" className="pages">
         <ul>
           <li>
             <Link to="/">
-              <text.H4_Big>Home </text.H4_Big>
+              <text.MediumSemiBold>Home </text.MediumSemiBold>
             </Link>
           </li>
           <li>
             <Link to="/carrinho">
-              <text.H4_Big>Carrinho</text.H4_Big>
+              <text.MediumSemiBold>Carrinho</text.MediumSemiBold>
             </Link>
           </li>
           <li>
             <Link to="/produtos">
-              <text.H4_Big>Produtos</text.H4_Big>
+              <text.MediumSemiBold>Produtos</text.MediumSemiBold>
             </Link>
           </li>
         </ul>

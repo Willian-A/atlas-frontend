@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import * as component from "./component";
+import * as text from "../../../components/text";
+
 import Button from "../../../styled/button";
 
 import importAll from "../../../functions/importAll";
@@ -58,12 +60,14 @@ export default function ProdCard(props) {
       />
       <component.ProdBioContainer>
         <component.ProdBioBox>
-          <h1>{result.name}</h1>
-          <h4>{result.description}</h4>
+          <text.BigBold>{result.name}</text.BigBold>
+          <text.SmallSemiBold>{result.description}</text.SmallSemiBold>
         </component.ProdBioBox>
         <component.ProdResume>
-          <h4 style={{ color: "red" }}>{error.message}</h4>
-          <h3>R$ {result.price}</h3>
+          <text.SmallSemiBold style={{ color: "red" }}>
+            {error.message}
+          </text.SmallSemiBold>
+          <text.MediumBold>R$ {result.price}</text.MediumBold>
           <Button
             width="200px"
             onClick={() => {

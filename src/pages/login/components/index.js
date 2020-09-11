@@ -6,7 +6,7 @@ import api from "../../../api";
 import FlexContainer from "../../../styled/flex-container";
 import Input from "../../../styled/input";
 import Button from "../../../styled/button";
-import * as text from "../../../styled/text";
+import * as text from "../../../components/text";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
@@ -29,13 +29,18 @@ export default function LoginCard() {
 
   return (
     <FlexContainer width="fit-content" margin="0 auto" top="25%">
-      <text.H4Link>
+      <text.SmallSemiBold>
         <Link to="/">Voltar a Pagina Incial</Link>
-      </text.H4Link>
-      <text.H2Title>Login</text.H2Title>
-      <text.Text height="25px" margin="0 auto 5px" font="18px" color="red">
+      </text.SmallSemiBold>
+      <text.BigBold>Login</text.BigBold>
+      <text.MediumSemiBold
+        height="25px"
+        margin="0 auto 5px"
+        font="18px"
+        color="red"
+      >
         {err}
-      </text.Text>
+      </text.MediumSemiBold>
       <form
         action=""
         style={{ display: "flex", flexDirection: "column" }}
@@ -54,16 +59,16 @@ export default function LoginCard() {
           required
           onChange={(e) => setPass(e.target.value)}
         />
-        <text.Text font="13px">
+        <text.SmallSemiBold>
           <Link to="/senha">Esqueceu sua Senha</Link>
-        </text.Text>
+        </text.SmallSemiBold>
         <Button width="100%" margin="20px 0 10px" type="submit">
           Login
         </Button>
       </form>
-      <text.Text margin="5px auto 0" font="13px">
+      <text.SmallSemiBold margin="5px auto 0">
         Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link>
-      </text.Text>
+      </text.SmallSemiBold>
     </FlexContainer>
   );
 }

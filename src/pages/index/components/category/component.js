@@ -34,6 +34,13 @@ const CategoriesBox = styled.div`
   text-align: center;
   margin: 0 auto 5px;
 
+  h2 {
+    position: absolute;
+    margin: 28% auto;
+    color: #ffae00;
+    transition: 500ms;
+  }
+
   &:hover {
     img {
       filter: brightness(20%);
@@ -44,13 +51,6 @@ const CategoriesBox = styled.div`
     }
   }
 
-  h2 {
-    position: absolute;
-    margin: 28% auto;
-    color: #ffae00;
-    transition: 500ms;
-  }
-
   @media (min-width: 390px) {
     width: 85%;
     margin: 0 auto 15px;
@@ -59,14 +59,9 @@ const CategoriesBox = styled.div`
     width: 32%;
     margin: 0;
   }
-  @media (min-width: 1024px) {
-  }
-  @media (min-width: 1440px) {
-  }
+
   @media (min-width: 1920px) {
     width: 32.5%;
-  }
-  @media (min-width: 2560px) {
   }
 `;
 const CategoriesCover = styled.img`

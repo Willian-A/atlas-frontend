@@ -35,7 +35,7 @@ const PageNameBox = styled.div`
 
   h4 {
     margin-left: 10px;
-    transform: translateY(50%);
+    transform: translateY(32%);
   }
 `;
 
@@ -183,11 +183,13 @@ const CardBio = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 1vh;
+  }
 
-    &:first-child {
-      margin-bottom: 0;
-    }
+  h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1vh;
   }
 `;
 
