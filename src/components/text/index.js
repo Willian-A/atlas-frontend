@@ -25,10 +25,6 @@ const BigSemiBold = styled.h2`
   font-family: WorkSans-SemiBold;
   font-size: 2em;
 `;
-const ExtraBigSemiBold = styled.h2`
-  font-family: WorkSans-SemiBold;
-  font-size: 2.5em;
-`;
 
 const SmallBold = styled.h4`
   font-family: WorkSans-Bold;
@@ -42,6 +38,10 @@ const BigBold = styled.h2`
   font-family: WorkSans-Bold;
   font-size: 2em;
 `;
+const ExtraBigBold = styled.h2`
+  font-family: WorkSans-Bold;
+  font-size: 2.8em;
+`;
 
 export {
   SmallLight,
@@ -50,8 +50,8 @@ export {
   SmallBold,
   MediumBold,
   BigBold,
+  ExtraBigBold,
   SmallSemiBold,
   MediumSemiBold,
   BigSemiBold,
-  ExtraBigSemiBold,
 };

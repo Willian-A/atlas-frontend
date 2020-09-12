@@ -7,7 +7,7 @@ export default function CategoryCard(props) {
   return (
     <component.CategoriesBox>
       <component.CategoriesCover src={props.img} />
-      <text.ExtraBigSemiBold>{props.txt}</text.ExtraBigSemiBold>
+      <text.ExtraBigBold>{props.txt}</text.ExtraBigBold>
     </component.CategoriesBox>
   );
 }

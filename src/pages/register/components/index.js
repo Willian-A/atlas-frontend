@@ -4,10 +4,11 @@ import InputMask from "react-input-mask";
 
 import api from "../../../api";
 
-import FlexContainer from "../../../styled/flex-container";
+import * as component from "./component";
+import * as text from "../../../components/text";
+
 import Input from "../../../styled/input";
 import Button from "../../../styled/button";
-import * as text from "../../../styled/text";
 
 export default function RegisterCard() {
   const [name, setName] = useState("");
@@ -33,14 +34,12 @@ export default function RegisterCard() {
   }
 
   return (
-    <FlexContainer width="fit-content" margin="0 auto" top="25%">
-      <text.H4Link>
+    <component.UserContainer>
+      <text.SmallSemiBold>
         <Link to="/">Voltar a Pagina Incial</Link>
-      </text.H4Link>
-      <text.H2Title>Cadastro</text.H2Title>
-      <text.Text height="25px" margin="0 auto 5px" font="18px" color="red">
-        {err}
-      </text.Text>
+      </text.SmallSemiBold>
+      <text.BigBold>Cadastro</text.BigBold>
+      <text.MediumSemiBold>{err}</text.MediumSemiBold>
       <form
         action=""
         style={{ display: "flex", flexDirection: "column" }}
@@ -80,9 +79,9 @@ export default function RegisterCard() {
           Login
         </Button>
       </form>
-      <text.Text margin="5px auto 0" font="13px">
+      <text.SmallSemiBold margin="5px auto 0" font="13px">
         Já tem uma conta? <Link to="/login">Faça Login</Link>
-      </text.Text>
-    </FlexContainer>
+      </text.SmallSemiBold>
+    </component.UserContainer>
   );
 }

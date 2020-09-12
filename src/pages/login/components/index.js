@@ -3,10 +3,11 @@ import { Link, useHistory } from "react-router-dom";
 
 import api from "../../../api";
 
-import FlexContainer from "../../../styled/flex-container";
+import * as component from "./components";
+import * as text from "../../../components/text";
+
 import Input from "../../../styled/input";
 import Button from "../../../styled/button";
-import * as text from "../../../components/text";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
@@ -28,24 +29,13 @@ export default function LoginCard() {
   }
 
   return (
-    <FlexContainer width="fit-content" margin="0 auto" top="25%">
+    <component.UserContainer>
       <text.SmallSemiBold>
         <Link to="/">Voltar a Pagina Incial</Link>
       </text.SmallSemiBold>
       <text.BigBold>Login</text.BigBold>
-      <text.MediumSemiBold
-        height="25px"
-        margin="0 auto 5px"
-        font="18px"
-        color="red"
-      >
-        {err}
-      </text.MediumSemiBold>
-      <form
-        action=""
-        style={{ display: "flex", flexDirection: "column" }}
-        onSubmit={handleSubmit}
-      >
+      <text.MediumSemiBold>{err}</text.MediumSemiBold>
+      <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"
           placeholder="Email"
@@ -66,9 +56,9 @@ export default function LoginCard() {
           Login
         </Button>
       </form>
-      <text.SmallSemiBold margin="5px auto 0">
+      <text.SmallSemiBold>
         Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link>
       </text.SmallSemiBold>
-    </FlexContainer>
+    </component.UserContainer>
   );
 }
