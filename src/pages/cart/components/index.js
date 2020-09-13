@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
+import * as text from "../../../components/text";
 
 import api from "../../../api";
 
@@ -36,8 +37,8 @@ export default function CartList() {
     return (
       <>
         <components.PageNameBox>
-          <h1>Seu Carrinho</h1>
-          <h5>{carResult.length} itens</h5>
+          <text.BigBold>Seu Carrinho</text.BigBold>
+          <text.SmallSemiBold>{carResult.length} itens</text.SmallSemiBold>
         </components.PageNameBox>
         <components.CartContainer>
           <components.CartListContainer>
@@ -63,9 +64,9 @@ export default function CartList() {
   } else {
     return (
       <>
-        <h1 style={{ margin: "10% auto", width: "fit-content" }}>
+        <text.BigBold style={{ margin: "10% auto", width: "fit-content" }}>
           {error.message}
-        </h1>
+        </text.BigBold>
       </>
     );
   }

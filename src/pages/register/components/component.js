@@ -20,7 +20,13 @@ const UserContainer = styled.div`
   }
 
   h2 {
-    margin: 5px 0 30px;
+    margin: 0 0 10px;
+  }
+
+  h3 {
+    height: 3vh;
+    margin: 0 auto 5px;
+    color: red;
   }
 
   h4:last-child {

@@ -1,20 +1,16 @@
 import React from "react";
 
 import FlexContainer from "../../../styled/flex-container";
-import * as text from "../../../styled/text";
+import * as text from "../../../components/text";
 import Button from "../../../styled/button";
 
 export default function CartResume(props) {
   return (
     <>
-      <h1>Resumo:</h1>
+      <text.BigBold>Resumo:</text.BigBold>
       <FlexContainer padding="0" shadow="0" direction="row">
-        <text.Text font="22px" color="black">
-          Total
-        </text.Text>
-        <text.Text font="22px" margin="0 0 0 auto" color="black">
-          R$ {props.value}
-        </text.Text>
+        <text.MediumSemiBold>Total</text.MediumSemiBold>
+        <text.MediumSemiBold>R$ {props.value}</text.MediumSemiBold>
       </FlexContainer>
       <Button>Finalizar</Button>
     </>

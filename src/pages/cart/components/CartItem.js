@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
+import * as text from "../../../components/text";
+
 import Button from "../../../styled/button";
 import importAll from "../../../functions/importAll";
 
@@ -43,9 +45,11 @@ export default function CartItem(props) {
     <components.CardContainer>
       <img src={images[`${props.image}.jpg`]} alt="" />
       <components.CardBio>
-        <h2>{props.name}</h2>
-        <h3>R$ {decimalFormat.format(props.price * props.qty)}</h3>
-        <h5>R$ {props.price}</h5>
+        <text.MediumBold>{props.name}</text.MediumBold>
+        <text.MediumSemiBold>
+          R$ {decimalFormat.format(props.price * props.qty)}
+        </text.MediumSemiBold>
+        <text.SmallLight>R$ {props.price}</text.SmallLight>
         <components.CardQty>
           <Button
             width="55%"
@@ -57,7 +61,7 @@ export default function CartItem(props) {
           >
             +
           </Button>
-          <h4>{props.qty}</h4>
+          <text.MediumSemiBold>{props.qty}</text.MediumSemiBold>
           <Button
             width="55%"
             fontSize="25px"

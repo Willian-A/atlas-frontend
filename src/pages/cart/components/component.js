@@ -5,7 +5,7 @@ const PageNameBox = styled.div`
   padding-bottom: 25px;
   margin: 20px 0 0 10px;
 
-  h5 {
+  h4 {
     margin-left: 10px;
     transform: translateY(35%);
   }
@@ -37,10 +37,14 @@ const ResumeContainer = styled.div`
   box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
 
-  h1 {
+  h2 {
     border-bottom: 5px solid rgba(0, 0, 0, 0.8);
     padding-bottom: 10px;
     margin-bottom: 15px;
+  }
+
+  h3:last-child {
+    margin: 0 0 0 auto;
   }
 
   button {
@@ -63,10 +67,9 @@ const ResumeContainer = styled.div`
 
 const CardContainer = styled.div`
   display: flex;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 10px;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
-
   img {
     width: 100px;
     cursor: pointer;
@@ -94,17 +97,17 @@ const CardBio = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 15px;
-  max-width: 420px;
+  margin: 0 10px;
+  max-width: 300px;
 
-  h2 {
+  @media (min-width: 768px) {
+    max-width: 420px;
+  }
+
+  h3:first-child {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  h5 {
-    font-size: 14px;
-    opacity: 0.5;
   }
 `;
 
@@ -116,8 +119,8 @@ const CardQty = styled.div`
   bottom: 0;
   max-width: 220px;
 
-  h4 {
-    font-size: 22px;
+  h3 {
+    width: fit-content;
     margin: 0 20px;
     padding: 5px 20px 0 20px;
     border: 1px rgba(0, 0, 0, 0.08) solid;

@@ -9,13 +9,13 @@ const ProductContainer = styled.div`
     width: 80%;
     margin: 0 auto;
     padding: 25px;
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 
 const ProdIMG = styled.img`
   width: 100%;
-  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
 
   @media (min-width: 1024px) {
     width: 30%;
