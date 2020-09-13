@@ -4,7 +4,7 @@ const GeralContainer = styled.div`
   height: fit-content;
 
   @media (min-width: 1024px) {
-    padding: 15px 2% 0;
+    padding: 2.5vh 2vw 0;
   }
 
   @media (min-width: 1440px) {
