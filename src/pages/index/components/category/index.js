@@ -21,9 +21,9 @@ export default function Category() {
   }, []);
   return (
     <component.CategoriesContainer>
-      <CategoryCard img={images["consoles.webp"]} txt="Consoles" />
-      <CategoryCard img={images["jogos.webp"]} txt="Jogos" />
-      <CategoryCard img={images["acessorios.webp"]} txt="Acessorios" />
+      <CategoryCard img={images["consoles"]} txt="Consoles" />
+      <CategoryCard img={images["jogos"]} txt="Jogos" />
+      <CategoryCard img={images["acessorios"]} txt="Acessorios" />
     </component.CategoriesContainer>
   );
 }

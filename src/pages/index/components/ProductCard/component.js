@@ -4,18 +4,14 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 25px 0;
 
   @media (min-width: 390px) {
-    padding: 30px 0;
+    padding: 35px 0;
   }
 
   @media (min-width: 768px) {
     flex-direction: row;
-    padding: 10px 0;
-  }
-
-  @media (min-width: 1024px) {
     padding: 10px 0;
   }
 
@@ -98,9 +94,6 @@ const CardBio = styled.div`
 
   @media (min-width: 768px) {
     padding: 10px;
-  }
-
-  @media (min-width: 1024px) {
   }
 
   @media (min-width: 2560px) {

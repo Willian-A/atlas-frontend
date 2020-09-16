@@ -19,7 +19,7 @@ export default function CartItem(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context("../../../assets/images/products", false, /\.(webp)$/)
         )
       );
     }
@@ -43,7 +43,7 @@ export default function CartItem(props) {
 
   return (
     <components.CardContainer>
-      <img src={images[`${props.image}.jpg`]} alt="" />
+      <img src={images[`${props.image}`]} alt="" />
       <components.CardBio>
         <text.MediumBold>{props.name}</text.MediumBold>
         <text.MediumSemiBold>

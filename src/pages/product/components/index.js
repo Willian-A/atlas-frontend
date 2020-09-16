@@ -33,7 +33,7 @@ export default function ProdCard(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context("../../../assets/images/products", false, /\.(webp)$/)
         )
       );
 
@@ -54,10 +54,7 @@ export default function ProdCard(props) {
 
   return (
     <component.ProductContainer>
-      <component.ProdIMG
-        src={images[`${result.image}.jpg`]}
-        alt={result.name}
-      />
+      <component.ProdIMG src={images[`${result.image}`]} alt={result.name} />
       <component.ProdBioContainer>
         <component.ProdBioBox>
           <text.BigBold>{result.name}</text.BigBold>

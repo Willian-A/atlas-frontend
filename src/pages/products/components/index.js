@@ -24,7 +24,7 @@ export default function ProductsLayout() {
 
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context("../../../assets/images/products", false, /\.(webp)$/)
         )
       );
 
@@ -57,7 +57,7 @@ export default function ProductsLayout() {
       return (
         <ProductCard
           key={value.id_product}
-          cover={images[value.image + ".jpg"]}
+          cover={images[value.image]}
           name={value.name}
           price={value.price}
           id_product={value.id_product}
