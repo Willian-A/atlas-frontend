@@ -22,7 +22,7 @@ export default function MainCard() {
           require.context(
             "../../../../assets/images/products",
             false,
-            /\.(jpg)$/
+            /\.(webp)$/
           )
         )
       );
@@ -39,7 +39,7 @@ export default function MainCard() {
       return (
         <Card
           key={value.id_product}
-          cover={images[value.image + ".jpg"]}
+          cover={images[value.image + ".webp"]}
           name={value.name}
           price={value.price}
           id_product={value.id_product}

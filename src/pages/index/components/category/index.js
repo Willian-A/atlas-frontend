@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
 
@@ -7,14 +7,23 @@ import CategoryCard from "./CategoryCard";
 import importAll from "../../../../functions/importAll";
 
 export default function Category() {
-  let imagesJPEG = importAll(
-    require.context("../../../../assets/images/categories", false, /\.(jpg)$/)
-  );
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    setImages(
+      importAll(
+        require.context(
+          "../../../../assets/images/categories",
+          false,
+          /\.(webp)$/
+        )
+      )
+    );
+  }, []);
   return (
     <component.CategoriesContainer>
-      <CategoryCard img={imagesJPEG["consoles.jpg"]} txt="Consoles" />
-      <CategoryCard img={imagesJPEG["jogos.jpg"]} txt="Jogos" />
-      <CategoryCard img={imagesJPEG["acessorios.jpg"]} txt="Acessorios" />
+      <CategoryCard img={images["consoles.webp"]} txt="Consoles" />
+      <CategoryCard img={images["jogos.webp"]} txt="Jogos" />
+      <CategoryCard img={images["acessorios.webp"]} txt="Acessorios" />
     </component.CategoriesContainer>
   );
 }

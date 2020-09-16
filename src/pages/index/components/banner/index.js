@@ -41,7 +41,7 @@ export default function Banner() {
   useEffect(() => {
     setImages(
       importAll(
-        require.context("../../../../assets/images/banner", false, /\.(jpg)$/)
+        require.context("../../../../assets/images/banner", false, /\.(webp)$/)
       )
     );
     bannerContainer.current = {

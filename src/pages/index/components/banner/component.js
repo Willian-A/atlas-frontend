@@ -48,7 +48,7 @@ const BannerSlideBox = styled.div`
 
   @media (min-width: 1440px) {
     img {
-      width: 72%;
+      width: 100%;
     }
   }
   @media (min-width: 2560px) {
@@ -70,9 +70,11 @@ const BannerDescBox = styled.div`
 
   @media (min-width: 1440px) {
     display: initial;
+    width: 35vw;
     padding: 20px;
   }
   @media (min-width: 1920px) {
+    width: 25vw;
     padding: 30px;
   }
 `;

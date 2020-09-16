@@ -1,21 +1,25 @@
 @font-face {
     font-family: WorkSans-SemiBold;
     src: url(./assets/fonts/WorkSans/WorkSans-SemiBold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: WorkSans-Bold;
     src: url(./assets/fonts/WorkSans/WorkSans-Bold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: WorkSans-Light;
     src: url(./assets/fonts/WorkSans/WorkSans-Light.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: WorkSans-Medium;
     src: url(./assets/fonts/WorkSans/WorkSans-Medium.ttf);
+    font-display: swap;
 }
 
 * {
