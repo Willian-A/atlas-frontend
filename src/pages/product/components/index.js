@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import { useHistory } from "react-router-dom";
-
 import * as component from "./component";
 import * as text from "../../../components/text";
 
@@ -14,7 +12,6 @@ export default function ProdCard(props) {
   const [images, setImages] = useState([]);
   const [result, setResult] = useState([]);
   const [error, setError] = useState({ error: false, message: null });
-  const history = useHistory();
 
   async function addOnCart() {
     try {
@@ -22,7 +19,6 @@ export default function ProdCard(props) {
         productID: props.id,
         action: "add",
       });
-      history.push("/carrinho");
     } catch (error) {
       setError({ error: true, message: error.response.data });
     }
@@ -33,7 +29,7 @@ export default function ProdCard(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(webp)$/)
+          require.context("../../../assets/images/products", false, /\.(jpg)$/)
         )
       );
 

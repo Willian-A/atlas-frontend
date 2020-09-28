@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { A } from "hookrouter";
 
 import api from "../../api";
 
 import * as component from "./component";
 import * as text from "../text";
-import MenuBar from "../../assets/images/icons/menu-bar";
+import { ReactComponent as Logo } from "../../assets/images/icons/menu.svg";
 
 export default function Navbar() {
   const [logged, setLogged] = useState(false);
@@ -24,23 +24,23 @@ export default function Navbar() {
     if (logged) {
       return (
         <li>
-          <Link to="/logout">
+          <A href="">
             <text.MediumSemiBold>Sair</text.MediumSemiBold>
-          </Link>
+          </A>
         </li>
       );
     }
     return (
       <>
         <li>
-          <Link to="/login">
+          <A href="/login">
             <text.MediumSemiBold>Login</text.MediumSemiBold>
-          </Link>
+          </A>
         </li>
         <li>
-          <Link to="/cadastro">
+          <A href="/cadastro">
             <text.MediumSemiBold>Cadastrar</text.MediumSemiBold>
-          </Link>
+          </A>
         </li>
       </>
     );
@@ -49,18 +49,20 @@ export default function Navbar() {
   useEffect(() => {
     let mounted = true;
 
-    getLoginStatus();
-    document.addEventListener(
-      "mousedown",
-      (e) => {
-        if (mounted) {
-          if (!document.getElementById("menu").contains(e.target)) {
-            setOpen(false);
+    if (mounted) {
+      getLoginStatus();
+      document.addEventListener(
+        "mousedown",
+        (e) => {
+          if (mounted) {
+            if (!document.getElementById("menu").contains(e.target)) {
+              setOpen(false);
+            }
           }
-        }
-      },
-      false
-    );
+        },
+        false
+      );
+    }
 
     return function cleanup() {
       mounted = false;
@@ -75,7 +77,7 @@ export default function Navbar() {
           setOpen(!open);
         }}
       >
-        <MenuBar />
+        <Logo />
         <text.MediumSemiBold style={{ margin: "2.5px " }}>
           Menu
         </text.MediumSemiBold>
@@ -83,19 +85,19 @@ export default function Navbar() {
       <div id="menu" className="pages">
         <ul>
           <li>
-            <Link to="/">
-              <text.MediumSemiBold>Home </text.MediumSemiBold>
-            </Link>
+            <A href="/">
+              <text.MediumSemiBold>Home</text.MediumSemiBold>
+            </A>
           </li>
           <li>
-            <Link to="/carrinho">
+            <A href="/carrinho">
               <text.MediumSemiBold>Carrinho</text.MediumSemiBold>
-            </Link>
+            </A>
           </li>
           <li>
-            <Link to="/produtos">
+            <A href="/produtos">
               <text.MediumSemiBold>Produtos</text.MediumSemiBold>
-            </Link>
+            </A>
           </li>
         </ul>
         <ul>{UserButtons()}</ul>

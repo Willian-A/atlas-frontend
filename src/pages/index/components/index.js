@@ -1,16 +1,16 @@
 import React from "react";
 
+import NavBar from "../../../components/navbar";
 import GeralContainer from "../../../styled/page-margin";
-import Navbar from "../../../components/navbar";
 
 import Banner from "./Banner";
-import MainCard from "./ProductCard";
 import Category from "./Category";
+import MainCard from "./ProductCard";
 
 export default function IndexLayout() {
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <GeralContainer>
         <Banner />
         <MainCard />

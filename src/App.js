@@ -1,34 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useRoutes } from "hookrouter";
 
-//Pages
-import Index from "./pages/index/index";
+import Index from "./pages/index";
 import Cart from "./pages/cart";
+import Products from "./pages/products";
 import Product from "./pages/product";
-import ProductsPage from "./pages/products";
 import Login from "./pages/login";
-import Logout from "./pages/logout";
 import Register from "./pages/register";
 import Error from "./pages/error";
 
 //CSS
 import "./global.css";
 
+const routes = {
+  "/": () => <Index />,
+  "/carrinho": () => <Cart />,
+  "/produtos": () => <Products />,
+  "/produto/:id": ({ id }) => <Product id={id} />,
+  "/login": () => <Login />,
+  "/cadastro": () => <Register />,
+};
+
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Index} />
-        <Route exact path="/carrinho" component={Cart} />
-        <Route exact path="/produto" component={Product} />
-        <Route exact path="/produtos" component={ProductsPage} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/logout" component={Logout} />
-        <Route exact path="/cadastro" component={Register} />
-        <Route component={Error} />
-      </Switch>
-    </Router>
-  );
+  const routeResult = useRoutes(routes);
+
+  return routeResult || <Error />;
 }
 
 export default App;

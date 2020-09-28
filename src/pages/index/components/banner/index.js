@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
+import ProgressiveImage from "react-progressive-image";
 
+import Placeholder from "../../../../assets/images/placeholders/BannerPlaceholder.jpg";
 import Button from "../../../../styled/button";
-import ArrowDown from "../../../../assets/images/icons/arrow-down";
-import * as component from "./component";
+import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
 import * as text from "../../../../components/text";
-
 import importAll from "../../../../functions/importAll";
+import * as component from "./component";
 
 export default function Banner() {
   const bannerContainer = useRef();
   const [bannerConfig, setBannerConfig] = useState({ top: 0, index: 1 });
   const [images, setImages] = useState([]);
 
-  function moveUp() {
+  const moveUp = () => {
     if (bannerConfig.index >= bannerContainer.current.bannerCounter) {
       setBannerConfig({
         top: 0,
@@ -26,28 +27,32 @@ export default function Banner() {
         index: bannerConfig.index + 1,
       });
     }
-  }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      moveUp();
-    }, 3500);
-
+    const interval = setInterval(moveUp, 3500);
     return () => clearInterval(interval);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bannerConfig]);
 
   useEffect(() => {
-    setImages(
-      importAll(
-        require.context("../../../../assets/images/banner", false, /\.(webp)$/)
-      )
-    );
-    bannerContainer.current = {
-      bannerCounter: document.getElementById("banner-main-container")
-        .childElementCount,
-      slideContainer: document.getElementById("banner-slide-container"),
+    let mounted = true;
+    if (mounted) {
+      setImages(
+        importAll(
+          require.context("../../../../assets/images/banner", false, /\.(jpg)$/)
+        )
+      );
+      bannerContainer.current = {
+        bannerCounter: document.getElementById("banner-main-container")
+          .childElementCount,
+        slideContainer: document.getElementById("banner-slide-container"),
+      };
+    }
+
+    return function cleanup() {
+      mounted = false;
     };
   }, []);
 
@@ -58,7 +63,19 @@ export default function Banner() {
           id="banner-slide-container"
           top={`-${bannerConfig.top}px`}
         >
-          <img src={Object.values(images)[0]} alt="FIFA 20" />
+          <ProgressiveImage
+            delay={1000}
+            src={Object.values(images)[0]}
+            placeholder={Placeholder}
+          >
+            {(src, loading) => (
+              <img
+                style={{ opacity: loading ? 0.5 : 1 }}
+                src={src}
+                alt="FIFA 20"
+              />
+            )}
+          </ProgressiveImage>
           <component.BannerDescBox>
             <component.BannerDesc>
               <text.BigBold>FIFA 20</text.BigBold>
@@ -74,18 +91,26 @@ export default function Banner() {
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>
-              <div
-                onClick={() => {
-                  moveUp();
-                }}
-              >
+              <div onClick={moveUp}>
                 <ArrowDown />
               </div>
             </component.BannerButtonsBox>
           </component.BannerDescBox>
         </component.BannerSlideBox>
         <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <img src={Object.values(images)[1]} alt="Cyberpunk 2077" />
+          <ProgressiveImage
+            delay={1000}
+            src={Object.values(images)[1]}
+            placeholder={Placeholder}
+          >
+            {(src, loading) => (
+              <img
+                style={{ opacity: loading ? 0.5 : 1 }}
+                src={src}
+                alt="Cyberpunk 2077"
+              />
+            )}
+          </ProgressiveImage>
           <component.BannerDescBox>
             <component.BannerDesc>
               <text.BigBold>Cyberpunk 2077</text.BigBold>
@@ -102,18 +127,26 @@ export default function Banner() {
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>
-              <div
-                onClick={() => {
-                  moveUp();
-                }}
-              >
+              <div onClick={moveUp}>
                 <ArrowDown />
               </div>
             </component.BannerButtonsBox>
           </component.BannerDescBox>
         </component.BannerSlideBox>
         <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <img src={Object.values(images)[2]} alt="NBA 2K20" />
+          <ProgressiveImage
+            delay={1000}
+            src={Object.values(images)[2]}
+            placeholder={Placeholder}
+          >
+            {(src, loading) => (
+              <img
+                style={{ opacity: loading ? 0.5 : 1 }}
+                src={src}
+                alt="NBA 2K20"
+              />
+            )}
+          </ProgressiveImage>
           <component.BannerDescBox>
             <component.BannerDesc>
               <text.BigBold>NBA 2K20</text.BigBold>
@@ -134,11 +167,7 @@ export default function Banner() {
             </component.BannerDesc>
             <component.BannerButtonsBox>
               <Button>Comprar</Button>
-              <div
-                onClick={() => {
-                  moveUp();
-                }}
-              >
+              <div onClick={moveUp}>
                 <ArrowDown />
               </div>
             </component.BannerButtonsBox>

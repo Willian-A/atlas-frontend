@@ -33,9 +33,14 @@ const BannerSlideBox = styled.div`
   transition: 500ms;
 
   img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (min-width: 1440px) {
+    img {
+      width: 75%;
+    }
   }
 `;
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { A } from "hookrouter";
 
 import api from "../../../api";
 
@@ -13,7 +13,6 @@ export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const [err, setErr] = useState(" ");
-  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,7 +21,6 @@ export default function LoginCard() {
         email,
         password,
       });
-      history.push("/");
     } catch (error) {
       setErr(error.response.data);
     }
@@ -31,7 +29,7 @@ export default function LoginCard() {
   return (
     <component.UserContainer>
       <text.SmallSemiBold>
-        <Link to="/">Voltar a Pagina Incial</Link>
+        <A href="/">Voltar a Pagina Incial</A>
       </text.SmallSemiBold>
       <text.BigBold>Login</text.BigBold>
       <text.MediumSemiBold>{err}</text.MediumSemiBold>
@@ -50,14 +48,14 @@ export default function LoginCard() {
           onChange={(e) => setPass(e.target.value)}
         />
         <text.SmallSemiBold>
-          <Link to="/senha">Esqueceu sua Senha</Link>
+          <A href="/senha">Esqueceu sua Senha</A>
         </text.SmallSemiBold>
         <Button width="100%" margin="20px 0 10px" type="submit">
           Login
         </Button>
       </form>
       <text.SmallSemiBold>
-        Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link>
+        Não tem uma conta? <A href="/cadastro">Cadastre-se</A>
       </text.SmallSemiBold>
     </component.UserContainer>
   );

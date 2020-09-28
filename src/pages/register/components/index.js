@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { A } from "hookrouter";
 import InputMask from "react-input-mask";
 
 import api from "../../../api";
@@ -16,7 +16,6 @@ export default function RegisterCard() {
   const [password, setPass] = useState("");
   const [cpf, setCpf] = useState("");
   const [err, setErr] = useState("");
-  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,7 +26,6 @@ export default function RegisterCard() {
         password,
         cpf,
       });
-      history.push("/login");
     } catch (error) {
       setErr(error.response.data);
     }
@@ -36,7 +34,7 @@ export default function RegisterCard() {
   return (
     <component.UserContainer>
       <text.SmallSemiBold>
-        <Link to="/">Voltar a Pagina Incial</Link>
+        <A href="/">Voltar a Pagina Incial</A>
       </text.SmallSemiBold>
       <text.BigBold>Cadastro</text.BigBold>
       <text.MediumSemiBold>{err}</text.MediumSemiBold>
@@ -80,7 +78,7 @@ export default function RegisterCard() {
         </Button>
       </form>
       <text.SmallSemiBold margin="5px auto 0" font="13px">
-        Já tem uma conta? <Link to="/login">Faça Login</Link>
+        Já tem uma conta? <A href="/login">Faça Login</A>
       </text.SmallSemiBold>
     </component.UserContainer>
   );

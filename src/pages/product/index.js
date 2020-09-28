@@ -9,7 +9,7 @@ export default function Product(props) {
     <div style={{ height: "100%" }}>
       <Navbar />
       <GeralContainer>
-        <ProdCard id={props.location.state} />
+        <ProdCard id={props.productID} />
       </GeralContainer>
     </div>
   );

@@ -12,27 +12,28 @@ const CategoriesContainer = styled.div`
 
 const CategoriesBox = styled.div`
   position: relative;
-  width: 85%;
-  text-align: center;
   margin: 0 auto 10px;
-
+  width: 85%;
   h2 {
     position: absolute;
+    text-align: center;
     margin: 25% 0;
     color: #ffae00;
     transition: 500ms;
+    z-index: 2;
   }
 
   img {
+    position: relative;
     width: 100%;
     cursor: pointer;
     transition: 500ms;
-    filter: brightness(40%);
+    z-index: 1;
   }
 
   &:hover {
     img {
-      filter: brightness(20%);
+      filter: brightness(50%);
       transform: scale(1.05);
     }
 
@@ -42,22 +43,22 @@ const CategoriesBox = styled.div`
   }
 
   @media (min-width: 390px) {
-    width: 80%;
     margin: 0 auto 15px;
+    width: 80%;
   }
+
   @media (min-width: 768px) {
-    width: 32%;
+    margin: 0 auto 15px;
+    width: 31.8%;
   }
+
   @media (min-width: 1024px) {
+    margin: 0 0 15px;
     width: 32.5%;
-    margin: 0;
 
     h2 {
       margin: 28% 0;
     }
-  }
-  @media (min-width: 1440px) {
-    width: 32.5%;
   }
 `;
 

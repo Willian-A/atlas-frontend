@@ -14,16 +14,16 @@ export default function Category() {
         require.context(
           "../../../../assets/images/categories",
           false,
-          /\.(webp)$/
+          /\.(jpg)$/
         )
       )
     );
   }, []);
   return (
     <component.CategoriesContainer>
-      <CategoryCard img={images["consoles"]} txt="Consoles" />
-      <CategoryCard img={images["jogos"]} txt="Jogos" />
-      <CategoryCard img={images["acessorios"]} txt="Acessorios" />
+      <CategoryCard img={images["consoles"]} name="Consoles" />
+      <CategoryCard img={images["jogos"]} name="Jogos" />
+      <CategoryCard img={images["acessorios"]} name="Acessorios" />
     </component.CategoriesContainer>
   );
 }
