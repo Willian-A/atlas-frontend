@@ -6,26 +6,31 @@ import * as component from "./component";
 import importAll from "../../../../functions/importAll";
 import api from "../../../../api";
 
-export default function MainCard() {
+export default function ProductsCard() {
   const [result, setResult] = useState([]);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     let mounted = true;
     if (mounted) {
-      async function selectProducts() {
-        const response = await api.get(`/product${5}`);
-        setResult(response.data.result);
-      }
       setImages(
         importAll(
           require.context(
-            "../../../../assets/images/products",
+            "../../../../assets/images/products/medium",
             false,
-            /\.(jpg)$/
+            /\.(webp)$/
           )
         )
       );
+      async function selectProducts() {
+        try {
+          await api
+            .get(`/product${5}`)
+            .then((response) => setResult(response.data.result));
+        } catch (err) {
+          console.log(err.response);
+        }
+      }
       selectProducts();
     }
 
@@ -34,7 +39,7 @@ export default function MainCard() {
     };
   }, []);
 
-  function loadCard() {
+  function CardLoader() {
     return result.map((value) => {
       return (
         <Card
@@ -48,5 +53,5 @@ export default function MainCard() {
     });
   }
 
-  return <component.CardContainer>{loadCard()}</component.CardContainer>;
+  return <component.CardContainer>{CardLoader()}</component.CardContainer>;
 }

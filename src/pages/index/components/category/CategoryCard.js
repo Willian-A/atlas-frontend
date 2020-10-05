@@ -1,23 +1,13 @@
 import React from "react";
-import ProgressiveImage from "react-progressive-image";
 
-import Placeholder from "../../../../assets/images/placeholders/ContainerPlaceholder.jpg";
 import * as component from "./component";
 import * as text from "../../../../components/text";
+import DivPlaceholder from "../../../../components/Placeholder";
 
 export default function CategoryCard(props) {
   return (
     <component.CategoriesBox>
-      <ProgressiveImage delay={1000} src={props.img} placeholder={Placeholder}>
-        {(src, loading) => (
-          <img
-            style={{ opacity: loading ? 0.5 : 1 }}
-            src={src}
-            alt={props.name}
-          />
-        )}
-      </ProgressiveImage>
-
+      <DivPlaceholder img={props.img} alt={props.name} />
       <text.ExtraBigBold>{props.name}</text.ExtraBigBold>
     </component.CategoriesBox>
   );

@@ -1,178 +1,142 @@
-import React, { useState, useEffect, useRef } from "react";
-import ProgressiveImage from "react-progressive-image";
+import React, { useState, useEffect } from "react";
 
-import Placeholder from "../../../../assets/images/placeholders/BannerPlaceholder.jpg";
+import * as component from "./component";
+import * as text from "../../../../components/text";
+import DivPlaceholder from "../../../../components/Placeholder";
 import Button from "../../../../styled/button";
 import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
-import * as text from "../../../../components/text";
+
 import importAll from "../../../../functions/importAll";
-import * as component from "./component";
 
 export default function Banner() {
-  const bannerContainer = useRef();
-  const [bannerConfig, setBannerConfig] = useState({ top: 0, index: 1 });
   const [images, setImages] = useState([]);
+  let bannerContent = [
+    {
+      name: "FIFA 20",
+      img: images[0],
+      description: `FIFA 20 apresenta uma nova maneira de jogar futebol, com toda
+      cultura, criatividade e estilo das ruas e quadras pelo mundo.
+      Crie seu jogador ou jogadora, escolha seu equipamento e mostre
+      seu estilo no mundo inteiro, de uma quadra em Londres a uma
+      passagem subterrânea em Amsterdã. Jogue futebol do seu jeito em
+      vários formatos de partida, como 5x5, com ou paredes, sem
+      goleiros ou futsal profissional.`,
+    },
+    {
+      name: "Cyberpunk 2077",
+      img: images[1],
+      description: `Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
+      ambientada em Night City, uma megalópole obcecada por poder,
+      glamour e biomodificações. Você joga como V, um mercenário fora
+      da lei atrás de um implante único que carrega a chave da
+      imortalidade. Você pode personalizar aparatos cibernéticos,
+      conjunto de habilidades e estilo de jogo do personagem e
+      explorar uma vasta cidade onde as decisões tomadas definem a
+      história e o mundo ao seu redor.`,
+    },
+    {
+      name: "NBA 2K20",
+      img: images[2],
+      description: `NBA 2K transformou-se em algo muito maior que uma simulação de
+      basquete. Com NBA 2K20 a 2K continua a redefinir ou é possível
+      fazer um jogo de esportes, com gráficos e jogabilidade da
+      primeira, modos de jogo, controle e personalização de jogadores
+      inigualáveis. E mais: com o Neighborhood, um modo de imersão no
+      mundo aberto, NBA 2K20 é uma plataforma para jogadores e fãs de
+      basquete, se você quiser e criar o futuro da cultura do esporte.
+      Dê um salto nas suas habilidades com o controle mais realista de
+      todos os tempos, com um mecanismo de movimento melhorado com
+      estilos característicos, controles avançados de controle, um
+      novo sistema de avaliação de drible, colisões sem bola e bola e
+      uma nova jogabilidade defensiva , baseada em leitura e reação.`,
+    },
+  ];
+  const [bannerConfig, setBannerConfig] = useState({
+    top: 0,
+    index: 1,
+    counter: bannerContent.length,
+    height: 0,
+  });
 
-  const moveUp = () => {
-    if (bannerConfig.index >= bannerContainer.current.bannerCounter) {
+  function moveBannerUp() {
+    if (bannerConfig.index >= bannerConfig.counter) {
       setBannerConfig({
         top: 0,
         index: 1,
+        counter: bannerContent.length,
+        height: bannerConfig.height,
       });
     } else {
       setBannerConfig({
-        top:
-          bannerContainer.current.slideContainer.clientHeight *
-          bannerConfig.index,
+        top: bannerConfig.height * bannerConfig.index,
         index: bannerConfig.index + 1,
+        counter: bannerContent.length,
+        height: bannerConfig.height,
       });
     }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(moveUp, 3500);
-    return () => clearInterval(interval);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bannerConfig]);
+  }
 
   useEffect(() => {
     let mounted = true;
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../../assets/images/banner", false, /\.(jpg)$/)
+          require.context(
+            "../../../../assets/images/banner",
+            false,
+            /\.(webp)$/
+          )
         )
       );
-      bannerContainer.current = {
-        bannerCounter: document.getElementById("banner-main-container")
-          .childElementCount,
-        slideContainer: document.getElementById("banner-slide-container"),
-      };
+      setBannerConfig({
+        top: bannerConfig.top,
+        index: bannerConfig.index,
+        counter: bannerContent.length,
+        height: document.getElementById("banner-slide-container").clientHeight,
+      });
     }
-
     return function cleanup() {
       mounted = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(moveBannerUp, 3500);
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bannerConfig]);
+
+  function BannerLoader() {
+    return bannerContent.map((value) => {
+      return (
+        <component.BannerSlideBox
+          id="banner-slide-container"
+          top={`-${bannerConfig.top}px`}
+          key={value.name}
+        >
+          <DivPlaceholder img={value.img} alt={value.name} />
+          <component.BannerDescBox>
+            <component.BannerDesc>
+              <text.BigBold>{value.name}</text.BigBold>
+              <text.SmallLight>{value.description}</text.SmallLight>
+            </component.BannerDesc>
+            <component.BannerButtonsBox>
+              <Button>Comprar</Button>
+              <div onClick={moveBannerUp}>
+                <ArrowDown />
+              </div>
+            </component.BannerButtonsBox>
+          </component.BannerDescBox>
+        </component.BannerSlideBox>
+      );
+    });
+  }
 
   return (
     <component.BannerContainer>
       <component.BannerSlideContainer id="banner-main-container">
-        <component.BannerSlideBox
-          id="banner-slide-container"
-          top={`-${bannerConfig.top}px`}
-        >
-          <ProgressiveImage
-            delay={1000}
-            src={Object.values(images)[0]}
-            placeholder={Placeholder}
-          >
-            {(src, loading) => (
-              <img
-                style={{ opacity: loading ? 0.5 : 1 }}
-                src={src}
-                alt="FIFA 20"
-              />
-            )}
-          </ProgressiveImage>
-          <component.BannerDescBox>
-            <component.BannerDesc>
-              <text.BigBold>FIFA 20</text.BigBold>
-              <text.SmallLight>
-                FIFA 20 apresenta uma nova maneira de jogar futebol, com toda
-                cultura, criatividade e estilo das ruas e quadras pelo mundo.
-                Crie seu jogador ou jogadora, escolha seu equipamento e mostre
-                seu estilo no mundo inteiro, de uma quadra em Londres a uma
-                passagem subterrânea em Amsterdã. Jogue futebol do seu jeito em
-                vários formatos de partida, como 5x5, com ou paredes, sem
-                goleiros ou futsal profissional.
-              </text.SmallLight>
-            </component.BannerDesc>
-            <component.BannerButtonsBox>
-              <Button>Comprar</Button>
-              <div onClick={moveUp}>
-                <ArrowDown />
-              </div>
-            </component.BannerButtonsBox>
-          </component.BannerDescBox>
-        </component.BannerSlideBox>
-        <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <ProgressiveImage
-            delay={1000}
-            src={Object.values(images)[1]}
-            placeholder={Placeholder}
-          >
-            {(src, loading) => (
-              <img
-                style={{ opacity: loading ? 0.5 : 1 }}
-                src={src}
-                alt="Cyberpunk 2077"
-              />
-            )}
-          </ProgressiveImage>
-          <component.BannerDescBox>
-            <component.BannerDesc>
-              <text.BigBold>Cyberpunk 2077</text.BigBold>
-              <text.SmallLight>
-                Cyberpunk 2077 é uma história de ação e aventura de mundo aberto
-                ambientada em Night City, uma megalópole obcecada por poder,
-                glamour e biomodificações. Você joga como V, um mercenário fora
-                da lei atrás de um implante único que carrega a chave da
-                imortalidade. Você pode personalizar aparatos cibernéticos,
-                conjunto de habilidades e estilo de jogo do personagem e
-                explorar uma vasta cidade onde as decisões tomadas definem a
-                história e o mundo ao seu redor.
-              </text.SmallLight>
-            </component.BannerDesc>
-            <component.BannerButtonsBox>
-              <Button>Comprar</Button>
-              <div onClick={moveUp}>
-                <ArrowDown />
-              </div>
-            </component.BannerButtonsBox>
-          </component.BannerDescBox>
-        </component.BannerSlideBox>
-        <component.BannerSlideBox top={`-${bannerConfig.top}px`}>
-          <ProgressiveImage
-            delay={1000}
-            src={Object.values(images)[2]}
-            placeholder={Placeholder}
-          >
-            {(src, loading) => (
-              <img
-                style={{ opacity: loading ? 0.5 : 1 }}
-                src={src}
-                alt="NBA 2K20"
-              />
-            )}
-          </ProgressiveImage>
-          <component.BannerDescBox>
-            <component.BannerDesc>
-              <text.BigBold>NBA 2K20</text.BigBold>
-              <text.SmallLight>
-                NBA 2K transformou-se em algo muito maior que uma simulação de
-                basquete. Com NBA 2K20 a 2K continua a redefinir ou é possível
-                fazer um jogo de esportes, com gráficos e jogabilidade da
-                primeira, modos de jogo, controle e personalização de jogadores
-                inigualáveis. E mais: com o Neighborhood, um modo de imersão no
-                mundo aberto, NBA 2K20 é uma plataforma para jogadores e fãs de
-                basquete, se você quiser e criar o futuro da cultura do esporte.
-                Dê um salto nas suas habilidades com o controle mais realista de
-                todos os tempos, com um mecanismo de movimento melhorado com
-                estilos característicos, controles avançados de controle, um
-                novo sistema de avaliação de drible, colisões sem bola e bola e
-                uma nova jogabilidade defensiva , baseada em leitura e reação.
-              </text.SmallLight>
-            </component.BannerDesc>
-            <component.BannerButtonsBox>
-              <Button>Comprar</Button>
-              <div onClick={moveUp}>
-                <ArrowDown />
-              </div>
-            </component.BannerButtonsBox>
-          </component.BannerDescBox>
-        </component.BannerSlideBox>
+        {BannerLoader()}
       </component.BannerSlideContainer>
     </component.BannerContainer>
   );

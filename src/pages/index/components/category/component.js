@@ -3,6 +3,7 @@ import styled from "styled-components";
 const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (min-width: 768px) {
     flex-direction: row;

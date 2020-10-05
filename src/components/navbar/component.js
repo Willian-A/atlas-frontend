@@ -9,7 +9,7 @@ const NavbarContainer = styled.div`
   div.icon {
     display: flex;
     width: fit-content;
-    padding: 1.2em;
+    padding: 2vh 5vw;
     transition: 500ms;
 
     &:hover {
@@ -19,24 +19,22 @@ const NavbarContainer = styled.div`
 
   div.pages {
     position: fixed;
-    max-width: 55vw;
-    overflow-x: hidden;
+    max-width: 50%;
     background-color: rgba(0, 0, 0, 1);
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-    transition: 350ms;
+    transition: transform 350ms ease;
 
     ul {
-      padding: 8vw 8vw 0;
+      padding: 5vw 5vw 0;
       list-style-type: none;
 
       li a {
-        text-transform: capitalize;
         color: #fff;
+        text-transform: capitalize;
         transition: 500ms;
 
         &:hover {
           color: #ffae00;
-          text-shadow: 0 1px #000000;
         }
       }
     }
@@ -56,7 +54,7 @@ const NavbarContainer = styled.div`
 
       ul {
         display: flex;
-        padding: 3vh;
+        padding: 2.5vh;
 
         li {
           display: initial;
@@ -71,14 +69,6 @@ const NavbarContainer = styled.div`
           flex: 1;
           justify-content: flex-end;
         }
-      }
-    }
-  }
-
-  @media (min-width: 2560px) {
-    div.pages {
-      ul {
-        padding: 4vh;
       }
     }
   }

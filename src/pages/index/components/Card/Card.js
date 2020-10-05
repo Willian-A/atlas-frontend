@@ -2,14 +2,15 @@ import React from "react";
 import { A } from "hookrouter";
 
 import * as component from "./component";
-import * as text from "../../../components/text";
-import Button from "../../../styled/button";
+import * as text from "../../../../components/text";
+import Button from "../../../../styled/button";
+import DivPlaceholder from "../../../../components/Placeholder";
 
-export default function ProductCard(props) {
+export default function Card(props) {
   return (
     <component.CardBox>
       <A href={`/produto/${props.id_product}`}>
-        <img src={props.img} alt={props.name} />
+        <DivPlaceholder alt={props.name} img={props.img} />
         <component.CardBio>
           <text.SmallSemiBold>{props.name}</text.SmallSemiBold>
           <text.MediumSemiBold>R$ {props.price}</text.MediumSemiBold>

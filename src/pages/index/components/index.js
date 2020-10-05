@@ -1,11 +1,12 @@
 import React from "react";
 
 import NavBar from "../../../components/navbar";
+
 import GeralContainer from "../../../styled/page-margin";
 
 import Banner from "./Banner";
+import ProductsCard from "./Card";
 import Category from "./Category";
-import MainCard from "./ProductCard";
 
 export default function IndexLayout() {
   return (
@@ -13,7 +14,7 @@ export default function IndexLayout() {
       <NavBar />
       <GeralContainer>
         <Banner />
-        <MainCard />
+        <ProductsCard />
         <Category />
       </GeralContainer>
     </div>

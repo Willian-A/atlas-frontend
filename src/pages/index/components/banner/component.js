@@ -11,7 +11,7 @@ const BannerContainer = styled.div`
     height: 40vw;
   }
   @media (min-width: 1920px) {
-    height: 35vw;
+    height: 30vw;
   }
   @media (min-width: 2560px) {
     height: 35vw;
@@ -54,7 +54,7 @@ const BannerDescBox = styled.div`
   }
   @media (min-width: 1920px) {
     width: 25vw;
-    padding: 30px;
+    padding: 20px;
   }
 `;
 

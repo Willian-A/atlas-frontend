@@ -30,6 +30,7 @@ const CardContainer = styled.div`
 
 const CardBox = styled.div`
   width: 100%;
+  position: relative;
   max-width: 85%;
   margin: 0 auto 20px;
   overflow: hidden;
