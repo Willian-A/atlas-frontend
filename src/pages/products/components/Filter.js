@@ -7,7 +7,7 @@ import api from "../../../api";
 
 function Filter(props) {
   const [open, setOpen] = useState(false);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState();
 
   async function selectProducts(index) {
     const response = await api.post("/categories", {

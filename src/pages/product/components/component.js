@@ -6,20 +6,30 @@ const ProductContainer = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    width: 80%;
     margin: 0 auto;
     padding: 25px;
     box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+  }
+  @media (min-width: 1920px) {
+    padding: 35px;
   }
 `;
 
 const ProdIMG = styled.img`
   width: 100%;
-  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 
+  @media (min-width: 768px) {
+    width: 60%;
+    margin: 5vh auto;
+  }
   @media (min-width: 1024px) {
-    width: 30%;
+    width: 30vw;
+    margin: 0;
     box-shadow: none;
+  }
+  @media (min-width: 1920px) {
+    width: 20vw;
   }
 `;
 
@@ -64,6 +74,9 @@ const ProdBioBox = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
     }
+  }
+  @media (min-width: 1920px) {
+    width: 40vw;
   }
 `;
 

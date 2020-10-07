@@ -29,7 +29,11 @@ export default function ProdCard(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context(
+            "../../../assets/images/products/big",
+            false,
+            /\.(jpg)$/
+          )
         )
       );
 
@@ -57,7 +61,13 @@ export default function ProdCard(props) {
           <text.SmallSemiBold>{result.description}</text.SmallSemiBold>
         </component.ProdBioBox>
         <component.ProdResume>
-          <text.SmallSemiBold style={{ color: "red" }}>
+          <text.SmallSemiBold
+            style={{
+              color: "red",
+              opacity: error.error ? "1" : "0",
+              transition: "350ms",
+            }}
+          >
             {error.message}
           </text.SmallSemiBold>
           <text.MediumBold>R$ {result.price}</text.MediumBold>

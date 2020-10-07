@@ -24,7 +24,11 @@ export default function ProductsLayout() {
 
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(jpg)$/)
+          require.context(
+            "../../../assets/images/products/medium",
+            false,
+            /\.(webp)$/
+          )
         )
       );
 
