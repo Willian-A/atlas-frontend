@@ -2,13 +2,13 @@ import React from "react";
 import { A } from "hookrouter";
 
 import * as component from "./component";
-import * as text from "../../../../components/text";
-import Button from "../../../../styled/button";
-import DivPlaceholder from "../../../../components/Placeholder";
+import * as text from "../text";
+import Button from "../../styled/button";
+import DivPlaceholder from "../Placeholder";
 
-export default function Card(props) {
+function Card(props) {
   return (
-    <component.CardBox>
+    <component.CardBox shouldDisplayLast={true}>
       <A href={`/produto/${props.id_product}`}>
         <DivPlaceholder alt={props.name} img={props.img} />
         <component.CardBio>
@@ -20,3 +20,5 @@ export default function Card(props) {
     </component.CardBox>
   );
 }
+
+export default Card;

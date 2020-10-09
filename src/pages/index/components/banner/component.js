@@ -33,6 +33,7 @@ const BannerSlideBox = styled.div`
   transition: 500ms;
 
   img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -40,6 +41,11 @@ const BannerSlideBox = styled.div`
   @media (min-width: 1440px) {
     img {
       width: 75%;
+    }
+  }
+  @media (min-width: 2560px) {
+    img {
+      width: 80%;
     }
   }
 `;
@@ -55,6 +61,10 @@ const BannerDescBox = styled.div`
   @media (min-width: 1920px) {
     width: 25vw;
     padding: 20px;
+  }
+  @media (min-width: 2560px) {
+    width: 15vw;
+    padding: 30px;
   }
 `;
 

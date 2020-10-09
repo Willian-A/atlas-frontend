@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "./Card";
-import * as component from "./component";
+import ProductCard from "../../../../components/ProductCard";
 
 import importAll from "../../../../functions/importAll";
 import api from "../../../../api";
@@ -40,18 +39,18 @@ export default function ProductsCard() {
   }, []);
 
   function CardLoader() {
-    return result.map((value) => {
-      return (
-        <Card
-          key={value.id_product}
-          img={images[value.image]}
-          name={value.name}
-          price={value.price}
-          id_product={value.id_product}
-        />
-      );
-    });
+    return (
+      <ProductCard
+        products={result}
+        images={images}
+        ContainerConfig={{
+          "768px": ["1.5vh 0", 4],
+          "1024px": ["1.5vh 0", 5],
+          "1440px": ["1.5vh 0", 5],
+        }}
+      />
+    );
   }
 
-  return <component.CardContainer>{CardLoader()}</component.CardContainer>;
+  return CardLoader();
 }

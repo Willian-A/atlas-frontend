@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import * as component from "./component";
 import * as text from "../../../components/text";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../../../components/ProductCard";
 import Filter from "./Filter";
 
 import importAll from "../../../functions/importAll";
@@ -56,20 +56,6 @@ export default function ProductsLayout() {
     };
   }, []);
 
-  function loadCard() {
-    return result.map((value) => {
-      return (
-        <ProductCard
-          key={value.id_product}
-          img={images[value.image]}
-          name={value.name}
-          price={value.price}
-          id_product={value.id_product}
-        />
-      );
-    });
-  }
-
   return (
     <>
       <component.PageNameContainer>
@@ -119,7 +105,15 @@ export default function ProductsLayout() {
             ]}
           />
         </component.FilterContainer>
-        <component.ProductsContainer>{loadCard()}</component.ProductsContainer>
+        <ProductCard
+          products={result}
+          ContainerConfig={{
+            "768px": ["0 1.5vw", 3],
+            "1024px": ["0 0 0 1vw", 3],
+            "1440px": ["0 0 0 1vw", 4],
+          }}
+          images={images}
+        />
       </component.PageContainer>
     </>
   );
