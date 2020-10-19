@@ -29,7 +29,7 @@ const ProductsContainer = styled.div`
   @media (min-width: 1440px) {
     margin: ${(props) => props.ContainerConfig["1440px"][0]};
     grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["1440px"][2]},
+      ${(props) => props.ContainerConfig["1440px"][1]},
       auto
     );
   }

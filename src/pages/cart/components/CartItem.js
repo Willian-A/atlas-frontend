@@ -19,7 +19,11 @@ export default function CartItem(props) {
     if (mounted) {
       setImages(
         importAll(
-          require.context("../../../assets/images/products", false, /\.(webp)$/)
+          require.context(
+            "../../../assets/images/products/medium",
+            false,
+            /\.(webp)$/
+          )
         )
       );
     }
@@ -36,9 +40,7 @@ export default function CartItem(props) {
         action: action,
       });
       window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   return (
@@ -52,7 +54,7 @@ export default function CartItem(props) {
         <text.SmallLight>R$ {props.price}</text.SmallLight>
         <components.CardQty>
           <Button
-            width="55%"
+            width="100px"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
@@ -63,7 +65,7 @@ export default function CartItem(props) {
           </Button>
           <text.MediumSemiBold>{props.qty}</text.MediumSemiBold>
           <Button
-            width="55%"
+            width="100px"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {

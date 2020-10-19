@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { navigate } from "hookrouter";
 
 import * as component from "./component";
 import * as text from "../../../components/text";
 
 import Button from "../../../styled/button";
+import DivPlaceholder from "../../../components/Placeholder";
 
 import importAll from "../../../functions/importAll";
 import api from "../../../api";
@@ -19,6 +21,7 @@ export default function ProdCard(props) {
         productID: props.id,
         action: "add",
       });
+      navigate("/carrinho");
     } catch (error) {
       setError({ error: true, message: error.response.data });
     }
@@ -54,7 +57,7 @@ export default function ProdCard(props) {
 
   return (
     <component.ProductContainer>
-      <component.ProdIMG src={images[`${result.image}`]} alt={result.name} />
+      <DivPlaceholder img={images[`${result.image}`]} alt={result.name} />
       <component.ProdBioContainer>
         <component.ProdBioBox>
           <text.BigBold>{result.name}</text.BigBold>

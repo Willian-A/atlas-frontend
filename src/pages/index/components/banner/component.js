@@ -2,19 +2,13 @@ import styled from "styled-components";
 
 const BannerContainer = styled.div`
   background-color: #fff;
-  height: 65vw;
+  height: 25vh;
 
   @media (min-width: 1024px) {
-    height: 60vw;
+    height: 65vh;
   }
   @media (min-width: 1440px) {
-    height: 40vw;
-  }
-  @media (min-width: 1920px) {
-    height: 30vw;
-  }
-  @media (min-width: 2560px) {
-    height: 35vw;
+    height: 70vh;
   }
 
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);

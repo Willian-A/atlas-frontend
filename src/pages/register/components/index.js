@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { A } from "hookrouter";
+import { A, navigate } from "hookrouter";
 import InputMask from "react-input-mask";
 
 import api from "../../../api";
@@ -26,6 +26,7 @@ export default function RegisterCard() {
         password,
         cpf,
       });
+      navigate("/login");
     } catch (error) {
       setErr(error.response.data);
     }

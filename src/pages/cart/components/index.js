@@ -11,7 +11,7 @@ import CartItem from "./CartItem";
 export default function CartList() {
   const [carResult, setCartResult] = useState([]);
   const [cartTotal, setCartTotal] = useState("0");
-  const [error, setError] = useState({ error: false, message: null });
+  const [error, setError] = useState({ error: true, message: null });
 
   useEffect(() => {
     let mounted = true;
@@ -21,6 +21,7 @@ export default function CartList() {
           const response = await api.get("/cart");
           setCartResult(response.data.newResult);
           setCartTotal(response.data.totalPrice);
+          setError({ error: false, message: null });
         } catch (error) {
           setError({ error: true, message: error.response.data });
         }
@@ -33,7 +34,16 @@ export default function CartList() {
     };
   }, []);
 
-  if (!error.error) {
+  function checkLogin() {
+    if (error.error)
+      return (
+        <>
+          <text.BigBold style={{ margin: "10% auto", width: "fit-content" }}>
+            {error.message}
+          </text.BigBold>
+        </>
+      );
+
     return (
       <>
         <components.PageNameBox>
@@ -61,13 +71,7 @@ export default function CartList() {
         </components.CartContainer>
       </>
     );
-  } else {
-    return (
-      <>
-        <text.BigBold style={{ margin: "10% auto", width: "fit-content" }}>
-          {error.message}
-        </text.BigBold>
-      </>
-    );
   }
+
+  return checkLogin();
 }

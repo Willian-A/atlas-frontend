@@ -5,12 +5,12 @@ import GeralContainer from "../../styled/page-margin";
 
 import ProductsLayout from "./components";
 
-function ProductsPage() {
+function ProductsPage(props) {
   return (
     <div>
       <NavBar />
       <GeralContainer>
-        <ProductsLayout />
+        <ProductsLayout id={props.id} />
       </GeralContainer>
     </div>
   );

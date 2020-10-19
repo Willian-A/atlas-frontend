@@ -26,9 +26,7 @@ export default function ProductsCard() {
           await api
             .get(`/product${5}`)
             .then((response) => setResult(response.data.result));
-        } catch (err) {
-          console.log(err.response);
-        }
+        } catch (error) {}
       }
       selectProducts();
     }

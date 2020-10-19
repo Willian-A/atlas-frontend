@@ -7,8 +7,10 @@ import DivPlaceholder from "../../../../components/Placeholder";
 export default function CategoryCard(props) {
   return (
     <component.CategoriesBox>
-      <DivPlaceholder img={props.img} alt={props.name} />
-      <text.ExtraBigBold>{props.name}</text.ExtraBigBold>
+      <a href={props.name}>
+        <DivPlaceholder img={props.img} alt={props.name} />
+        <text.ExtraBigBold>{props.name}</text.ExtraBigBold>
+      </a>
     </component.CategoriesBox>
   );
 }

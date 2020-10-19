@@ -17,7 +17,15 @@ export default function DivPlaceholder(props) {
           zIndex: 2,
         }}
       />
-      <img src={props.img} alt={props.alt} onLoad={() => setStatus(true)} />
+      <img
+        src={props.img}
+        alt={props.alt}
+        onLoad={() =>
+          setTimeout(() => {
+            setStatus(true);
+          }, 500)
+        }
+      />
     </>
   );
 }

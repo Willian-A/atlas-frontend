@@ -10,7 +10,6 @@ const Input = styled.input`
   &:focus,
   &:hover {
     color: #fff;
-    transform: scale(1.02);
     background-color: #212121;
 
     &::placeholder {

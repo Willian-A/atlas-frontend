@@ -15,6 +15,10 @@ const CategoriesBox = styled.div`
   position: relative;
   margin: 0 auto 10px;
   width: 85%;
+
+  a {
+    height: 100%;
+  }
   h2 {
     position: absolute;
     text-align: center;

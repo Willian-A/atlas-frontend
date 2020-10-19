@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ProductContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -13,23 +14,23 @@ const ProductContainer = styled.div`
   @media (min-width: 1920px) {
     padding: 35px;
   }
-`;
 
-const ProdIMG = styled.img`
-  width: 100%;
-  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+  img {
+    width: 100%;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 
-  @media (min-width: 768px) {
-    width: 60%;
-    margin: 5vh auto;
-  }
-  @media (min-width: 1024px) {
-    width: 30vw;
-    margin: 0;
-    box-shadow: none;
-  }
-  @media (min-width: 1920px) {
-    width: 20vw;
+    @media (min-width: 768px) {
+      width: 60%;
+      margin: 5vh auto;
+    }
+    @media (min-width: 1024px) {
+      width: 30vw;
+      margin: 0;
+      box-shadow: none;
+    }
+    @media (min-width: 1920px) {
+      width: 20vw;
+    }
   }
 `;
 
@@ -92,4 +93,4 @@ const ProdResume = styled.div`
   }
 `;
 
-export { ProductContainer, ProdIMG, ProdBioContainer, ProdBioBox, ProdResume };
+export { ProductContainer, ProdBioContainer, ProdBioBox, ProdResume };

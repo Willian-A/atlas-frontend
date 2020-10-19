@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { A } from "hookrouter";
+import { A, navigate  } from "hookrouter";
 
 import api from "../../../api";
 
@@ -13,7 +13,7 @@ export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const [err, setErr] = useState(" ");
-
+ 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -21,6 +21,7 @@ export default function LoginCard() {
         email,
         password,
       });
+      navigate("/");
     } catch (error) {
       setErr(error.response.data);
     }

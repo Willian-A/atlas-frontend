@@ -9,7 +9,7 @@ import Filter from "./Filter";
 import importAll from "../../../functions/importAll";
 import api from "../../../api";
 
-export default function ProductsLayout() {
+export default function ProductsLayout(props) {
   const [result, setResult] = useState([]);
   const [images, setImages] = useState([]);
   const [open, setOpen] = useState(false);
@@ -17,9 +17,20 @@ export default function ProductsLayout() {
   useEffect(() => {
     let mounted = true;
     if (mounted) {
-      async function selectProducts() {
-        const response = await api.get(`/product${0}`);
-        setResult(response.data.result);
+      if (props.id !== "all") {
+        async function selectProducts() {
+          const response = await api.post("/categories", {
+            categoryID: props.id,
+          });
+          setResult(response.data.result);
+        }
+        selectProducts();
+      } else {
+        async function selectProducts() {
+          const response = await api.get(`/product${0}`);
+          setResult(response.data.result);
+        }
+        selectProducts();
       }
 
       setImages(
@@ -47,8 +58,6 @@ export default function ProductsLayout() {
         },
         false
       );
-
-      selectProducts();
     }
 
     return function cleanup() {

@@ -7,50 +7,59 @@ import * as component from "./component";
 import * as text from "../text";
 import { ReactComponent as Logo } from "../../assets/images/icons/menu.svg";
 
-export default function Navbar() {
-  const [logged, setLogged] = useState(false);
+function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [loading, setLoading] = React.useState(true);
   const [open, setOpen] = useState(false);
 
   async function getLoginStatus() {
     try {
-      let response = await api.get("/logged");
-      setLogged(response.data);
-    } catch (error) {
-      console.log(error.response.data);
-    }
+      const response = await api.get("/logged");
+      setIsLoggedIn(response.data);
+    } catch (error) {}
   }
 
   function UserButtons() {
-    if (logged) {
+    function Logged() {
       return (
         <li>
-          <A href="">
+          <A href="/logout">
             <text.MediumSemiBold>Sair</text.MediumSemiBold>
           </A>
         </li>
       );
     }
-    return (
-      <>
-        <li>
-          <A href="/login">
-            <text.MediumSemiBold>Login</text.MediumSemiBold>
-          </A>
-        </li>
-        <li>
-          <A href="/cadastro">
-            <text.MediumSemiBold>Cadastrar</text.MediumSemiBold>
-          </A>
-        </li>
-      </>
-    );
+
+    function Unlogged() {
+      return (
+        <>
+          <li>
+            <A href="/login">
+              <text.MediumSemiBold>Login</text.MediumSemiBold>
+            </A>
+          </li>
+          <li>
+            <A href="/cadastro">
+              <text.MediumSemiBold>Cadastrar</text.MediumSemiBold>
+            </A>
+          </li>
+        </>
+      );
+    }
+
+    if (!loading) {
+      return isLoggedIn ? Logged() : Unlogged();
+    }
+    return "";
   }
 
   useEffect(() => {
     let mounted = true;
 
     if (mounted) {
-      getLoginStatus();
+      getLoginStatus().then(() => {
+        setLoading(false);
+      });
       document.addEventListener(
         "mousedown",
         (e) => {
@@ -95,13 +104,16 @@ export default function Navbar() {
             </A>
           </li>
           <li>
-            <A href="/produtos">
+            <A href="/produtos/all">
               <text.MediumSemiBold>Produtos</text.MediumSemiBold>
             </A>
           </li>
         </ul>
-        <ul>{UserButtons()}</ul>
+        <ul>
+          <UserButtons />
+        </ul>
       </div>
     </component.NavbarContainer>
   );
 }
+export default React.memo(Navbar);

@@ -117,7 +117,7 @@ const CardQty = styled.div`
   position: absolute;
   top: unset;
   bottom: 0;
-  max-width: 220px;
+  width: 200px;
 
   h3 {
     width: fit-content;
