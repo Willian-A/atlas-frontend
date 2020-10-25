@@ -3,15 +3,13 @@ import { navigate } from "hookrouter";
 
 import * as component from "./component";
 import * as text from "../../../components/text";
-
 import Button from "../../../styled/button";
 import DivPlaceholder from "../../../components/Placeholder";
-
-import importAll from "../../../functions/importAll";
+import { bigProductImages } from "../../../functions/importImages";
 import api from "../../../api";
 
 export default function ProdCard(props) {
-  const [images, setImages] = useState([]);
+  const images = bigProductImages();
   const [result, setResult] = useState([]);
   const [error, setError] = useState({ error: false, message: null });
 
@@ -28,31 +26,18 @@ export default function ProdCard(props) {
   }
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      setImages(
-        importAll(
-          require.context(
-            "../../../assets/images/products/big",
-            false,
-            /\.(jpg)$/
-          )
-        )
-      );
-
+    let isMounted = true;
+    if (isMounted) {
       async function selectProduct() {
         const response = await api.post("/product", {
           productID: props.id,
         });
         setResult(response.data.result[0]);
       }
-
       selectProduct();
     }
 
-    return function cleanup() {
-      mounted = false;
-    };
+    return () => (isMounted = false);
   }, [props.id]);
 
   return (

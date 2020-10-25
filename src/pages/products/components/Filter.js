@@ -9,7 +9,6 @@ function Filter(props) {
 
   async function selectProducts(index) {
     navigate(`/produtos/${index}`);
-    window.location.reload();
   }
 
   return (

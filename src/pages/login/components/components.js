@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const UserContainer = styled.div`
+const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,4 +52,4 @@ const UserContainer = styled.div`
   }
 `;
 
-export { UserContainer };
+export { LoginContainer };

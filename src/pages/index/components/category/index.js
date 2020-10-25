@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import * as component from "./component";
-
 import CategoryCard from "./CategoryCard";
-
-import importAll from "../../../../functions/importAll";
+import { categoriesImages } from "../../../../functions/importImages";
 
 export default function Category() {
-  const [images, setImages] = useState([]);
-  useEffect(() => {
-    setImages(
-      importAll(
-        require.context(
-          "../../../../assets/images/categories",
-          false,
-          /\.(jpg)$/
-        )
-      )
-    );
-  }, []);
+  const images = categoriesImages();
+
   return (
     <component.CategoriesContainer>
       <CategoryCard img={images["consoles"]} name="Consoles" />

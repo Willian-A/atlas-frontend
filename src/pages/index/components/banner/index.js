@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import * as component from "./component";
-import * as text from "../../../../components/text";
-import DivPlaceholder from "../../../../components/Placeholder";
-import Button from "../../../../styled/button";
-import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
-
-import importAll from "../../../../functions/importAll";
+import BannerComponent from "./BannerComponent";
+import { bannerImages } from "../../../../functions/importImages";
 
 export default function Banner() {
-  const [images, setImages] = useState([]);
-  let bannerContent = [
+  const [bannerConfigs, setBannerConfigs] = React.useState({
+    bannerTopPosition: 0,
+    bannerIndex: 1,
+    bannerHeight: 0,
+  });
+  const images = bannerImages();
+
+  // Titulo, descrição e imagem para cada banner
+  const bannerContent = [
     {
       name: "FIFA 20",
       img: images[0],
@@ -51,92 +54,51 @@ export default function Banner() {
       uma nova jogabilidade defensiva , baseada em leitura e reação.`,
     },
   ];
-  const [bannerConfig, setBannerConfig] = useState({
-    top: 0,
-    index: 1,
-    counter: bannerContent.length,
-    height: 0,
-  });
 
-  function moveBannerUp() {
-    if (bannerConfig.index >= bannerConfig.counter) {
-      setBannerConfig({
-        top: 0,
-        index: 1,
-        counter: bannerContent.length,
-        height: bannerConfig.height,
-      });
-    } else {
-      setBannerConfig({
-        top: bannerConfig.height * bannerConfig.index,
-        index: bannerConfig.index + 1,
-        counter: bannerContent.length,
-        height: bannerConfig.height,
+  // Quando "component did mount" define as configs do banner
+  React.useEffect(() => {
+    let isMounted = true;
+    if (isMounted) {
+      setBannerConfigs({
+        bannerTopPosition: bannerConfigs.bannerTopPosition,
+        bannerIndex: bannerConfigs.bannerIndex,
+        // Pega a altura do Banner (responsivamente)
+        bannerHeight: document.getElementById("banner-container").clientHeight,
       });
     }
-  }
-
-  useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      setImages(
-        importAll(
-          require.context(
-            "../../../../assets/images/banner",
-            false,
-            /\.(webp)$/
-          )
-        )
-      );
-      setBannerConfig({
-        top: bannerConfig.top,
-        index: bannerConfig.index,
-        counter: bannerContent.length,
-        height: document.getElementById("banner-slide-container").clientHeight,
-      });
-    }
-    return function cleanup() {
-      mounted = false;
-    };
+    return () => (isMounted = false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(moveBannerUp, 3500);
-    return () => clearInterval(interval);
+  React.useEffect(() => {
+    const moveUpInterval = setInterval(moveUpBannerUp, 3500);
+    return () => clearInterval(moveUpInterval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bannerConfig]);
+  }, [bannerConfigs]);
 
-  function BannerLoader() {
-    return bannerContent.map((value) => {
-      return (
-        <component.BannerSlideBox
-          id="banner-slide-container"
-          top={`-${bannerConfig.top}px`}
-          key={value.name}
-        >
-          <DivPlaceholder img={value.img} alt={value.name} />
-          <component.BannerDescBox>
-            <component.BannerDesc>
-              <text.BigBold>{value.name}</text.BigBold>
-              <text.SmallLight>{value.description}</text.SmallLight>
-            </component.BannerDesc>
-            <component.BannerButtonsBox>
-              <Button>Comprar</Button>
-              <div onClick={moveBannerUp}>
-                <ArrowDown />
-              </div>
-            </component.BannerButtonsBox>
-          </component.BannerDescBox>
-        </component.BannerSlideBox>
-      );
+  function moveUpBannerUp() {
+    if (bannerConfigs.bannerIndex >= bannerContent.length)
+      return setBannerConfigs({
+        bannerTopPosition: 0,
+        bannerIndex: 1,
+        bannerHeight: bannerConfigs.bannerHeight,
+      });
+    return setBannerConfigs({
+      bannerTopPosition: bannerConfigs.bannerHeight * bannerConfigs.bannerIndex,
+      bannerIndex: bannerConfigs.bannerIndex + 1,
+      bannerHeight: bannerConfigs.bannerHeight,
     });
   }
 
   return (
     <component.BannerContainer>
       <component.BannerSlideContainer id="banner-main-container">
-        {BannerLoader()}
+        <BannerComponent
+          content={bannerContent}
+          images={images}
+          top={bannerConfigs.bannerTopPosition}
+          moveUp={moveUpBannerUp}
+        />
       </component.BannerSlideContainer>
     </component.BannerContainer>
   );

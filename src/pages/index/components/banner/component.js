@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const BannerContainer = styled.div`
-  background-color: #fff;
   height: 25vh;
 
   @media (min-width: 1024px) {
@@ -34,7 +33,7 @@ const BannerSlideBox = styled.div`
 
   @media (min-width: 1440px) {
     img {
-      width: 75%;
+      width: 70%;
     }
   }
   @media (min-width: 2560px) {
@@ -68,6 +67,10 @@ const BannerDesc = styled.div`
   position: relative;
 
   h2 {
+    width: 20vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-transform: capitalize;
     color: #5a5a5a;
   }

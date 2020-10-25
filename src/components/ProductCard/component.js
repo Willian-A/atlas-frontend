@@ -13,7 +13,7 @@ const ProductsContainer = styled.div`
     grid-gap: 1.5vw;
     grid-template-columns: repeat(
       ${(props) => props.ContainerConfig["768px"][1]},
-      auto
+      minmax(100px, 254px)
     );
   }
 
@@ -22,7 +22,7 @@ const ProductsContainer = styled.div`
     grid-gap: 1vw;
     grid-template-columns: repeat(
       ${(props) => props.ContainerConfig["1024px"][1]},
-      auto
+      minmax(100px, 254px)
     );
   }
 
@@ -30,7 +30,21 @@ const ProductsContainer = styled.div`
     margin: ${(props) => props.ContainerConfig["1440px"][0]};
     grid-template-columns: repeat(
       ${(props) => props.ContainerConfig["1440px"][1]},
-      auto
+      minmax(100px, 225px)
+    );
+  }
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(
+      ${(props) => props.ContainerConfig["1440px"][1]},
+      minmax(100px, 290px)
+    );
+  }
+
+  @media (min-width: 2560px) {
+    grid-template-columns: repeat(
+      ${(props) => props.ContainerConfig["1440px"][1]},
+      minmax(100px, 335px)
     );
   }
 `;

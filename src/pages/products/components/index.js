@@ -6,7 +6,7 @@ import * as text from "../../../components/text";
 import ProductCard from "../../../components/ProductCard";
 import Filter from "./Filter";
 
-import importAll from "../../../functions/importAll";
+import importImages from "../../../functions/importImages";
 import api from "../../../api";
 
 export default function ProductsLayout(props) {
@@ -15,26 +15,28 @@ export default function ProductsLayout(props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    if (props.id !== "todos") {
+      async function selectProducts() {
+        const response = await api.post("/categories", {
+          categoryID: props.id,
+        });
+        setResult(response.data.result);
+      }
+      selectProducts();
+    } else {
+      async function selectProducts() {
+        const response = await api.get(`/product${0}`);
+        setResult(response.data.result);
+      }
+      selectProducts();
+    }
+  }, [props.id]);
+
+  useEffect(() => {
     let mounted = true;
     if (mounted) {
-      if (props.id !== "all") {
-        async function selectProducts() {
-          const response = await api.post("/categories", {
-            categoryID: props.id,
-          });
-          setResult(response.data.result);
-        }
-        selectProducts();
-      } else {
-        async function selectProducts() {
-          const response = await api.get(`/product${0}`);
-          setResult(response.data.result);
-        }
-        selectProducts();
-      }
-
       setImages(
-        importAll(
+        importImages(
           require.context(
             "../../../assets/images/products/medium",
             false,
@@ -63,6 +65,7 @@ export default function ProductsLayout(props) {
     return function cleanup() {
       mounted = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -86,10 +89,11 @@ export default function ProductsLayout(props) {
           <Filter
             name="categorias"
             options={[
+              "todos",
               "ação",
               "aventura",
               "puzzle",
-              "rpg",
+              "RPG",
               "tiro",
               "estratégia",
               "sobrevivência",

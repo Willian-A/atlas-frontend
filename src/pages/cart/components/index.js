@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
 import * as text from "../../../components/text";
-
 import api from "../../../api";
-
 import CartResume from "./CartResume";
 import CartItem from "./CartItem";
 
@@ -14,8 +12,8 @@ export default function CartList() {
   const [error, setError] = useState({ error: true, message: null });
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
+    let isMounted = true;
+    if (isMounted) {
       async function getCart() {
         try {
           const response = await api.get("/cart");
@@ -29,9 +27,7 @@ export default function CartList() {
       getCart();
     }
 
-    return function cleanup() {
-      mounted = false;
-    };
+    return () => (isMounted = false);
   }, []);
 
   function checkLogin() {

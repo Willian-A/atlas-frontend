@@ -1,37 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import * as components from "./component";
 import * as text from "../../../components/text";
-
 import Button from "../../../styled/button";
-import importAll from "../../../functions/importAll";
+import { smallProductImages } from "../../../functions/importImages";
 
 import api from "../../../api";
 
 export default function CartItem(props) {
-  const [images, setImages] = useState([]);
+  const images = smallProductImages();
   const decimalFormat = new Intl.NumberFormat("en-US", {
     minimumFractionDigits: 2,
   });
-
-  useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      setImages(
-        importAll(
-          require.context(
-            "../../../assets/images/products/medium",
-            false,
-            /\.(webp)$/
-          )
-        )
-      );
-    }
-
-    return function cleanup() {
-      mounted = false;
-    };
-  }, [props]);
 
   async function productQty(action) {
     try {

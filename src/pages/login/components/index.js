@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { A, navigate  } from "hookrouter";
+import { A, navigate } from "hookrouter";
 
 import api from "../../../api";
 
@@ -13,7 +13,7 @@ export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const [err, setErr] = useState(" ");
- 
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -28,7 +28,7 @@ export default function LoginCard() {
   }
 
   return (
-    <component.UserContainer>
+    <component.LoginContainer>
       <text.SmallSemiBold>
         <A href="/">Voltar a Pagina Incial</A>
       </text.SmallSemiBold>
@@ -58,6 +58,6 @@ export default function LoginCard() {
       <text.SmallSemiBold>
         Não tem uma conta? <A href="/cadastro">Cadastre-se</A>
       </text.SmallSemiBold>
-    </component.UserContainer>
+    </component.LoginContainer>
   );
 }

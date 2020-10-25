@@ -1,26 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 import ProductCard from "../../../../components/ProductCard";
-
-import importAll from "../../../../functions/importAll";
+import { mediumProductImages } from "../../../../functions/importImages";
 import api from "../../../../api";
 
 export default function ProductsCard() {
   const [result, setResult] = useState([]);
-  const [images, setImages] = useState([]);
+  const images = mediumProductImages();
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      setImages(
-        importAll(
-          require.context(
-            "../../../../assets/images/products/medium",
-            false,
-            /\.(webp)$/
-          )
-        )
-      );
+    let isMounted = true;
+    if (isMounted) {
       async function selectProducts() {
         try {
           await api
@@ -31,24 +21,18 @@ export default function ProductsCard() {
       selectProducts();
     }
 
-    return function cleanup() {
-      mounted = false;
-    };
+    return () => (isMounted = false);
   }, []);
 
-  function CardLoader() {
-    return (
-      <ProductCard
-        products={result}
-        images={images}
-        ContainerConfig={{
-          "768px": ["1.5vh 0", 4],
-          "1024px": ["1.5vh 0", 5],
-          "1440px": ["1.5vh 0", 5],
-        }}
-      />
-    );
-  }
-
-  return CardLoader();
+  return (
+    <ProductCard
+      products={result}
+      images={images}
+      ContainerConfig={{
+        "768px": ["1.5vh 0", 4],
+        "1024px": ["1.5vh 0", 5],
+        "1440px": ["1.5vh 0", 5],
+      }}
+    />
+  );
 }
