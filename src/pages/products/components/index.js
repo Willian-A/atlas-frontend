@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
-import { A, P, H5, H4, H3, H2, H1 } from "../../../components/text/text";
+import { H5, H3, H2 } from "../../../components/text/text";
 
 import ProductCard from "../../../components/ProductCard";
 import Filter from "./Filter";

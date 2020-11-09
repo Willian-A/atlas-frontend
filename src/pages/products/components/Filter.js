@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navigate } from "hookrouter";
 
 import * as component from "./component";
-import { A, P, H5, H4, H3, H2, H1 } from "../../../components/text/text";
+import { H4, H3 } from "../../../components/text/text";
 
 function Filter(props) {
   const [open, setOpen] = useState(false);
