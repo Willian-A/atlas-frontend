@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import * as text from "../../../components/text";
+import { H5, H2 } from "../../../components/text/text";
 import api from "../../../api";
 import CartResume from "./CartResume";
 import CartItem from "./CartItem";
@@ -34,17 +34,23 @@ export default function CartList() {
     if (error.error)
       return (
         <>
-          <text.BigBold style={{ margin: "10% auto", width: "fit-content" }}>
+          <H2
+            style={{
+              margin: "10% auto",
+              width: "fit-content",
+              fontWeight: "400",
+            }}
+          >
             {error.message}
-          </text.BigBold>
+          </H2>
         </>
       );
 
     return (
       <>
         <components.PageNameBox>
-          <text.BigBold>Seu Carrinho</text.BigBold>
-          <text.SmallSemiBold>{carResult.length} itens</text.SmallSemiBold>
+          <H2>Seu Carrinho</H2>
+          <H5>{carResult.length} itens</H5>
         </components.PageNameBox>
         <components.CartContainer>
           <components.CartListContainer>

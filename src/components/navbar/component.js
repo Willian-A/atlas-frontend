@@ -1,75 +1,35 @@
 import styled from "styled-components";
 
 const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.2);
+  height: ${(props) => (props.scrolling ? "3em" : "5em")};
+  background-color: #f2f4f8;
+  transition: 250ms;
   z-index: 3;
 
-  div.icon {
-    display: flex;
-    width: fit-content;
-    padding: 2vh 5vw;
+  a {
+    margin: 0 0.2em;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+    font-weight: 500;
+    color: #2e3440;
     transition: 500ms;
 
     &:hover {
-      opacity: 0.5;
+      background-color: #c9cfd8;
     }
   }
 
-  div.pages {
-    position: fixed;
-    max-width: 50%;
-    background-color: rgba(0, 0, 0, 1);
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-    transition: transform 350ms ease;
-
-    ul {
-      padding: 5vw 5vw 0;
-      list-style-type: none;
-
-      li a {
-        color: #fff;
-        text-transform: capitalize;
-        transition: 500ms;
-
-        &:hover {
-          color: #ffae00;
-        }
-      }
-    }
+  div.user {
+    display: none;
   }
 
   @media (min-width: 768px) {
-    div.icon {
-      display: none;
-    }
-
-    div.pages {
-      display: flex;
-      position: relative;
-      max-width: 100%;
-      transform: unset;
-      background: unset;
-
-      ul {
-        display: flex;
-        padding: 2.5vh;
-
-        li {
-          display: initial;
-          margin: 0 20px 0 0;
-
-          a {
-            color: #000;
-          }
-        }
-
-        &:last-child {
-          flex: 1;
-          justify-content: flex-end;
-        }
-      }
+    div.user {
+      display: initial;
     }
   }
 `;

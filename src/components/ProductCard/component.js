@@ -1,65 +1,51 @@
 import styled from "styled-components";
 
 const ProductsContainer = styled.div`
-  display: grid;
   width: fit-content;
-  grid-gap: 5vw;
-  margin: 2vh auto;
-  grid-template-columns: repeat(1, 80vw);
+  margin: 10vw auto;
+  display: grid;
+  grid-gap: 10vw;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   @media (min-width: 768px) {
     width: 100%;
-    margin: ${(props) => props.ContainerConfig["768px"][0]};
-    grid-gap: 1.5vw;
-    grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["768px"][1]},
-      minmax(100px, 254px)
-    );
+    margin: ${({ useMargin }) => (useMargin ? "0 1vw" : "1vw 0")};
+    grid-gap: 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-rows: minmax(345px, 1fr);
   }
 
   @media (min-width: 1024px) {
-    margin: ${(props) => props.ContainerConfig["1024px"][0]};
-    grid-gap: 1vw;
-    grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["1024px"][1]},
-      minmax(100px, 254px)
-    );
+    margin: ${({ useMargin }) => (useMargin ? "0 0 0 0.8em" : "0.8em 0")};
+    grid-gap: 0.8em;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-rows: minmax(300px, 1fr);
   }
 
   @media (min-width: 1440px) {
-    margin: ${(props) => props.ContainerConfig["1440px"][0]};
-    grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["1440px"][1]},
-      minmax(100px, 225px)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: minmax(375px, 1fr);
   }
 
   @media (min-width: 1920px) {
-    grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["1440px"][1]},
-      minmax(100px, 290px)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 
   @media (min-width: 2560px) {
-    grid-template-columns: repeat(
-      ${(props) => props.ContainerConfig["1440px"][1]},
-      minmax(100px, 335px)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 `;
 
 const CardBox = styled.div`
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
   img {
     width: 100%;
-    transition: 500ms;
+    transition: ease-in-out 450ms;
 
     &:hover {
-      filter: brightness(30%);
+      filter: brightness(40%);
     }
   }
 
@@ -76,20 +62,22 @@ const CardBox = styled.div`
 `;
 
 const CardBio = styled.div`
-  padding: 10px;
+  padding: 10px 0 0;
   color: black;
 
   h4 {
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   h3 {
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 1vh;
+    margin-bottom: 0.5em;
   }
 `;
 

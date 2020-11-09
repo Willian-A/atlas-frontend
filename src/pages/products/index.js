@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import NavBar from "../../components/navbar";
-import GeralContainer from "../../styled/page-margin";
-
 import ProductsLayout from "./components";
 
 function ProductsPage(props) {
@@ -13,12 +11,10 @@ function ProductsPage(props) {
   }, [props.id]);
 
   return (
-    <div>
+    <>
       <NavBar />
-      <GeralContainer>
-        <ProductsLayout id={id} />
-      </GeralContainer>
-    </div>
+      <ProductsLayout id={id} />
+    </>
   );
 }
 

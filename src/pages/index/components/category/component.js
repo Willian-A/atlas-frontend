@@ -1,69 +1,80 @@
 import styled from "styled-components";
 
 const CategoriesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  width: fit-content;
+  margin: 0 auto 10px;
+  display: grid;
+  grid-gap: 5vw;
+  grid-template-columns: repeat(auto-fit, minmax(0, 280px));
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
+    width: 100%;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-gap: 0.8em;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  @media (min-width: 2560px) {
+    grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
   }
 `;
 
 const CategoriesBox = styled.div`
   position: relative;
-  margin: 0 auto 10px;
-  width: 85%;
 
-  a {
-    height: 100%;
-  }
-  h2 {
+  h1 {
     position: absolute;
+    top: 35%;
+    height: fit-content;
     text-align: center;
-    margin: 25% 0;
-    color: #ffae00;
+    font-weight: 600;
+    color: #eceff4;
     transition: 500ms;
     z-index: 2;
   }
 
   img {
-    position: relative;
     width: 100%;
-    cursor: pointer;
     transition: 500ms;
-    z-index: 1;
   }
 
   &:hover {
     img {
-      filter: brightness(50%);
-      transform: scale(1.05);
+      filter: brightness(40%);
     }
 
-    h2 {
-      color: white;
+    h1 {
+      color: #ffae00;
     }
-  }
-
-  @media (min-width: 390px) {
-    margin: 0 auto 15px;
-    width: 80%;
   }
 
   @media (min-width: 768px) {
-    margin: 0 auto 15px;
-    width: 31.8%;
   }
 
   @media (min-width: 1024px) {
-    margin: 0 0 15px;
-    width: 32.5%;
+  }
 
-    h2 {
-      margin: 28% 0;
+  @media (min-width: 1440px) {
+  }
+
+  @media (min-width: 1920px) {
+    h1 {
+      top: 42%;
     }
+  }
+
+  @media (min-width: 2560px) {
   }
 `;
 

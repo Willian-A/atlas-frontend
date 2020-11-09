@@ -2,7 +2,7 @@ import React from "react";
 import { A } from "hookrouter";
 
 import * as component from "./component";
-import * as text from "../text";
+import { H3, H4 } from "../text/text";
 import Button from "../../styled/button";
 import DivPlaceholder from "../Placeholder";
 
@@ -12,8 +12,8 @@ function Card(props) {
       <A href={`/produto/${props.id_product}`}>
         <DivPlaceholder alt={props.name} img={props.img} />
         <component.CardBio>
-          <text.SmallSemiBold>{props.name}</text.SmallSemiBold>
-          <text.MediumSemiBold>R$ {props.price}</text.MediumSemiBold>
+          <H4>{props.name}</H4>
+          <H3>R$ {props.price}</H3>
           <Button width="100%">Ver Produto</Button>
         </component.CardBio>
       </A>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navigate } from "hookrouter";
 
 import * as component from "./component";
-import * as text from "../../../components/text";
+import { A, P, H5, H4, H3, H2, H1 } from "../../../components/text/text";
 
 function Filter(props) {
   const [open, setOpen] = useState(false);
@@ -19,18 +19,18 @@ function Filter(props) {
           setOpen(!open);
         }}
       >
-        <text.MediumSemiBold>{props.name}</text.MediumSemiBold>
+        <H3>{props.name}</H3>
         <component.FilterOptions open={open}>
           {props.options.map((name, index) => {
             return (
-              <text.SmallSemiBold
+              <H4
                 key={index}
                 onClick={() => {
                   selectProducts(props.options[props.options.indexOf(name)]);
                 }}
               >
                 {name}
-              </text.SmallSemiBold>
+              </H4>
             );
           })}
         </component.FilterOptions>

@@ -8,7 +8,6 @@ const LoginContainer = styled.div`
   padding: 30px;
   margin: 0 auto;
   top: 25%;
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
 
   a {
     color: #b2b2b2;

@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { A } from "hookrouter";
+import React from "react";
 
 import api from "../../api";
 
 import * as component from "./component";
-import * as text from "../text";
-import { ReactComponent as Logo } from "../../assets/images/icons/menu.svg";
+import { A } from "../text/text";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = React.useState();
   const [loading, setLoading] = React.useState(true);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [scrolling, setScrolling] = React.useState();
 
   async function getLoginStatus() {
     try {
@@ -21,28 +20,14 @@ function Navbar() {
 
   function UserButtons() {
     function Logged() {
-      return (
-        <li>
-          <A href="/logout">
-            <text.MediumSemiBold>Sair</text.MediumSemiBold>
-          </A>
-        </li>
-      );
+      return <A href="/logout">Sair</A>;
     }
 
     function Unlogged() {
       return (
         <>
-          <li>
-            <A href="/login">
-              <text.MediumSemiBold>Login</text.MediumSemiBold>
-            </A>
-          </li>
-          <li>
-            <A href="/cadastro">
-              <text.MediumSemiBold>Cadastrar</text.MediumSemiBold>
-            </A>
-          </li>
+          <A href="/login">Login</A>
+          <A href="/cadastro">Cadastrar</A>
         </>
       );
     }
@@ -53,7 +38,21 @@ function Navbar() {
     return "";
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 2) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    }
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  React.useEffect(() => {
     let mounted = true;
 
     if (mounted) {
@@ -79,41 +78,20 @@ function Navbar() {
   }, []);
 
   return (
-    <component.NavbarContainer open={open}>
-      <div
-        className="icon"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <Logo />
-        <text.MediumSemiBold style={{ margin: "2.5px " }}>
-          Menu
-        </text.MediumSemiBold>
+    <component.NavbarContainer
+      open={open}
+      scrolling={scrolling ? scrolling.toString() : undefined}
+    >
+      <div>
+        <A href="/">Home</A>
+        <A href="/carrinho">Carrinho</A>
+        <A href="/produtos/all">Produtos</A>
       </div>
-      <div id="menu" className="pages">
-        <ul>
-          <li>
-            <A href="/">
-              <text.MediumSemiBold>Home</text.MediumSemiBold>
-            </A>
-          </li>
-          <li>
-            <A href="/carrinho">
-              <text.MediumSemiBold>Carrinho</text.MediumSemiBold>
-            </A>
-          </li>
-          <li>
-            <A href="/produtos/all">
-              <text.MediumSemiBold>Produtos</text.MediumSemiBold>
-            </A>
-          </li>
-        </ul>
-        <ul>
-          <UserButtons />
-        </ul>
+      <div id="menu" className="user">
+        <UserButtons />
       </div>
     </component.NavbarContainer>
   );
 }
+
 export default React.memo(Navbar);

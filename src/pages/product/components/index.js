@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { navigate } from "hookrouter";
 
 import * as component from "./component";
-import * as text from "../../../components/text";
+import { P, H3, H2 } from "../../../components/text/text";
 import Button from "../../../styled/button";
 import DivPlaceholder from "../../../components/Placeholder";
 import { bigProductImages } from "../../../functions/importImages";
@@ -45,11 +45,11 @@ export default function ProdCard(props) {
       <DivPlaceholder img={images[`${result.image}`]} alt={result.name} />
       <component.ProdBioContainer>
         <component.ProdBioBox>
-          <text.BigBold>{result.name}</text.BigBold>
-          <text.SmallSemiBold>{result.description}</text.SmallSemiBold>
+          <H2>{result.name}</H2>
+          <P>{result.description}</P>
         </component.ProdBioBox>
         <component.ProdResume>
-          <text.SmallSemiBold
+          <H3
             style={{
               color: "red",
               opacity: error.error ? "1" : "0",
@@ -57,8 +57,8 @@ export default function ProdCard(props) {
             }}
           >
             {error.message}
-          </text.SmallSemiBold>
-          <text.MediumBold>R$ {result.price}</text.MediumBold>
+          </H3>
+          <H2>R$ {result.price}</H2>
           <Button
             width="200px"
             onClick={() => {

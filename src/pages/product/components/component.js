@@ -9,7 +9,6 @@ const ProductContainer = styled.div`
     flex-direction: row;
     margin: 0 auto;
     padding: 25px;
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
   }
   @media (min-width: 1920px) {
     padding: 35px;
@@ -17,7 +16,6 @@ const ProductContainer = styled.div`
 
   img {
     width: 100%;
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
 
     @media (min-width: 768px) {
       width: 60%;
@@ -26,7 +24,6 @@ const ProductContainer = styled.div`
     @media (min-width: 1024px) {
       width: 30vw;
       margin: 0;
-      box-shadow: none;
     }
     @media (min-width: 1920px) {
       width: 20vw;
@@ -49,12 +46,15 @@ const ProdBioBox = styled.div`
 
   h2 {
     margin: 25px 0 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    text-weight: 600;
   }
 
-  h4 {
+  p {
     color: #3f3f3f;
     -webkit-line-clamp: 30;
   }
@@ -62,13 +62,12 @@ const ProdBioBox = styled.div`
   @media (min-width: 1024px) {
     width: 500px;
     padding: 0;
-    box-shadow: none;
 
     h2 {
       margin: 0 0 1.5vh;
     }
 
-    h4 {
+    p {
       display: -webkit-box;
       -webkit-line-clamp: 12;
       -webkit-box-orient: vertical;
@@ -76,6 +75,7 @@ const ProdBioBox = styled.div`
       text-overflow: ellipsis;
     }
   }
+
   @media (min-width: 1920px) {
     width: 40vw;
   }
@@ -84,7 +84,11 @@ const ProdBioBox = styled.div`
 const ProdResume = styled.div`
   margin: 20px 0 25px;
 
-  h3 {
+  h3:first-child {
+    font-weight: 400;
+  }
+
+  h2 {
     margin-bottom: 5px;
   }
 

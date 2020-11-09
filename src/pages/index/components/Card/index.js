@@ -29,7 +29,7 @@ export default function ProductsCard() {
       products={result}
       images={images}
       ContainerConfig={{
-        "768px": ["1.5vh 0", 4],
+        "768px": ["1vh 0", 4],
         "1024px": ["1.5vh 0", 5],
         "1440px": ["1.5vh 0", 5],
       }}

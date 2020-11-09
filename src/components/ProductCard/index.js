@@ -18,7 +18,10 @@ function ProductCard(props) {
     });
   }
   return (
-    <component.ProductsContainer ContainerConfig={props.ContainerConfig || [0]}>
+    <component.ProductsContainer
+      ContainerConfig={props.ContainerConfig || [0]}
+      useMargin={props.useMargin}
+    >
       {loadCards()}
     </component.ProductsContainer>
   );

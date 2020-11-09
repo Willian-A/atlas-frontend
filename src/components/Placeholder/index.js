@@ -7,10 +7,11 @@ export default function DivPlaceholder(props) {
     <>
       <div
         style={{
-          backgroundColor: "#d6d6d6",
+          backgroundColor: "#c9cfd8",
           width: "100%",
           height: "100%",
           position: "absolute",
+          borderRadius: "1em",
           opacity: status ? 0 : 1,
           visibility: status ? "hidden" : "visible",
           transition: "500ms",
@@ -18,6 +19,9 @@ export default function DivPlaceholder(props) {
         }}
       />
       <img
+        style={{
+          opacity: status ? 1 : 0,
+        }}
         src={props.img}
         alt={props.alt}
         onLoad={() =>

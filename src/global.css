@@ -1,27 +1,4 @@
-@font-face {
-    font-family: WorkSans-SemiBold;
-    src: url(./assets/fonts/WorkSans/WorkSans-SemiBold.ttf);
-    font-display: block;
-}
-
-@font-face {
-    font-family: WorkSans-Bold;
-    src: url(./assets/fonts/WorkSans/WorkSans-Bold.ttf);
-    font-display: block;
-}
-
-@font-face {
-    font-family: WorkSans-Light;
-    src: url(./assets/fonts/WorkSans/WorkSans-Light.ttf);
-    font-display: block;
-}
-
-@font-face {
-    font-family: WorkSans-Medium;
-    src: url(./assets/fonts/WorkSans/WorkSans-Medium.ttf);
-    font-display: block;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;615;700;800;900&display=swap');
 * {
     top: 0;
     left: 0;
@@ -37,5 +14,37 @@
 
 body {
     min-width: fit-content;
-    background-color: #fff;
+    background-color: #F2F4F8;
+}
+
+@media (min-width: 767px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        max-width: calc(1600px + (100vw / 64 * 2) + (100vw / 64 * 2));
+        overflow-x: auto;
+        padding-left: calc(100vw / 64 * 2);
+        padding-right: calc(100vw / 64 * 2);
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
+        padding-left: calc(100vw / 72 * 9);
+        padding-right: calc(100vw / 72 * 9);
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
+        padding-left: calc(100vw / 72 * 9);
+        padding-right: calc(100vw / 72 * 9);
+    }
 }

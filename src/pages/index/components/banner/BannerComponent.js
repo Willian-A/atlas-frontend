@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
-import * as text from "../../../../components/text";
+import { P, H1 } from "../../../../components/text/text";
 import DivPlaceholder from "../../../../components/Placeholder";
 import Button from "../../../../styled/button";
 import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
@@ -17,14 +17,12 @@ function BannerComponent(props) {
         <DivPlaceholder img={value.img} alt={value.name} />
         <component.BannerDescBox>
           <component.BannerDesc>
-            <text.BigBold>{value.name}</text.BigBold>
-            <text.SmallLight>{value.description}</text.SmallLight>
+            <H1>{value.name}</H1>
+            <P>{value.description}</P>
           </component.BannerDesc>
           <component.BannerButtonsBox>
             <Button>Comprar</Button>
-            <div onClick={props.moveUp}>
-              <ArrowDown />
-            </div>
+            <ArrowDown onClick={props.moveUp} />
           </component.BannerButtonsBox>
         </component.BannerDescBox>
       </component.BannerSlideBox>

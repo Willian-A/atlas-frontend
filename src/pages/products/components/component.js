@@ -1,27 +1,29 @@
 import styled from "styled-components";
 
 const PageNameContainer = styled.div`
-  position: relative;
-  width: fit-content;
-  margin: 1.5vh auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 10px 20px;
 
-  h3 {
-    width: fit-content;
-    margin: 1.5vh auto;
+  h2 {
+    font-weight: 500;
   }
 
-  @media (min-width: 768px) {
-    width: auto;
-    margin: 3.5vw;
-    display: flex;
+  h3 {
+    margin: auto 0 auto;
+    height: min-content;
+    font-weight: 500;
+  }
 
-    h3 {
-      margin: 1.5vh 0 0 auto;
-    }
+  h5 {
+    margin: auto auto auto 10px;
+    height: min-content;
+    font-weight: 400;
   }
 
   @media (min-width: 1024px) {
-    margin: 0 0 2vh;
+    margin: 20px 0;
 
     h3 {
       display: none;
@@ -53,8 +55,8 @@ const PageContainer = styled.div`
 `;
 const FilterContainer = styled.div`
   position: absolute;
-  padding: 5vw 5vw 0;
-  width: ${({ open }) => (open ? "50vw" : "0")};
+  padding: 1em;
+  width: ${({ open }) => (open ? "45%" : "0")};
   opacity: ${({ open }) => (open ? "1" : "0")};
   overflow: hidden;
   background-color: #000;
@@ -63,34 +65,25 @@ const FilterContainer = styled.div`
   transition: 500ms;
 
   @media (min-width: 390px) {
-    padding: 3.5vw 3.5vw 0;
-    width: ${({ open }) => (open ? "40vw" : "0")};
+    width: ${({ open }) => (open ? "35%" : "0")};
   }
 
   @media (min-width: 768px) {
-    padding: 2vw 2vw 0;
-    width: ${({ open }) => (open ? "25vw" : "0")};
+    width: ${({ open }) => (open ? "20%" : "0")};
   }
 
   @media (min-width: 1024px) {
     position: relative;
-    width: 18vw;
+    width: 18%;
     opacity: 1;
-    padding: 2vw 2vw 0;
-    margin-right: auto;
-  }
-
-  @media (min-width: 1440px) {
-    width: 13vw;
-    padding: 1vw 1vw 0;
   }
 
   @media (min-width: 1920px) {
-    width: 10vw;
+    width: 15%;
   }
 
   @media (min-width: 2560px) {
-    width: 11vw;
+    width: 10%;
   }
 `;
 const FilterBox = styled.div`
@@ -98,12 +91,13 @@ const FilterBox = styled.div`
   cursor: pointer;
   margin-bottom: 1vh;
   text-transform: capitalize;
-  transition: 500ms;
+  transition: 250ms;
 
   h3 {
     padding-bottom: 0.5vh;
-    transition: 500ms;
-    border-bottom: ${({ open }) => (open ? "5px solid white" : "0")};
+    transition: 250ms;
+    font-weight: 500;
+    border-bottom: ${({ open }) => (open ? "2.5px solid white" : "0")};
 
     &:hover {
       color: #ffae00;
@@ -116,16 +110,15 @@ const FilterOptions = styled.div`
   height: ${({ open }) => (open ? "fit-content" : "0")};
   opacity: ${({ open }) => (open ? "1" : "0")};
   visibility: ${({ open }) => (open ? "visible" : "hidden")};
-  transition: 500ms;
+  margin: ${({ open }) => (open ? "0 0 15px" : "0")};
+  transition: 350ms;
 
   h4 {
-    transition: 500ms;
+    transition: 250ms;
+    font-weight: 400;
 
     &:hover {
       color: #ffae00;
-    }
-    &:last-child {
-      padding-bottom: 0.5vh;
     }
   }
 `;

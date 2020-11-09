@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
-import * as text from "../../../components/text";
+import { A, P, H5, H4, H3, H2, H1 } from "../../../components/text/text";
 
 import ProductCard from "../../../components/ProductCard";
 import Filter from "./Filter";
@@ -72,17 +72,17 @@ export default function ProductsLayout(props) {
     <>
       <component.PageNameContainer>
         <component.PageNameBox>
-          <text.BigBold>Produtos</text.BigBold>
-          <text.SmallSemiBold>{result.length} Produtos</text.SmallSemiBold>
+          <H2>Produtos</H2>
+          <H5>{result.length} Produtos</H5>
         </component.PageNameBox>
-        <text.MediumSemiBold
+        <H3
           id="filter-button"
           onClick={() => {
             setOpen(!open);
           }}
         >
           Filtro
-        </text.MediumSemiBold>
+        </H3>
       </component.PageNameContainer>
       <component.PageContainer>
         <component.FilterContainer id="filter-box" open={open}>
@@ -118,15 +118,7 @@ export default function ProductsLayout(props) {
             ]}
           />
         </component.FilterContainer>
-        <ProductCard
-          products={result}
-          ContainerConfig={{
-            "768px": ["0 1.5vw", 3],
-            "1024px": ["0 0 0 1vw", 3],
-            "1440px": ["0 0 0 1vw", 4],
-          }}
-          images={images}
-        />
+        <ProductCard products={result} useMargin={true} images={images} />
       </component.PageContainer>
     </>
   );

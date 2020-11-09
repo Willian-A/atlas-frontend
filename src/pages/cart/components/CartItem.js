@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as components from "./component";
-import * as text from "../../../components/text";
+import { P, H3, H2 } from "../../../components/text/text";
 import Button from "../../../styled/button";
 import { smallProductImages } from "../../../functions/importImages";
 
@@ -27,14 +27,12 @@ export default function CartItem(props) {
     <components.CardContainer>
       <img src={images[`${props.image}`]} alt="" />
       <components.CardBio>
-        <text.MediumBold>{props.name}</text.MediumBold>
-        <text.MediumSemiBold>
-          R$ {decimalFormat.format(props.price * props.qty)}
-        </text.MediumSemiBold>
-        <text.SmallLight>R$ {props.price}</text.SmallLight>
+        <H2>{props.name}</H2>
+        <H3>R$ {decimalFormat.format(props.price * props.qty)}</H3>
+        <P>R$ {props.price}</P>
         <components.CardQty>
           <Button
-            width="100px"
+            width="50px"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
@@ -43,9 +41,9 @@ export default function CartItem(props) {
           >
             +
           </Button>
-          <text.MediumSemiBold>{props.qty}</text.MediumSemiBold>
+          <H2>{props.qty}</H2>
           <Button
-            width="100px"
+            width="50px"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {

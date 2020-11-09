@@ -2,25 +2,30 @@ import styled from "styled-components";
 
 const PageNameBox = styled.div`
   display: flex;
-  padding-bottom: 25px;
-  margin: 20px 0 0 10px;
+  margin: 20px 10px 20px;
 
-  h4 {
+  h2 {
+    font-weight: 500;
+  }
+
+  h5 {
+    height: fit-content;
     margin-left: 10px;
-    transform: translateY(35%);
+    font-weight: 400;
+    transform: translateY(45%);
   }
 
   @media (min-width: 1024px) {
-    margin: 0;
+    margin: 20px 0;
   }
 `;
 
 const CartContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  padding: 10px;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
+    display: flex;
+    padding: 0;
   }
 `;
 
@@ -31,47 +36,48 @@ const CartListContainer = styled.div`
 const ResumeContainer = styled.div`
   position: fixed;
   top: unset;
+  bottom: 0;
+  margin-bottom: 5px;
   height: fit-content;
   padding: 18px;
   background-color: #fff;
-  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
 
   h2 {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
     padding-bottom: 10px;
     margin-bottom: 15px;
   }
 
-  h3:last-child {
-    margin: 0 0 0 auto;
-  }
+  h3 {
+    font-weight: 400;
 
-  button {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 25px 5%;
+    &:last-child {
+      margin: 0 0 0 auto;
+    }
   }
 
   @media (min-width: 1024px) {
-    width: 40%;
-    flex-direction: row;
     position: relative;
+    width: 100%;
+    max-width: 25vw;
+    height: unset;
     padding: 10px 15px;
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    box-shadow: none;
+    border-left: 5px solid rgba(0, 0, 0, 0.15);
   }
 `;
 
 const CardContainer = styled.div`
   display: flex;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  height: 150px;
+
   img {
-    width: 100px;
+    width: 110px;
     cursor: pointer;
     transition: 500ms;
 
@@ -80,11 +86,8 @@ const CardContainer = styled.div`
     }
   }
 
-  &:last-child {
-    margin-bottom: 200px;
-  }
-
   @media (min-width: 1024px) {
+    padding: 0;
     width: 92%;
 
     &:last-child {
@@ -95,19 +98,23 @@ const CardContainer = styled.div`
 
 const CardBio = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 0 10px;
-  max-width: 300px;
+  margin: 0 0 0 10px;
 
-  @media (min-width: 768px) {
-    max-width: 420px;
-  }
-
-  h3:first-child {
-    white-space: nowrap;
+  h2:first-child {
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 400;
   }
 `;
 
@@ -115,15 +122,17 @@ const CardQty = styled.div`
   display: flex;
   flex-direction: row;
   position: absolute;
+  width: 100%;
   top: unset;
   bottom: 0;
-  width: 200px;
 
-  h3 {
-    width: fit-content;
+  h2 {
+    text-align: center;
+    font-weight: 500;
+    width: 45px;
     margin: 0 20px;
-    padding: 5px 20px 0 20px;
-    border: 1px rgba(0, 0, 0, 0.08) solid;
+    padding: 5px;
+    border: 1px rgba(0, 0, 0, 0.15) solid;
   }
 `;
 
