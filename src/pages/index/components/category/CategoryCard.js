@@ -2,7 +2,7 @@ import React from "react";
 
 import * as component from "./component";
 import { H1 } from "../../../../components/text/text";
-import DivPlaceholder from "../../../../components/Placeholder";
+import DivPlaceholder from "../../../../components/placeholder";
 
 export default function CategoryCard(props) {
   return (

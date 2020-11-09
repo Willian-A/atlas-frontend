@@ -4,7 +4,7 @@ import { navigate } from "hookrouter";
 import * as component from "./component";
 import { P, H3, H2 } from "../../../components/text/text";
 import Button from "../../../styled/button";
-import DivPlaceholder from "../../../components/Placeholder";
+import DivPlaceholder from "../../../components/placeholder";
 import { bigProductImages } from "../../../functions/importImages";
 import api from "../../../api";
 
