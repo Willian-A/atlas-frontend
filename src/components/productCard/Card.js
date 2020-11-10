@@ -9,7 +9,7 @@ import DivPlaceholder from "../placeholder";
 function Card(props) {
   return (
     <component.CardBox shouldDisplayLast={true}>
-      <A href={`/produto/${props.id_product}`}>
+      <A href={`/produto/${props.product_id}`}>
         <DivPlaceholder alt={props.name} img={props.img} />
         <component.CardBio>
           <H4>{props.name}</H4>

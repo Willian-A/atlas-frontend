@@ -12,7 +12,7 @@ function ProductCard(props) {
           img={props.images[value.image]}
           name={value.name}
           price={value.price}
-          id_product={value.id_product}
+          product_id={value.product_id}
         />
       );
     });
