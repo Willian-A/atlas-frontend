@@ -5,34 +5,34 @@ const ProductsContainer = styled.div`
   margin: 10vw auto;
   display: grid;
   grid-gap: 10vw;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 310px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   @media (min-width: 768px) {
     width: 100%;
     margin: ${({ useMargin }) => (useMargin ? "0 1vw" : "1vw 0")};
     grid-gap: 1vw;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-template-rows: minmax(345px, 1fr);
   }
 
   @media (min-width: 1024px) {
     margin: ${({ useMargin }) => (useMargin ? "0 0 0 0.8em" : "0.8em 0")};
     grid-gap: 0.8em;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-template-rows: minmax(300px, 1fr);
   }
 
   @media (min-width: 1440px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: minmax(375px, 1fr);
   }
 
   @media (min-width: 1920px) {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 290px));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 
   @media (min-width: 2560px) {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 320px));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 `;
 
