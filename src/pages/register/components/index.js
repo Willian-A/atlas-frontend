@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { A, navigate } from "hookrouter";
+import { navigate } from "hookrouter";
 import InputMask from "react-input-mask";
 
 import api from "../../../api";
 
 import * as component from "./component";
-import * as text from "../../../components/text";
+import { H5, H3, H2 } from "../../../components/text/text";
 
 import Input from "../../../styled/input";
 import Button from "../../../styled/button";
@@ -34,11 +34,11 @@ export default function RegisterCard() {
 
   return (
     <component.UserContainer>
-      <text.SmallSemiBold>
-        <A href="/">Voltar a Pagina Incial</A>
-      </text.SmallSemiBold>
-      <text.BigBold>Cadastro</text.BigBold>
-      <text.MediumSemiBold>{err}</text.MediumSemiBold>
+      <H5>
+        <a href="/">Voltar a Pagina Incial</a>
+      </H5>
+      <H2>Cadastro</H2>
+      <H3>{err}</H3>
       <form
         action=""
         style={{ display: "flex", flexDirection: "column" }}
@@ -78,9 +78,9 @@ export default function RegisterCard() {
           Login
         </Button>
       </form>
-      <text.SmallSemiBold margin="5px auto 0" font="13px">
-        Já tem uma conta? <A href="/login">Faça Login</A>
-      </text.SmallSemiBold>
+      <H5>
+        Já tem uma conta? <a href="/login">Faça Login</a>
+      </H5>
     </component.UserContainer>
   );
 }

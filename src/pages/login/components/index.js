@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { A, navigate } from "hookrouter";
+import { navigate } from "hookrouter";
 
 import api from "../../../api";
 
 import * as component from "./components";
-import * as text from "../../../components/text";
+import { H5, H3, H2 } from "../../../components/text/text";
 
 import Input from "../../../styled/input";
 import Button from "../../../styled/button";
@@ -29,12 +29,12 @@ export default function LoginCard() {
 
   return (
     <component.LoginContainer>
-      <text.SmallSemiBold>
-        <A href="/">Voltar a Pagina Incial</A>
-      </text.SmallSemiBold>
-      <text.BigBold>Login</text.BigBold>
-      <text.MediumSemiBold>{err}</text.MediumSemiBold>
-      <form action="" onSubmit={handleSubmit}>
+      <H5>
+        <a href="/">Voltar a Pagina Incial</a>
+      </H5>
+      <H2>Login</H2>
+      <H3>{err}</H3>
+      <form action="" onSubmit={handleSubmit} autocomplete="on">
         <Input
           type="email"
           placeholder="Email"
@@ -48,16 +48,16 @@ export default function LoginCard() {
           required
           onChange={(e) => setPass(e.target.value)}
         />
-        <text.SmallSemiBold>
-          <A href="/senha">Esqueceu sua Senha</A>
-        </text.SmallSemiBold>
+        <H5>
+          <a href="/senha">Esqueceu sua Senha</a>
+        </H5>
         <Button width="100%" margin="20px 0 10px" type="submit">
           Login
         </Button>
       </form>
-      <text.SmallSemiBold>
-        Não tem uma conta? <A href="/cadastro">Cadastre-se</A>
-      </text.SmallSemiBold>
+      <H5>
+        Não tem uma conta? <a href="/cadastro">Cadastre-se</a>
+      </H5>
     </component.LoginContainer>
   );
 }

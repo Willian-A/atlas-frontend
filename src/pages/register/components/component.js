@@ -3,15 +3,16 @@ import styled from "styled-components";
 const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   width: fit-content;
-  padding: 30px;
+  height: fit-content;
   margin: 0 auto;
   top: 25%;
 
   a {
-    color: #b2b2b2;
-    transition: 500ms;
+    color: #8c8c8c;
+    font-weight: 500;
+    transition: 250ms;
 
     &:hover {
       color: black;
@@ -25,20 +26,12 @@ const UserContainer = styled.div`
   h3 {
     height: 3vh;
     margin: 0 auto 5px;
+    font-weight: 400;
     color: red;
   }
 
   h4:last-child {
     margin: 0 auto;
-
-    a {
-      color: #939393;
-      transition: 500ms;
-
-      &:hover {
-        color: black;
-      }
-    }
   }
 
   form {
