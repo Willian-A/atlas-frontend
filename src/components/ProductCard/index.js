@@ -8,7 +8,7 @@ function ProductCard(props) {
     return props.products.map((value) => {
       return (
         <Card
-          key={value.id_product}
+          key={value.product_id}
           img={props.images[value.image]}
           name={value.name}
           price={value.price}

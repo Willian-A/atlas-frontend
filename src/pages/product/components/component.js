@@ -7,37 +7,45 @@ const ProductContainer = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    width: 90%;
     margin: 0 auto;
-    padding: 25px;
+    height: 425px;
+    padding: 30px;
   }
-  @media (min-width: 1920px) {
-    padding: 35px;
+
+  @media (min-width: 2560px) {
+    width: 50vw;
+    height: 480px;
   }
 
   img {
     width: 100%;
+    margin: 0 0 15px;
 
     @media (min-width: 768px) {
-      width: 60%;
-      margin: 5vh auto;
+      width: 65%;
+      margin: 2.5vh auto;
     }
     @media (min-width: 1024px) {
-      width: 30vw;
+      width: 325px;
       margin: 0;
     }
-    @media (min-width: 1920px) {
-      width: 20vw;
+    @media (min-width: 2560px) {
+      width: 350px;
     }
   }
 `;
 
 const ProdBioContainer = styled.div`
+  width: 90%;
   padding: 0 5%;
 
   @media (min-width: 1024px) {
+    position: relative;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 0 0 20px;
+    padding: 0;
   }
 `;
 
@@ -45,7 +53,7 @@ const ProdBioBox = styled.div`
   height: 100%;
 
   h2 {
-    margin: 25px 0 15px;
+    margin: 0 0 10px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -60,11 +68,8 @@ const ProdBioBox = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 500px;
-    padding: 0;
-
     h2 {
-      margin: 0 0 1.5vh;
+      margin: 0 0 10px;
     }
 
     p {
@@ -75,10 +80,6 @@ const ProdBioBox = styled.div`
       text-overflow: ellipsis;
     }
   }
-
-  @media (min-width: 1920px) {
-    width: 40vw;
-  }
 `;
 
 const ProdResume = styled.div`
@@ -88,12 +89,11 @@ const ProdResume = styled.div`
     font-weight: 400;
   }
 
-  h2 {
-    margin-bottom: 5px;
-  }
-
   @media (min-width: 1024px) {
-    margin: 20px 0 0;
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    margin: 0;
   }
 `;
 

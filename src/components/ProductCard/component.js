@@ -3,12 +3,14 @@ import styled from "styled-components";
 const ProductsContainer = styled.div`
   width: fit-content;
   margin: 10vw auto;
+  padding: 0 20px;
   display: grid;
   grid-gap: 10vw;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   @media (min-width: 768px) {
     width: 100%;
+    padding: 0;
     margin: ${({ useMargin }) => (useMargin ? "0 1vw" : "1vw 0")};
     grid-gap: 1vw;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
