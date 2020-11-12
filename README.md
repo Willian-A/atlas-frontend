@@ -2,7 +2,7 @@
 
 ### `Description:`
 
-This is a study repository for the remake of my final high school project.
+That's a remake of my final high school project.
 
 ### `What the project is about?`
 
