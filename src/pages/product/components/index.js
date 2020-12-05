@@ -3,7 +3,7 @@ import { navigate } from "hookrouter";
 
 import * as component from "./component";
 import { P, H3, H2 } from "../../../components/text/text";
-import Button from "../../../styled/button";
+import Button from "../../../components/button";
 import DivPlaceholder from "../../../components/placeholder";
 import { bigProductImages } from "../../../functions/importImages";
 import api from "../../../api";
@@ -15,9 +15,8 @@ export default function ProdCard(props) {
 
   async function addOnCart() {
     try {
-      await api.post("/cart", {
-        productID: props.id,
-        action: "add",
+      await api.post("/cart/add", {
+        id: props.id,
       });
       navigate("/carrinho");
     } catch (error) {
@@ -30,9 +29,9 @@ export default function ProdCard(props) {
     if (isMounted) {
       async function selectProduct() {
         const response = await api.post("/product", {
-          productID: props.id,
+          id: props.id,
         });
-        setResult(response.data.result[0]);
+        setResult(response.data[0]);
       }
       selectProduct();
     }

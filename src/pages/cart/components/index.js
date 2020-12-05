@@ -21,7 +21,8 @@ export default function CartList() {
           setCartTotal(response.data.totalPrice);
           setError({ error: false, message: null });
         } catch (error) {
-          setError({ error: true, message: error.response.data });
+          console.log(error.response);
+          setError({ error: true, message: error.response });
         }
       }
       getCart();

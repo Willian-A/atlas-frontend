@@ -14,8 +14,8 @@ export default function ProductsCard() {
       async function selectProducts() {
         try {
           await api
-            .get(`/product${5}`)
-            .then((response) => setResult(response.data.result));
+            .get(`/products${5}`)
+            .then((response) => setResult(response.data));
         } catch (error) {}
       }
       selectProducts();

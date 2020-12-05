@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { navigate } from "hookrouter";
-
-import * as component from "./component";
+/*import { navigate } from "hookrouter"*/ import * as component from "./component";
 import { H4, H3 } from "../../../components/text/text";
 
 function Filter(props) {
   const [open, setOpen] = useState(false);
 
+  /*
   async function selectProducts(index) {
     navigate(`/produtos/${index}`);
-  }
+  }*/
 
   return (
     <>
@@ -25,9 +24,10 @@ function Filter(props) {
             return (
               <H4
                 key={index}
+                /*
                 onClick={() => {
                   selectProducts(props.options[props.options.indexOf(name)]);
-                }}
+                }}*/
               >
                 {name}
               </H4>

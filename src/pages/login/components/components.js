@@ -19,18 +19,14 @@ const LoginContainer = styled.div`
     }
   }
 
-  h2 {
-    margin: 0 0 10px;
-  }
-
   h3 {
     height: 3vh;
-    margin: 0 auto 5px;
+    margin: 0 auto;
     font-weight: 400;
     color: red;
   }
 
-  h4:last-child {
+  h5:last-child {
     margin: 0 auto;
   }
 
@@ -40,6 +36,10 @@ const LoginContainer = styled.div`
 
     input {
       font-family: WorkSans-Medium;
+    }
+
+    button {
+      margin: 20px 0 10px;
     }
   }
 `;

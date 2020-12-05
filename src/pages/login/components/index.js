@@ -5,9 +5,8 @@ import api from "../../../api";
 
 import * as component from "./components";
 import { H5, H3, H2 } from "../../../components/text/text";
-
-import Input from "../../../styled/input";
-import Button from "../../../styled/button";
+import Input from "../../../components/input";
+import Button from "../../../components/button";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
@@ -51,7 +50,7 @@ export default function LoginCard() {
         <H5>
           <a href="/senha">Esqueceu sua Senha</a>
         </H5>
-        <Button width="100%" margin="20px 0 10px" type="submit">
+        <Button width="100%" type="submit">
           Login
         </Button>
       </form>

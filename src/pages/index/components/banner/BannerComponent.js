@@ -3,7 +3,7 @@ import React from "react";
 import * as component from "./component";
 import { P, H1 } from "../../../../components/text/text";
 import DivPlaceholder from "../../../../components/placeholder";
-import Button from "../../../../styled/button";
+import Button from "../../../../components/button";
 import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
 
 function BannerComponent(props) {

@@ -3,7 +3,7 @@ import { A } from "hookrouter";
 
 import * as component from "./component.js";
 import { H3, H4 } from "../text/text";
-import Button from "../../styled/button";
+import Button from "../../components/button";
 import DivPlaceholder from "../placeholder";
 
 function Card(props) {

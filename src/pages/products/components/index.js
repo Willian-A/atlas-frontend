@@ -23,8 +23,8 @@ export default function ProductsLayout(props) {
       selectProducts();
     } else {
       async function selectProducts() {
-        const response = await api.get(`/product${0}`);
-        setResult(response.data.result);
+        const response = await api.get(`/products`);
+        setResult(response.data);
       }
       selectProducts();
     }
