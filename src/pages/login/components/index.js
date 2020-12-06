@@ -33,7 +33,7 @@ export default function LoginCard() {
       </H5>
       <H2>Login</H2>
       <H3>{err}</H3>
-      <form action="" onSubmit={handleSubmit} autocomplete="on">
+      <form action="" onSubmit={handleSubmit} autoComplete="on">
         <Input
           type="email"
           placeholder="Email"

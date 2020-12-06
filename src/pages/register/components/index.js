@@ -27,7 +27,7 @@ export default function RegisterCard() {
       });
       navigate("/login");
     } catch (error) {
-      setErr(error.response.data);
+      setErr(error.response);
     }
   }
 
