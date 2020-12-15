@@ -22,6 +22,7 @@ const PageNameBox = styled.div`
 
 const CartContainer = styled.div`
   padding: 10px;
+  margin-bottom: 25px;
 
   @media (min-width: 1024px) {
     display: flex;
