@@ -4,3 +4,5 @@ node_modules
 yarn.lock
 debug.log
 node_modules/
+src/components/ProductCard/
+src/components/ProductCard/Card.js
