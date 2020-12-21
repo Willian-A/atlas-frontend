@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
-import BannerComponent from "./BannerComponent";
+import BannerComponent from "./bannerComponent";
 import { bannerImages } from "../../../../functions/importImages";
 
 export default function Banner() {

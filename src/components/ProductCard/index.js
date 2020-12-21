@@ -8,11 +8,11 @@ function ProductCard(props) {
     return props.products.map((value) => {
       return (
         <Card
-          key={value.product_id}
+          key={value._id}
           img={props.images[value.image]}
           name={value.name}
           price={value.price}
-          product_id={value.product_id}
+          _id={value._id}
         />
       );
     });
