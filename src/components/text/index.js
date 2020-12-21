@@ -1,57 +1,37 @@
 import styled from "styled-components";
 
-const SmallLight = styled.h4`
-  font-family: WorkSans-Light;
-  font-size: 1em;
-`;
-const MediumLight = styled.h3`
-  font-family: WorkSans-Light;
-  font-size: ;
-`;
-const BigLight = styled.h2`
-  font-family: WorkSans-Light;
-  font-size: 2em;
-`;
-
-const SmallSemiBold = styled.h4`
-  font-family: WorkSans-SemiBold;
-  font-size: 1em;
-`;
-const MediumSemiBold = styled.h3`
-  font-family: WorkSans-SemiBold;
+const A = styled.a`
+  font-family: Rubik, sans-serif;
   font-size: 1.2em;
 `;
-const BigSemiBold = styled.h2`
-  font-family: WorkSans-SemiBold;
-  font-size: 2em;
+const P = styled.p`
+  font-family: Rubik, sans-serif;
+  font-size: 1.1em;
 `;
 
-const SmallBold = styled.h4`
-  font-family: WorkSans-Bold;
+const H5 = styled.h5`
+  font-family: Rubik, sans-serif;
+  font-size: 0.85em;
+`;
+
+const H4 = styled.h4`
+  font-family: Rubik, sans-serif;
   font-size: 1em;
 `;
-const MediumBold = styled.h3`
-  font-family: WorkSans-Bold;
-  font-size: 1.5em;
-`;
-const BigBold = styled.h2`
-  font-family: WorkSans-Bold;
-  font-size: 2em;
-`;
-const ExtraBigBold = styled.h2`
-  font-family: WorkSans-Bold;
-  font-size: 2.8em;
+
+const H3 = styled.h3`
+  font-family: Rubik, sans-serif;
+  font-size: 1.15em;
 `;
 
-export {
-  SmallLight,
-  MediumLight,
-  BigLight,
-  SmallBold,
-  MediumBold,
-  BigBold,
-  ExtraBigBold,
-  SmallSemiBold,
-  MediumSemiBold,
-  BigSemiBold,
-};
+const H2 = styled.h2`
+  font-family: Rubik, sans-serif;
+  font-size: 1.5em;
+`;
+
+const H1 = styled.h1`
+  font-family: Rubik, sans-serif;
+  font-size: 2.5em;
+`;
+
+export { A, P, H5, H4, H3, H2, H1 };

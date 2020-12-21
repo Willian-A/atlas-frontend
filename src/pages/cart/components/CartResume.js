@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H3, H2 } from "../../../components/text/text";
+import { H3, H2 } from "../../../components/text";
 import Button from "../../../components/button";
 
 export default function CartResume(props) {

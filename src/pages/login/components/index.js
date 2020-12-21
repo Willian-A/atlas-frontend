@@ -4,7 +4,7 @@ import { navigate } from "hookrouter";
 import api from "../../../api";
 
 import * as component from "./components";
-import { H5, H3, H2 } from "../../../components/text/text";
+import { H5, H3, H2 } from "../../../components/text";
 import Input from "../../../components/input";
 import Button from "../../../components/button";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 /*import { navigate } from "hookrouter"*/ import * as component from "./component";
-import { H4, H3 } from "../../../components/text/text";
+import { H4, H3 } from "../../../components/text";
 
 function Filter(props) {
   const [open, setOpen] = useState(false);

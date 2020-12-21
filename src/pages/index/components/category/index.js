@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "./categoryCard";
 import { categoriesImages } from "../../../../functions/importImages";
 
 export default function Category() {

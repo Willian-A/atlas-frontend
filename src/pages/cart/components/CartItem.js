@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as components from "./component";
-import { P, H3, H2 } from "../../../components/text/text";
+import { P, H3, H2 } from "../../../components/text";
 import Button from "../../../components/button";
 import { smallProductImages } from "../../../functions/importImages";
 

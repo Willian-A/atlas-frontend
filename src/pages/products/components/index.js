@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as component from "./component";
-import { H5, H3, H2 } from "../../../components/text/text";
+import { H5, H3, H2 } from "../../../components/text";
 import ProductCard from "../../../components/productCard";
 import Filter from "./Filter";
 import importImages from "../../../functions/importImages";

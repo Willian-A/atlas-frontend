@@ -1,50 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;615;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;615;700;800;900&display=swap");
 * {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: none;
-    user-select: none;
-    text-decoration: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  user-select: none;
+  text-decoration: none;
 }
 
 body {
-    min-width: fit-content;
-    background-color: #F2F4F8;
+  min-width: fit-content;
+  background-color: #f2f4f8;
 }
 
 @media (min-width: 767px) {
-    body {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (min-width: 1024px) {
-    body {
-        max-width: calc(1600px + (100vw / 64 * 2) + (100vw / 64 * 2));
-        overflow-x: auto;
-        padding-left: calc(100vw / 64 * 2);
-        padding-right: calc(100vw / 64 * 2);
-    }
+  body {
+    max-width: calc(1600px + (100vw / 64 * 2) + (100vw / 64 * 2));
+    overflow-x: auto;
+    padding-left: calc(100vw / 64 * 2);
+    padding-right: calc(100vw / 64 * 2);
+  }
 }
 
 @media (min-width: 1440px) {
-    body {
-        max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
-        padding-left: calc(100vw / 72 * 9);
-        padding-right: calc(100vw / 72 * 9);
-    }
+  body {
+    max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
+    padding-left: calc(100vw / 72 * 9);
+    padding-right: calc(100vw / 72 * 9);
+  }
 }
 
 @media (min-width: 2560px) {
-    body {
-        max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
-        padding-left: calc(100vw / 72 * 9);
-        padding-right: calc(100vw / 72 * 9);
-    }
+  body {
+    max-width: calc(1600px + (100vw / 72 * 9) + (100vw / 72 * 9));
+    padding-left: calc(100vw / 72 * 9);
+    padding-right: calc(100vw / 72 * 9);
+  }
 }
+
+/*@media (min-width: 390px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {}
+
+@media (min-width: 1440px) {}
+
+@media (min-width: 1920px) {}
+
+@media (min-width: 2560px) {}*/

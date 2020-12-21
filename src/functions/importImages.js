@@ -10,7 +10,7 @@ export default function importImages(r) {
 
 function bannerImages() {
   return importImages(
-    require.context("../assets/images/banner", false, /\.(jpg)$/)
+    require.context("../assets/images/banner", false, /\.(webp)$/)
   );
 }
 
@@ -28,7 +28,7 @@ function mediumProductImages() {
 // eslint-disable-next-line
 function bigProductImages() {
   return importImages(
-    require.context("../assets/images/products/big", false, /\.(jpg)$/)
+    require.context("../assets/images/products/big", false, /\.(webp)$/)
   );
 }
 

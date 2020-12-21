@@ -1,22 +1,23 @@
 import React from "react";
 
-import Card from "./Card";
+import Card from "./card";
 import * as component from "./component";
 
 function ProductCard(props) {
   function loadCards() {
-    return props.products.map((value) => {
+    return props.products.map((value) => {  
       return (
         <Card
-          key={value.product_id}
+          key={value._id}
           img={props.images[value.image]}
           name={value.name}
           price={value.price}
-          product_id={value.product_id}
+          product_id={value._id}
         />
       );
     });
   }
+
   return (
     <component.ProductsContainer
       ContainerConfig={props.ContainerConfig || [0]}

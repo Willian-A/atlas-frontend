@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { navigate } from "hookrouter";
 
 import * as component from "./component";
-import { P, H3, H2 } from "../../../components/text/text";
+import { P, H3, H2 } from "../../../components/text";
 import Button from "../../../components/button";
-import DivPlaceholder from "../../../components/placeholder";
 import { bigProductImages } from "../../../functions/importImages";
 import api from "../../../api";
 
@@ -41,7 +40,7 @@ export default function ProdCard(props) {
 
   return (
     <component.ProductContainer>
-      <DivPlaceholder img={images[`${result.image}`]} alt={result.name} />
+      <img src={images[`${result.image}`]} alt={result.name} />
       <component.ProdBioContainer>
         <component.ProdBioBox>
           <H2>{result.name}</H2>

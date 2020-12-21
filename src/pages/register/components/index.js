@@ -5,7 +5,7 @@ import InputMask from "react-input-mask";
 import api from "../../../api";
 
 import * as component from "./component";
-import { H5, H3, H2 } from "../../../components/text/text";
+import { H5, H3, H2 } from "../../../components/text";
 import Input from "../../../components/input";
 import Button from "../../../components/button";
 

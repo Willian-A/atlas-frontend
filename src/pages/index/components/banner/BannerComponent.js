@@ -1,8 +1,7 @@
 import React from "react";
 
 import * as component from "./component";
-import { P, H1 } from "../../../../components/text/text";
-import DivPlaceholder from "../../../../components/placeholder";
+import { P, H1 } from "../../../../components/text";
 import Button from "../../../../components/button";
 import { ReactComponent as ArrowDown } from "../../../../assets/images/icons/arrowDown.svg";
 
@@ -14,7 +13,7 @@ function BannerComponent(props) {
         top={`-${props.top}px`}
         key={value.name}
       >
-        <DivPlaceholder img={value.img} alt={value.name} />
+        <img src={value.img} alt={value.name} />
         <component.BannerDescBox>
           <component.BannerDesc>
             <H1>{value.name}</H1>

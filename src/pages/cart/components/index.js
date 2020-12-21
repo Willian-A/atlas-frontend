@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import * as components from "./component";
-import { H5, H2 } from "../../../components/text/text";
+import { H5, H2 } from "../../../components/text";
 import api from "../../../api";
-import CartResume from "./CartResume";
-import CartItem from "./CartItem";
+import CartResume from "./cartResume";
+import CartItem from "./cartItem";
 
 export default function CartList() {
   const [carResult, setCartResult] = useState([]);
@@ -21,8 +21,7 @@ export default function CartList() {
           setCartTotal(response.data.cartTotal);
           setError({ error: false, message: null });
         } catch (error) {
-          console.log(error.response);
-          setError({ error: true, message: error.response });
+          setError({ error: true, message: error.response.data });
         }
       }
       getCart();
