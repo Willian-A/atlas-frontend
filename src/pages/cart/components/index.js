@@ -17,6 +17,7 @@ export default function CartList() {
       async function getCart() {
         try {
           const response = await api.get("/cart");
+          console.log(response.data);
           setCartResult(response.data.dbResult);
           setCartTotal(response.data.cartTotal);
           setError({ error: false, message: null });
@@ -57,12 +58,12 @@ export default function CartList() {
             {carResult.map((value) => {
               return (
                 <CartItem
-                  key={value.product_id}
-                  id={value.product_id}
+                  key={value._id}
+                  id={value._id}
                   image={value.image}
                   name={value.name}
                   qty={value.qty}
-                  totalPrice={value.totalPrice}
+                  total={value.total}
                   price={value.price}
                 />
               );

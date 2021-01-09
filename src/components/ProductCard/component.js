@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProductsContainer = styled.div`
   width: fit-content;
-  margin: 10vw auto;
+  margin: 5vw auto;
   padding: 0 20px;
   display: grid;
   grid-gap: 10vw;
@@ -31,6 +31,7 @@ const ProductsContainer = styled.div`
 
   @media (min-width: 1920px) {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-rows: minmax(470px, 1fr);
   }
 
   @media (min-width: 2560px) {
@@ -40,11 +41,11 @@ const ProductsContainer = styled.div`
 
 const CardBox = styled.div`
   position: relative;
-  overflow: hidden;
 
   img {
     width: 100%;
-    transition: ease-in-out 450ms;
+    min-height: 372px;
+    transition: filter ease-in-out 450ms;
 
     &:hover {
       filter: brightness(40%);
@@ -52,13 +53,40 @@ const CardBox = styled.div`
   }
 
   @media (min-width: 768px) {
+    img {
+      min-height: 250px;
+    }
+
     &:last-child {
       display: none;
     }
   }
+
   @media (min-width: 1024px) {
+    img {
+      min-height: 245px;
+    }
+
     &:last-child {
       display: unset;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    img {
+      min-height: 275px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    img {
+      min-height: 365px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    img {
+      min-height: 450px;
     }
   }
 `;

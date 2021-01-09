@@ -37,10 +37,11 @@ const ProductContainer = styled.div`
 `;
 
 const ProdBioContainer = styled.div`
-  width: 90%;
+  width: 20%;
   padding: 0 5%;
 
   @media (min-width: 1024px) {
+    width: 950px;
     position: relative;
     display: flex;
     flex-direction: column;

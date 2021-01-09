@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import ProductCard from "../../../../components/productCard";
 import { mediumProductImages } from "../../../../functions/importImages";
 import api from "../../../../api";
 
 export default function ProductsCard() {
-  const [result, setResult] = useState([]);
+  const [result, setResult] = React.useState([]);
   const images = mediumProductImages();
 
-  useEffect(() => {
+  React.useEffect(() => {
     let isMounted = true;
     if (isMounted) {
       async function selectProducts() {

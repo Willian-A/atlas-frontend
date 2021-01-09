@@ -9,10 +9,7 @@ import api from "../../../api";
 
 export default function CartItem(props) {
   const images = smallProductImages();
-  const decimalFormat = new Intl.NumberFormat("en-US", {
-    minimumFractionDigits: 2,
-  });
-  console.log(props);
+
   async function productQty(action) {
     try {
       await api.post("/cart", {
@@ -28,7 +25,7 @@ export default function CartItem(props) {
       <img src={images[`${props.image}`]} alt="" />
       <components.CardBio>
         <H2>{props.name}</H2>
-        <H3>R$ {decimalFormat.format(props.totalPrice)}</H3>
+        <H3>R$ {props.total}</H3>
         <P>R$ {props.price}</P>
         <components.CardQty>
           <Button

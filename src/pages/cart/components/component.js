@@ -98,6 +98,7 @@ const CardContainer = styled.div`
 `;
 
 const CardBio = styled.div`
+  min-width: 300px;
   position: relative;
   margin: 0 0 0 10px;
 

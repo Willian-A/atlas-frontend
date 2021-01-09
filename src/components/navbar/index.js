@@ -1,18 +1,37 @@
 import React from "react";
 
+import api from "../../api";
 import * as component from "./component";
 import { A } from "../text";
 
 function Navbar() {
   const [scrolling, setScrolling] = React.useState();
+  const [isLogged, setIsLogged] = React.useState();
 
-  /*async function getLoginStatus() {
+  async function getLoginStatus() {
     try {
-      const response = await api.get("/logged");
-      setIsLoggedIn(response.data);
-    } catch (error) {}
-  }*/
+      await api.get("/logged").then((res) => setIsLogged(res.data));
+    } catch (error) {
+      setIsLogged(error.response.data.payload);
+    }
+  }
 
+  function userMenu() {
+    if (isLogged === true) {
+      return <A href="/logout">Sair</A>;
+    } else if (isLogged === false) {
+      return (
+        <>
+          <A href="/login">Login</A>
+          <A href="/cadastro">Cadastrar</A>
+        </>
+      );
+    }
+  }
+
+  React.useEffect(() => {
+    getLoginStatus();
+  }, []);
   /*React.useEffect(() => {
     let mounted = true;
 
@@ -59,8 +78,7 @@ function Navbar() {
         <A href="/produtos/all">Produtos</A>
       </div>
       <div id="menu" className="user">
-        <A href="/login">Login</A>
-        <A href="/cadastro">Cadastrar</A>
+        {userMenu()}
       </div>
     </component.NavbarContainer>
   );
