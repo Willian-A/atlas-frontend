@@ -80,7 +80,7 @@ const CardBox = styled.div`
 
   @media (min-width: 1920px) {
     img {
-      min-height: 365px;
+      min-height: 310px;
     }
   }
 
