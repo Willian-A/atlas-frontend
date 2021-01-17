@@ -77,7 +77,8 @@ const BannerDesc = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-transform: capitalize;
-    color: #4c566a;
+    color: #545454;
+    line-height: 1.3;
   }
 `;
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { navigate } from "hookrouter";
 
 import * as component from "./component";
@@ -9,8 +9,8 @@ import api from "../../../api";
 
 export default function ProdCard(props) {
   const images = bigProductImages();
-  const [result, setResult] = useState([]);
-  const [error, setError] = useState({ error: false, message: null });
+  const [result, setResult] = React.useState([]);
+  const [error, setError] = React.useState({ error: false, message: null });
 
   async function addOnCart() {
     try {
@@ -23,7 +23,7 @@ export default function ProdCard(props) {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     let isMounted = true;
     if (isMounted) {
       async function selectProduct() {
