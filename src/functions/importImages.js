@@ -34,7 +34,7 @@ function bigProductImages() {
 
 function categoriesImages() {
   return importImages(
-    require.context("../assets/images/categories", false, /\.(jpg)$/)
+    require.context("../assets/images/categories", false, /\.(webp)$/)
   );
 }
 export {

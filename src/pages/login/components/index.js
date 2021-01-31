@@ -33,10 +33,11 @@ export default function LoginCard() {
       </H5>
       <H2>Login</H2>
       <H3>{err}</H3>
-      <form action="" onSubmit={handleSubmit} autoComplete="on">
+      <form onSubmit={handleSubmit} autoComplete="on">
         <Input
           type="email"
           placeholder="Email"
+          autoComplete="on"
           required
           onChange={(e) => setEmail(e.target.value)}
         />

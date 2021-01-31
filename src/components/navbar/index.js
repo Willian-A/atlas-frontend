@@ -10,7 +10,7 @@ function Navbar() {
 
   async function getLoginStatus() {
     try {
-      await api.get("/logged").then((res) => console.log(res.data));
+      await api.get("/logged").then((res) => setIsLogged(res.data));
     } catch (error) {
       setIsLogged(error.response.data.payload);
     }
