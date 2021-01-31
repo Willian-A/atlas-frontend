@@ -4,24 +4,12 @@ import { A } from "hookrouter";
 import * as component from "./component.js";
 import { H3, H4 } from "../text";
 import Button from "../../components/button";
-import Placeholder from "./placeholder";
 
 function Card(props) {
-  const [teste, setTeste] = React.useState();
-
-  function a() {
-    if (teste) {
-      return <></>;
-    } else {
-      return <Placeholder />;
-    }
-  }
-
   return (
     <component.CardBox shouldDisplayLast={true}>
       <A href={`/produto/${props._id}`}>
-        {a()}
-        <img alt={props.name} src={props.img} onLoad={() => setTeste(true)} />
+        <img alt={props.name} src={props.img} />
         <component.CardBio>
           <H4>{props.name}</H4>
           <H3>R$ {props.price}</H3>

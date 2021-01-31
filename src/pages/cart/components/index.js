@@ -17,7 +17,6 @@ export default function CartList() {
       async function getCart() {
         try {
           const response = await api.get("/cart");
-          console.log(response.data);
           setCartResult(response.data.dbResult);
           setCartTotal(response.data.cartTotal);
           setError({ error: false, message: null });
