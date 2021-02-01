@@ -4,7 +4,7 @@ let URL =
     ? "https://localhost:3333"
     : "https://remake-backend-tcc.herokuapp.com";
 const api = axios.create({
-  baseURL: URL,
+  baseURL: "https://remake-backend-tcc.herokuapp.com",
   withCredentials: true,
 });
 

@@ -4,39 +4,36 @@ const ProductContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 0 5vw 15px;
 
   img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 2/2.8;
+    margin: 0 0 10px;
   }
 
   @media (min-width: 768px) {
-    img {
-      width: 65%;
-      margin: 2.5vh auto;
-    }
+    max-width: 65%;
+    margin: 0 auto 10px;
   }
 
   @media (min-width: 1024px) {
-    width: 85%;
-    min-height: 645px;
     flex-direction: row;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 30px;
 
     img {
       margin: 0;
     }
   }
 
-  @media (min-width: 2560px) {
-    width: 60%;
+  @media (min-width: 1920px) {
+    max-width: 75%;
   }
 `;
 
 const ProdBioContainer = styled.div`
-  width: 90%;
-  margin: 5vw auto;
-
   @media (min-width: 1024px) {
     width: 100%;
     position: relative;
