@@ -9,7 +9,7 @@ const ProductContainer = styled.div`
   img {
     max-width: 100%;
     height: auto;
-    aspect-ratio: 2/2.8;
+    aspect-ratio: 2/2.7;
     margin: 0 0 10px;
   }
 
