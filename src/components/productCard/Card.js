@@ -12,7 +12,7 @@ function Card(props) {
         <img alt={props.name} src={props.img} />
         <component.CardBio>
           <H4>{props.name}</H4>
-          <H3>R$ {props.price}</H3>
+          <H3>R$ {props.price.toFixed(2)}</H3>
           <Button width="100%">Ver Produto</Button>
         </component.CardBio>
       </A>

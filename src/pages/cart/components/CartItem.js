@@ -1,4 +1,5 @@
 import React from "react";
+import { A } from "hookrouter";
 
 import * as components from "./component";
 import { P, H3, H2 } from "../../../components/text";
@@ -10,11 +11,19 @@ import api from "../../../api";
 export default function CartItem(props) {
   const images = smallProductImages();
 
-  async function productQty(action) {
+  async function add(action) {
     try {
-      await api.post("/cart", {
-        productID: props.id,
-        action: action,
+      await api.post("/add_cart", {
+        id: props._id,
+      });
+      window.location.reload();
+    } catch (error) {}
+  }
+
+  async function remove(action) {
+    try {
+      await api.post("/remove_cart", {
+        id: props._id,
       });
       window.location.reload();
     } catch (error) {}
@@ -22,18 +31,20 @@ export default function CartItem(props) {
 
   return (
     <components.CardContainer>
-      <img src={images[`${props.image}`]} alt="" />
+      <A href={`/produto/${props._id}`}>
+        <img src={images[`${props.image}`]} alt="" />
+      </A>
       <components.CardBio>
         <H2>{props.name}</H2>
-        <H3>R$ {props.total}</H3>
-        <P>R$ {props.price}</P>
+        <H3>R$ {props.total.toFixed(2)}</H3>
+        <P>R$ {props.price.toFixed(2)}</P>
         <components.CardQty>
           <Button
             width="50px"
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
-              productQty("add");
+              add();
             }}
           >
             +
@@ -44,7 +55,7 @@ export default function CartItem(props) {
             fontSize="25px"
             padding="0 10px"
             onClick={() => {
-              productQty("remove");
+              remove();
             }}
           >
             -

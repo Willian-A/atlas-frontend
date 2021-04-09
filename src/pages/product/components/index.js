@@ -14,7 +14,7 @@ export default function ProdCard(props) {
 
   async function addOnCart() {
     try {
-      await api.post("/cart/add", {
+      await api.post("/add_cart", {
         id: props.id,
       });
       navigate("/carrinho");
@@ -56,7 +56,7 @@ export default function ProdCard(props) {
           >
             {error.message}
           </H3>
-          <H2>R$ {result.price}</H2>
+          <H2>R$ {result.price} </H2>
           <Button
             width="200px"
             onClick={() => {

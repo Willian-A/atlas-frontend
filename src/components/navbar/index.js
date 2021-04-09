@@ -12,14 +12,14 @@ function Navbar() {
     try {
       await api.get("/logged").then((res) => setIsLogged(res.data));
     } catch (error) {
-      setIsLogged(error.response.data.payload);
+      setIsLogged(error.response.data);
     }
   }
 
   function userMenu() {
     if (isLogged === true) {
       return <A href="/logout">Sair</A>;
-    } else if (isLogged === false) {
+    } else {
       return (
         <>
           <A href="/login">Login</A>

@@ -4,7 +4,7 @@ const BannerContainer = styled.div`
   height: 60vw;
 
   @media (min-width: 1440px) {
-    height: 70vh;
+    height: 35vw;
   }
 `;
 

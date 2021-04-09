@@ -8,7 +8,7 @@ import CartItem from "./cartItem";
 
 export default function CartList() {
   const [carResult, setCartResult] = useState([]);
-  const [cartTotal, setCartTotal] = useState("0");
+  const [total, setTotal] = useState("0");
   const [error, setError] = useState({ error: true, message: null });
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export default function CartList() {
       async function getCart() {
         try {
           const response = await api.get("/cart");
-          setCartResult(response.data.dbResult);
-          setCartTotal(response.data.cartTotal);
+          setCartResult(response.data.result);
+          setTotal(response.data.total);
           setError({ error: false, message: null });
         } catch (error) {
           setError({ error: true, message: error.response.data });
@@ -58,7 +58,7 @@ export default function CartList() {
               return (
                 <CartItem
                   key={value._id}
-                  id={value._id}
+                  _id={value._id}
                   image={value.image}
                   name={value.name}
                   qty={value.qty}
@@ -69,7 +69,7 @@ export default function CartList() {
             })}
           </components.CartListContainer>
           <components.ResumeContainer>
-            <CartResume value={cartTotal} />
+            <CartResume value={total.toFixed(2)} />
           </components.ResumeContainer>
         </components.CartContainer>
       </>

@@ -44,7 +44,6 @@ const CardBox = styled.div`
 
   img {
     width: 100%;
-    min-height: 372px;
     transition: filter ease-in-out 450ms;
 
     &:hover {
@@ -53,40 +52,14 @@ const CardBox = styled.div`
   }
 
   @media (min-width: 768px) {
-    img {
-      min-height: 250px;
-    }
-
     &:last-child {
       display: none;
     }
   }
 
   @media (min-width: 1024px) {
-    img {
-      min-height: 245px;
-    }
-
     &:last-child {
       display: unset;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    img {
-      min-height: 275px;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    img {
-      min-height: 310px;
-    }
-  }
-
-  @media (min-width: 2560px) {
-    img {
-      min-height: 450px;
     }
   }
 `;
